@@ -6,6 +6,6 @@ const userTamaRoutes = require('./usertama-routes');
 
 router.use('/user', userRoutes);
 router.use('/tama', tamaRoutes);
-router.user('/usertama', userTamaRoutes);
+router.use('/usertama', userTamaRoutes);
 
 module.exports = router

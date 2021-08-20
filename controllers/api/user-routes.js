@@ -7,9 +7,14 @@ const { User } = require('../../models')
 //GET ALL USERS
 router.get('/', async (req, res) => {
   try {
-    const dbUserData = await User.findAll();
-
-    res.json(dbUserData);
+    // console.log(req);
+    console.log(User);
+    const dbUserData = await User.findAll({});
+    console.log(dbUserData);
+    // const userData = dbUserData.map((user) => user.get({ plain : true}))
+    // console.log(userData);
+    // res.status(200).json(dbUserData);
+    res.status(200).json({message: "test passed"})
 
   } catch (err) {
     res.status(500).json(err)
