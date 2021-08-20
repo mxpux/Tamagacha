@@ -18,3 +18,5 @@ User.belongsToMany(Tama, {
     unique: false,
     foreignKey: "user_id",
 });
+
+module.exports = { User, Tama, UserTama};
