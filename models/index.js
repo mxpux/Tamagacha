@@ -14,6 +14,7 @@ Tama.belongsToMany(User, {
 
 User.belongsToMany(Tama, {
     as: "usertama", // this naming sense can change
+    through: UserTama,
     unique: false,
     foreignKey: "user_id",
 });
