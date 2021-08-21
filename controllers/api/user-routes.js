@@ -7,12 +7,8 @@ const { User } = require('../../models')
 //GET ALL USERS
 router.get('/', async (req, res) => {
   try {
-    // console.log(req);
-    console.log(User);
-    const dbUserData = await User.findAll({});
-    console.log(dbUserData);
+    // const dbUserData = await User.findAll({});
     // const userData = dbUserData.map((user) => user.get({ plain : true}))
-    // console.log(userData);
     // res.status(200).json(dbUserData);
     res.status(200).json({message: "test passed"})
 
@@ -23,7 +19,17 @@ router.get('/', async (req, res) => {
 
 //GET ONE USER
 //TODO: GET ROUTE
+router.get('/:id', async (req, res) => {
+  try {
+    // const dbUserData = await User.findByPk(req.params.id);
+    // const userData = dbUserData.map((user) => user.get({ plain : true}))
+    // res.status(200).json(dbUserData);
+    res.status(200).json({message: "test passed"})
 
+  } catch (err) {
+    res.status(500).json(err)
+  }
+});
 //CREATE NEW USER
 // SIGNUP
 //TODO: POST ROUTE
