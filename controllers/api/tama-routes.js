@@ -37,6 +37,22 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//ADD A TAMA
+//TODO: POST ROUTE
+router.post('/add', async (req, res) => {
+    console.log("body", req.body)
+    try {
+        const tamaData = await Tama.create({
+            name: req.body.name,
+            description: req.body.description,
+            pictures: req.body.pictures
+        })
+        res.status(200).json(tamaData);
+    }
+    catch (err) {
+        res.status(400).json(err);
+    }
+});
 
 
 module.exports = router
