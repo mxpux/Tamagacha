@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { endsWith } = require('sequelize/types/lib/operators');
 const { User } = require('../../models')
 //TODO: IMPORT withAuth
 //URL: <homeURL>/api/user
@@ -88,7 +89,16 @@ router.post('/login', async (req, res) => {
 })
 
 //LOGOUT
-//TODO: POST ROUTE
+//TODO: TEST
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+})
 
 //DELETE A USER
 //TODO: DELETE ROUTE
