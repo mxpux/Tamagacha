@@ -90,7 +90,7 @@ router.post('/login', async (req, res) => {
 
 //LOGOUT
 //TODO: TEST
-router.post('/logout', (req, res) => {
+router.post('/logout', async (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -101,7 +101,25 @@ router.post('/logout', (req, res) => {
 })
 
 //DELETE A USER
-//TODO: DELETE ROUTE
+//TODO: TEST
+router.delete('/:id', async (req, res) => {
+  try {
+    const dbUserData = await User.destroy({
+      where: {
+        id: req.params.id
+      },
+    });
 
+    if (!dbUserData) {
+      res.status(404).json({ message: "No user found with that id! "});
+      return
+    }
+
+    res.status(200).json({dbUserData, message: "User deleted!"});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+})
 
 module.exports = router
