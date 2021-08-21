@@ -24,6 +24,19 @@ router.get('/', async (req, res) => {
     }
 });
 
+//GET ONE TAMA
+//TODO: GET ROUTE
+router.get('/:id', async (req, res) => {
+    try {
+        const tamaData = await Tama.findByPk(req.params.id);
+        const tama = tamaData.get({ plain: true });
+        res.status(200).json(tama)
+    }
+    catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 
 module.exports = router
