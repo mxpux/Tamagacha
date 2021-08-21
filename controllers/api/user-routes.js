@@ -5,13 +5,12 @@ const { User } = require('../../models')
 
 
 //GET ALL USERS
-//TODO: TEST
 router.get('/', async (req, res) => {
   try {
-    // const dbUserData = await User.findAll({});
-    // const userData = dbUserData.map((user) => user.get({ plain : true}))
-    // res.status(200).json(dbUserData);
-    res.status(200).json({message: "test passed"})
+    const dbUserData = await User.findAll({});
+    const userData = dbUserData.map((user) => user.get({ plain : true}))
+    res.status(200).json(userData);
+    // res.status(200).json({message: "test passed"})
 
   } catch (err) {
     res.status(500).json(err)
@@ -19,13 +18,12 @@ router.get('/', async (req, res) => {
 });
 
 //GET ONE USER
-//TODO: TEST
 router.get('/:id', async (req, res) => {
   try {
-    // const userData = await User.findByPk(req.params.id);
-    
-    // res.status(200).json(userData);
-    res.status(200).json({message: "test passed"})
+    const userData = await User.findByPk(req.params.id);
+    const user = userData.get({ plain: true })
+    res.status(200).json(user);
+    // res.status(200).json({message: "test passed"})
 
   } catch (err) {
     res.status(500).json(err)
