@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const userRoutes = require('./user-routes');
-const tamaRoutes = require('./tamagachi');
+const tamaRoutes = require('./tama-routes');
 const userTamaRoutes = require('./usertama-routes');
 
 router.use('/user', userRoutes);

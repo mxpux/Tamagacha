@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { UserTama } = require('../../models')
 //TODO: IMPORT withAuth
 //URL: <homeURL>/api/usertama
 
