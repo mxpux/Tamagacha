@@ -5,6 +5,7 @@ const { User } = require('../../models')
 
 
 //GET ALL USERS
+//TODO: TEST
 router.get('/', async (req, res) => {
   try {
     // const dbUserData = await User.findAll({});
@@ -18,12 +19,12 @@ router.get('/', async (req, res) => {
 });
 
 //GET ONE USER
-//TODO: GET ROUTE
+//TODO: TEST
 router.get('/:id', async (req, res) => {
   try {
-    // const dbUserData = await User.findByPk(req.params.id);
+    // const userData = await User.findByPk(req.params.id);
     
-    // res.status(200).json(dbUserData);
+    // res.status(200).json(userData);
     res.status(200).json({message: "test passed"})
 
   } catch (err) {
@@ -32,10 +33,10 @@ router.get('/:id', async (req, res) => {
 });
 //CREATE NEW USER
 // SIGNUP
-//TODO: POST ROUTE
-router.post('/', async (req, res) => {
+//TODO: TEST
+router.post('/signup', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const userData = await User.create({
       username: req.body.username,
       password: req.body.password,
       email: req.body.email,
@@ -45,7 +46,7 @@ router.post('/', async (req, res) => {
       req.session.loggedIn = true;
       req.session.username = req.body.username;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(userData);
     })
   } catch (err) {
     console.log(err);
@@ -54,7 +55,37 @@ router.post('/', async (req, res) => {
 })
 
 //LOGIN
-//TODO: POST ROUTE
+//TODO: TEST
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: {
+        username: req.body.username
+      }
+    });
+
+    if (!userData) {
+      res.status(400).json({ message: "Incorrect email/password.  Please try again!" });
+      return;
+    };
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect email/password.  Please try again!" });
+      return;
+    };
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.username = req.body.username;
+      res.status(200).json({ user: userData, message: "You are now logged in!" })
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 //LOGOUT
 //TODO: POST ROUTE
