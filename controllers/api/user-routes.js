@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { endsWith } = require('sequelize/types/lib/operators');
 const { User } = require('../../models')
 //TODO: IMPORT withAuth
 //URL: <homeURL>/api/user
