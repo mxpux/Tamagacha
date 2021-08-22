@@ -7,14 +7,10 @@ const { User } = require('../../models')
 //GET ALL USERS
 router.get('/', async (req, res) => {
   try {
-    // console.log(req);
-    console.log(User);
     const dbUserData = await User.findAll({});
-    console.log(dbUserData);
-    // const userData = dbUserData.map((user) => user.get({ plain : true}))
-    // console.log(userData);
-    // res.status(200).json(dbUserData);
-    res.status(200).json({message: "test passed"})
+    const userData = dbUserData.map((user) => user.get({ plain : true}))
+    res.status(200).json(userData);
+    // res.status(200).json({message: "test passed"})
 
   } catch (err) {
     res.status(500).json(err)
@@ -22,20 +18,101 @@ router.get('/', async (req, res) => {
 });
 
 //GET ONE USER
-//TODO: GET ROUTE
+router.get('/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id);
+    const user = userData.get({ plain: true })
+    res.status(200).json(user);
+    // res.status(200).json({message: "test passed"})
 
+  } catch (err) {
+    res.status(500).json(err)
+  }
+});
 //CREATE NEW USER
 // SIGNUP
-//TODO: POST ROUTE
+router.post('/signup', async (req, res) => {
+  try {
+    const userData = await User.create({
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+    });
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.username = req.body.username;
+
+      res.status(200).json(userData);
+    })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 //LOGIN
-//TODO: POST ROUTE
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: {
+        username: req.body.username
+      }
+    });
+
+    if (!userData) {
+      res.status(400).json({ message: "Incorrect email/password.  Please try again!" });
+      return;
+    };
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect email/password.  Please try again!" });
+      return;
+    };
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.username = req.body.username;
+      res.status(200).json({ user: userData, message: "You are now logged in!" })
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 //LOGOUT
-//TODO: POST ROUTE
+router.post('/logout', async (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+})
 
 //DELETE A USER
-//TODO: DELETE ROUTE
+router.delete('/:id', async (req, res) => {
+  try {
+    const dbUserData = await User.destroy({
+      where: {
+        id: req.params.id
+      },
+    });
 
+    if (!dbUserData) {
+      res.status(404).json({ message: "No user found with that id! "});
+      return
+    }
+
+    res.status(200).json({dbUserData, message: "User deleted!"});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+})
 
 module.exports = router
