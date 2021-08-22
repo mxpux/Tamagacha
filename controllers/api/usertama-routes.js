@@ -30,7 +30,8 @@ router.get('/', async (req, res) => {
 //ONE USER ALL TAMAS
 router.get('/:u_id', async (req, res) => {
   try {
-    const dbUserTamaData = await User.findByPk(req.params.u_id, {
+    const dbUserTamaData = await User.findByPk(req.params.u_id, 
+    {
       include:
       [
         // {all: true, nested: true}
@@ -58,7 +59,8 @@ router.get('/:u_id', async (req, res) => {
 //ONE USER ONE TAMA
 router.get('/:u_id/:t_id', async (req, res) => {
   try {
-    const dbUserTamaData = await User.findByPk(req.params.u_id, {
+    const dbUserTamaData = await User.findByPk(req.params.u_id, 
+    {
       include:
       [
         // {all: true, nested: true},
@@ -86,8 +88,7 @@ router.get('/:u_id/:t_id', async (req, res) => {
 })
 
 //ONE USER ONE TAMA CHANGE STATS
-//TODO: TEST
-router.put('/:u_id/:t_id', async (req, res) => {
+router.put('/unique/:ut_id', async (req, res) => {
   try{
     const dbUserTamaData = await UserTama.update(
       {
@@ -99,8 +100,7 @@ router.put('/:u_id/:t_id', async (req, res) => {
         status: req.body.status
       }, {
         where: {
-          user_id: req.params.u_id,
-          tama_id: req.params.t_id
+          id: req.params.ut_id // |Make changes to unique row in UserTama |
         }
       }
     );
@@ -116,8 +116,26 @@ router.put('/:u_id/:t_id', async (req, res) => {
     res.status(500).json(err);
   }
 })
-//ONE USER NEW TAMA
-//TODO: POST ROUTE
 
+//ONE USER NEW TAMA
+router.post('/:u_id/:t_id', async (req, res) => {
+  try {
+    const newUserTama = await UserTama.create({
+      user_id: req.params.u_id,
+      tama_id: req.params.t_id,
+      age: 0,
+      hunger: 100,
+      happiness: 100,
+      bladder: 100,
+      status: 10
+    });
+
+    const usertama = newUserTama.get({ plain: true })
+    res.status(200).json(usertama);
+  } catch {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router
