@@ -31,7 +31,6 @@ router.get('/:id', async (req, res) => {
 });
 //CREATE NEW USER
 // SIGNUP
-//TODO: TEST
 router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create({
@@ -53,7 +52,6 @@ router.post('/signup', async (req, res) => {
 })
 
 //LOGIN
-//TODO: TEST
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -86,7 +84,6 @@ router.post('/login', async (req, res) => {
 })
 
 //LOGOUT
-//TODO: TEST
 router.post('/logout', async (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -98,7 +95,6 @@ router.post('/logout', async (req, res) => {
 })
 
 //DELETE A USER
-//TODO: TEST
 router.delete('/:id', async (req, res) => {
   try {
     const dbUserData = await User.destroy({
