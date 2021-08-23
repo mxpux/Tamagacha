@@ -11,14 +11,12 @@ h1 {
     color: lightyellow;
     text-align: center;
     padding-top: 50px;
-    margin-bottom: 0px;
     font-size: 45px;
 }
 
 .menu {
     display: flex;
     justify-content: flex-end;
-    background-color: rgb(169, 215, 255);
 }
 
 button {
@@ -27,6 +25,15 @@ button {
     display: flex;
     justify-content: flex-end;
 }
+
+li {
+    list-style-type: none;
+}
+
+li span {
+    position: relative;
+    left: -20px;
+  }
 
 body {
     margin: 0;
