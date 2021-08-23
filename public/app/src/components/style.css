@@ -1,10 +1,52 @@
 .header {
     background-color: rgb(169, 215, 255);
+    display: 'flex';
+    flex-direction: 'row';
+    align-items: 'center';
+    justify-content: 'center';
 }
 
 h1 {
     font-family: 'Luckiest Guy', cursive;
     color: lightyellow;
-    margin-top: 20px;
-    padding: 15px;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 0px;
+    font-size: 45px;
 }
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+  
+.x {
+    animation: x 13s linear infinite alternate;
+    position: absolute;
+}
+
+.y {
+    animation: y 7s linear infinite alternate;
+}
+
+@keyframes x {
+    100% {
+      transform: translateX( calc(100vw - 200px) );
+    }
+}
+  
+@keyframes y {
+    100% {
+      transform: translateY( calc(75vh - 200px) );
+    }
+}
+
