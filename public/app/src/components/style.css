@@ -50,3 +50,65 @@ img {
     }
 }
 
+.x2 {
+    animation: x2 9s linear infinite alternate;
+    position: absolute;
+}
+
+.y2 {
+    animation: y2 11s linear infinite alternate;
+}
+
+@keyframes x2 {
+    100% {
+      transform: translateX( calc(100vw - 200px) );
+    }
+}
+  
+@keyframes y2 {
+    100% {
+      transform: translateY( calc(75vh - 200px) );
+    }
+}
+
+.x3 {
+    animation: x3 10s linear infinite alternate;
+    position: absolute;
+}
+
+.y3 {
+    animation: y3 7s linear infinite alternate;
+}
+
+@keyframes x3 {
+    100% {
+      transform: translateX( calc(100vw - 200px) );
+    }
+}
+  
+@keyframes y3 {
+    100% {
+      transform: translateY( calc(75vh - 200px) );
+    }
+}
+
+.x4 {
+    animation: x4 12s linear infinite alternate;
+    position: absolute;
+}
+
+.y4 {
+    animation: y4 8s linear infinite alternate;
+}
+
+@keyframes x4 {
+    100% {
+      transform: translateX( calc(100vw - 200px) );
+    }
+}
+  
+@keyframes y4 {
+    100% {
+      transform: translateY( calc(75vh - 200px) );
+    }
+}
