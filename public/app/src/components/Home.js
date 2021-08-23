@@ -5,32 +5,21 @@ import './style.css';
 
 function Home() {
   // const [isOpen, setOpen] = useState(false)
+  const Button = ({ onClick }) => {
+    return (
+      <button onClick={onClick}>
+        <Hamburger distance="md" color="lightyellow" >
+        </Hamburger>
+      </button>
+    );
+  };
+
   return (
     <div>
       <div class="header">
         <h1>TAMAGACHA</h1>
         <div class='menu'>
-          <Hamburger distance="md" color="lightyellow" onToggle={toggled => {
-            if (toggled) {
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Login</a>
-                </li>
-                <li>
-                  <a href="#">Characters</a>
-                </li>
-                <li>
-                  <a href="#">My Tama</a>
-                </li>
-              </ul>
-
-            } else {
-              // close a menu
-            }
-          }} />
+          <Hamburger distance="md" color="lightyellow" />
         </div>
       </div>
     </div>
