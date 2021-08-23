@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import DropDownCard from "./dropDownCard";
-const sampleData = new Array(7).fill("item name");
+const sampleData = ["Login", "Characters", "My Tama"];
 
 const ButtonWithDropDownCmp = () => {
   const [open, setOpen] = React.useState(false);
