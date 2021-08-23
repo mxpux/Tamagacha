@@ -16,6 +16,9 @@ function Homepage() {
             <div class="x4">
                 <img class="y4" src="tama4.png" alt="tamago"/>
             </div>
+            <div class="x5">
+                <img class="y5" src="tama5.png" alt="tamago"/>
+            </div>
         </body>
     );
 }

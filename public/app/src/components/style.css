@@ -25,8 +25,8 @@ body {
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
   
 .x {
@@ -40,13 +40,13 @@ img {
 
 @keyframes x {
     100% {
-      transform: translateX( calc(100vw - 200px) );
+      transform: translateX( calc(100vw - 250px) );
     }
 }
   
 @keyframes y {
     100% {
-      transform: translateY( calc(75vh - 200px) );
+      transform: translateY( calc(75vh - 250px) );
     }
 }
 
@@ -61,13 +61,13 @@ img {
 
 @keyframes x2 {
     100% {
-      transform: translateX( calc(100vw - 200px) );
+      transform: translateX( calc(100vw - 250px) );
     }
 }
   
 @keyframes y2 {
     100% {
-      transform: translateY( calc(75vh - 200px) );
+      transform: translateY( calc(75vh - 250px) );
     }
 }
 
@@ -82,13 +82,13 @@ img {
 
 @keyframes x3 {
     100% {
-      transform: translateX( calc(100vw - 200px) );
+      transform: translateX( calc(100vw - 250px) );
     }
 }
   
 @keyframes y3 {
     100% {
-      transform: translateY( calc(75vh - 200px) );
+      transform: translateY( calc(75vh - 250px) );
     }
 }
 
@@ -103,12 +103,33 @@ img {
 
 @keyframes x4 {
     100% {
-      transform: translateX( calc(100vw - 200px) );
+      transform: translateX( calc(100vw - 250px) );
     }
 }
   
 @keyframes y4 {
     100% {
-      transform: translateY( calc(75vh - 200px) );
+      transform: translateY( calc(75vh - 250px) );
+    }
+}
+
+.x5 {
+    animation: x5 7s linear infinite alternate;
+    position: absolute;
+}
+
+.y5 {
+    animation: y5 11s linear infinite alternate;
+}
+
+@keyframes x5 {
+    100% {
+      transform: translateX( calc(100vw - 250px) );
+    }
+}
+  
+@keyframes y5 {
+    100% {
+      transform: translateY( calc(75vh - 250px) );
     }
 }
