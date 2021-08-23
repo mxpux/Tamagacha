@@ -1,9 +1,16 @@
 import React from 'react';
+import './style.css';
 
 function Home() {
   return (
-    <div className="container">
-      <h2>Tamagacha</h2>
+    <div class="header" style={{
+      display: 'flex',
+      fontFamily: 'helvetica',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+      <h1>TAMAGACHA</h1>
     </div>
   );
 }

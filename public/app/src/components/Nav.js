@@ -11,7 +11,7 @@ export default function Nav() {
           fontFamily: 'helvetica',
           flexDirection: 'row',
           alignItems: 'flex-start',
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
         }}
       >
         <div style={linkStyle}>
