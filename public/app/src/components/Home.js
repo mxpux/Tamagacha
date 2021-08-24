@@ -10,10 +10,10 @@ function Home() {
   return (
     <div>
       <div class="header">
-        <h1>TAMAGACHA</h1>
         <div class='menu'>
           <DropDown />
         </div>
+        <h1>TAMAGACHA</h1>
       </div>
     </div>
   );

@@ -10,8 +10,12 @@ h1 {
     font-family: 'Luckiest Guy', cursive;
     color: lightyellow;
     text-align: center;
-    padding-top: 50px;
-    font-size: 45px;
+    font-size: 75px;
+    padding-bottom: 20px;
+}
+
+h1:hover {
+    color: rgb(169, 215, 255);
 }
 
 .menu {
