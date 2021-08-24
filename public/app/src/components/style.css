@@ -1,0 +1,154 @@
+.header {
+    background-color: rgb(169, 215, 255);
+    display: 'flex';
+    flex-direction: 'row';
+    align-items: 'center';
+    justify-content: 'center';
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: lightyellow;
+    text-align: center;
+    font-size: 75px;
+    padding-bottom: 20px;
+}
+
+h1:hover {
+    color: rgb(169, 215, 255);
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    background-color: transparent;
+    border-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+}
+
+li {
+    list-style-type: none;
+}
+
+li span {
+    position: relative;
+    left: -20px;
+  }
+
+body {
+    margin: 0;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
+  
+.x {
+    animation: x 13s linear infinite alternate;
+    position: absolute;
+}
+
+.y {
+    animation: y 7s linear infinite alternate;
+}
+
+@keyframes x {
+    100% {
+      transform: translateX( calc(100vw - 250px) );
+    }
+}
+  
+@keyframes y {
+    100% {
+      transform: translateY( calc(75vh - 250px) );
+    }
+}
+
+.x2 {
+    animation: x2 9s linear infinite alternate;
+    position: absolute;
+}
+
+.y2 {
+    animation: y2 11s linear infinite alternate;
+}
+
+@keyframes x2 {
+    100% {
+      transform: translateX( calc(100vw - 250px) );
+    }
+}
+  
+@keyframes y2 {
+    100% {
+      transform: translateY( calc(75vh - 250px) );
+    }
+}
+
+.x3 {
+    animation: x3 10s linear infinite alternate;
+    position: absolute;
+}
+
+.y3 {
+    animation: y3 7s linear infinite alternate;
+}
+
+@keyframes x3 {
+    100% {
+      transform: translateX( calc(100vw - 250px) );
+    }
+}
+  
+@keyframes y3 {
+    100% {
+      transform: translateY( calc(75vh - 250px) );
+    }
+}
+
+.x4 {
+    animation: x4 12s linear infinite alternate;
+    position: absolute;
+}
+
+.y4 {
+    animation: y4 8s linear infinite alternate;
+}
+
+@keyframes x4 {
+    100% {
+      transform: translateX( calc(100vw - 250px) );
+    }
+}
+  
+@keyframes y4 {
+    100% {
+      transform: translateY( calc(75vh - 250px) );
+    }
+}
+
+.x5 {
+    animation: x5 7s linear infinite alternate;
+    position: absolute;
+}
+
+.y5 {
+    animation: y5 11s linear infinite alternate;
+}
+
+@keyframes x5 {
+    100% {
+      transform: translateX( calc(100vw - 250px) );
+    }
+}
+  
+@keyframes y5 {
+    100% {
+      transform: translateY( calc(75vh - 250px) );
+    }
+}
