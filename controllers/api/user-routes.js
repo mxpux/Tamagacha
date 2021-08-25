@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     // console.log(req);
     console.log(User);
     const dbUserData = await User.findAll({});
-    console.log(dbUserData);
+    // console.log(dbUserData);
     // const userData = dbUserData.map((user) => user.get({ plain : true}))
     // console.log(userData);
     // res.status(200).json(dbUserData);
