@@ -6,8 +6,6 @@ const { Tama } = require('../../models')
 //TODO: IMPORT withAuth
 //URL: <homeURL>/api/tama
 
-
-
 //GET ALL TAMAS
 //TODO: GET ROUTE
 router.get('/', async (req, res) => {
