@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 3005;
 cron.schedule('0,05,10,15,20,25,30,35,40,45,50,55 * * * * *', () => {
     getAllUserTama(PORT)
     .then( (data) => {
-        console.log(createUserTamaArr(data))
+        console.log('NEW ARRAY', createUserTamaArr(data))
     })
 })
 
