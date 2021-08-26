@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Hamburger from 'hamburger-react';
 import DropDown from './MenuDrop';
-import './style.css';
+import '../styles/style.css';
 
 
 function Home() {

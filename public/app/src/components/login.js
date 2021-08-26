@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.css';
+import '../styles/login.css';
 
 function Form() {
   const [firstName, setFirstName] = useState('');
