@@ -5,7 +5,8 @@ const routes = require('./controllers');
 require('dotenv').config();
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const cron = require('node-cron');
+const { getAllUserTama, createUserTamaArr, userTamaUpdate } = require('./utils/passive')
 
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -22,6 +23,15 @@ const PORT = process.env.PORT || 3005;
 //         db: sequelize
 //     })
 // };
+
+// -- cron -- \\
+//!Tweak schedule based on game balance
+cron.schedule('0,05,10,15,20,25,30,35,40,45,50,55 * * * * *', () => {
+    getAllUserTama(PORT)
+    .then((data) => {
+        userTamaUpdate(createUserTamaArr(data), PORT)
+    })
+})
 
 // -- middleware -- \\
 // app.use(session(sess));
