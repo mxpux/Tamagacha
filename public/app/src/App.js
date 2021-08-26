@@ -6,12 +6,14 @@ import Hamburger from 'hamburger-react';
 import './components/style.css';
 import Login from './components/login';
 import DropDown from './components/MenuDrop';
+import Ttt from './components/Ttt';
 
 function App() {
   return (
     <div>
       <Home />
       <Homepage />
+      <Ttt />
     </div>
   );
 }
