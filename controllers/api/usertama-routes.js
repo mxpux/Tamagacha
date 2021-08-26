@@ -91,14 +91,7 @@ router.get('/:u_id/:t_id', async (req, res) => {
 router.put('/unique/:ut_id', async (req, res) => {
   try{
     const dbUserTamaData = await UserTama.update(
-      {
-        age: req.body.age,
-        hunger: req.body.hunger,
-        happiness: req.body.happiness,
-        bladder: req.body.bladder,
-        date_modified: req.body.date_modified,
-        status: req.body.status
-      }, {
+      req.body, {
         where: {
           id: req.params.ut_id // |Make changes to unique row in UserTama |
         }

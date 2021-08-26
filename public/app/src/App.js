@@ -7,12 +7,14 @@ import Hamburger from 'hamburger-react';
 import './styles/style.css';
 import Login from './components/login';
 import DropDown from './components/MenuDrop';
+import Ttt from './components/Ttt';
 
 function App() {
   return (
     <div>
       <Home />
-      <Characters />
+      <Homepage />
+      <Ttt />
     </div>
   );
 }
