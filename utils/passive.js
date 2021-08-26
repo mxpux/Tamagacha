@@ -1,7 +1,6 @@
 const fetch = require("node-fetch")
-const { promisify } = require("util")
 
-//Tweak with numbers for balance.  These numbers are used to subtract from upkeep
+//!Tweak with numbers for gameplay balance.  These numbers are used to subtract from upkeep
 const upkeepVals = {
   hunger: 1,
   bladder: 1,
@@ -9,13 +8,14 @@ const upkeepVals = {
   status: 1
 }
 
-//Returns an array of user objects
+//!Returns an array of user objects
 function getAllUserTama (PORT) {
+  //TODO: Eventually change to a suitable URL that's not local
   return fetch(`http://localhost:${PORT}/api/usertama`)
     .then(res => res.json())
 }
 
-//Returns an array of userTama objects
+//!Returns an array of userTama objects
 function createUserTamaArr (data) {
   let newArr = []
   data.forEach((user) => {
@@ -31,23 +31,23 @@ function createUserTamaArr (data) {
 
 //! Update the database
 async function userTamaUpdate (userTamaArr, PORT) {
-  let newUserTamaArr = [];
+  let newUserTamaArr = []; //Will contain updated userTama stats
   userTamaArr.forEach((userTama) => {
     //! Apply upkeep values for each userTama, then PUT to db
     newUserTama = userTamaUpkeep(userTama)
-    newUserTamaArr.push(newUserTama)
+    newUserTamaArr.push(newUserTama) //push updated userTamas
   })
-  console.log('newUserTamaArr', newUserTamaArr);
-  Promise.all(newUserTamaArr.map(tama => {
+  Promise.all(newUserTamaArr.map(tama => { //Promise.all will ensure each fetch route is complete before moving on
+    //TODO: Eventually change to a suitable URL that's not local
     console.log(`http://localhost:${PORT}/api/usertama/unique/${tama.id}`)
     fetch(`http://localhost:${PORT}/api/usertama/unique/${tama.id}`, {
       method: "PUT",
       body: JSON.stringify(tama),
       headers: { 'Content-Type': 'application/json' }
     })
-    .then(console.log('done'))
+    .then(console.log(`Usertama ${tama.id} updated`))
   }))
-  .then(console.log('all finished'))
+  .then(console.log('All finished'))
 }
 
 
