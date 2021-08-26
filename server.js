@@ -5,7 +5,7 @@ const routes = require('./controllers');
 require('dotenv').config();
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const cron = require('node-cron');
 
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -22,6 +22,12 @@ const PORT = process.env.PORT || 3005;
 //         db: sequelize
 //     })
 // };
+
+// -- cron -- \\
+cron.schedule('0,10,20,30,40,50 * * * * *', () => {
+    let rn = new Date()
+    console.log(`${rn}: ten seconds passed..`)
+})
 
 // -- middleware -- \\
 // app.use(session(sess));
