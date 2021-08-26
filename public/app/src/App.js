@@ -7,11 +7,14 @@ import './components/style.css';
 import Login from './components/login';
 import DropDown from './components/MenuDrop';
 
+import Matching from './components/Matching';
+
 function App() {
   return (
     <div>
       <Home />
       <Homepage />
+      <Matching />
     </div>
   );
 }
