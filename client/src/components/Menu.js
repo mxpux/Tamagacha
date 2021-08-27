@@ -1,6 +1,6 @@
 import React from "react";
 import Hamburger from 'hamburger-react';
-import './style.css';
+import '../styles/style.css';
 
 const Button = ({ onClick }) => (
     <button onClick={onClick}>

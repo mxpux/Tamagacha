@@ -1,0 +1,31 @@
+.container {
+    /* Make centered */
+}
+
+h2 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.card {
+    width: 300px;
+    display: inline-block;
+    border: transparent;
+    background-color: transparent;
+    margin: 20px;
+}
+
+.card-body {
+    visibility: hidden;
+    text-align: center;
+}
+
+.card:hover { 
+    opacity: 1; 
+    transform: scale(1.2); 
+    transition-delay: 0ms, 0ms;
+}
+
+.card:hover .card-body {
+    visibility: visible;
+}
