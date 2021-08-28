@@ -4,7 +4,8 @@ import './ttt.css';
 
 
 const Ttt = () => {
-	const [turn, setTurn] = useState(<img src={x} alt="yellow-turn" />);
+	// const [turn, setTurn] = useState(<img src={x} alt="yellow-turn" />);
+    const [turn, setTurn] = useState('x');
 	const [boxes, setBoxes] = useState(Array(9).fill(''));
 	const [winner, setWinner] = useState();
 
@@ -41,8 +42,39 @@ const Ttt = () => {
 		}
 	};
 
+	const handleClick = (num) => {
+		if (boxes[num] !== '') {
+			alert('already clicked');
+			return;
+		}
+
+		var squares = [...boxes];
+
+		if (turn === 'x') {
+			squares[num] = 'x';
+			setTurn('o');
+		} else {
+			squares[num] = 'o';
+			setTurn('x');
+		}
+
+		winningComb(squares);
+		setBoxes(squares);
+	};
+
+	const handleRestart = () => {
+		setWinner(null);
+		setBoxes(Array(9).fill(''));
+	};
+
+	const Cell = ({ num }) => {
+		return <td onClick={() => handleClick(num)}>{boxes[num]}</td>;
+	};
+
+	return (
 		<div className='container'>
-		
+			<table>
+				Turn: {turn}
 				<tbody>
 					<tr>
 						<Cell num={0} />
@@ -60,9 +92,15 @@ const Ttt = () => {
 						<Cell num={8} />
 					</tr>
 				</tbody>
-			
+			</table>
+			{winner && (
+				<>
+					<p>{winner} is the winner!</p>
+					<button onClick={() => handleRestart()}>Play Again</button>
+				</>
+			)}
 		</div>
-	
-
+	);
+};
 
 export default Ttt;
