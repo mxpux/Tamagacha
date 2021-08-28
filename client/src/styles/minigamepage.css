@@ -1,0 +1,32 @@
+.minigame-container {
+    background-color: rgb(37, 189, 209);
+    display: flex;
+    justify-content: center;
+}
+
+.minigame-card {
+    width: 300px;
+    display: inline-block;
+    margin: 50px;
+    margin-left: 200px;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.minigame-card:hover {
+    transform: scale(1.2); 
+    transition-delay: 0ms, 0ms;
+}
+
+.minigame-card h3 {
+    text-align: center;
+}
+
+.minigame-card-img {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+}

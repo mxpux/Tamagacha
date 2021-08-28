@@ -8,6 +8,9 @@ import './styles/style.css';
 import Login from './components/login';
 import DropDown from './components/MenuDrop';
 import Ttt from './components/Ttt';
+import Profile from './components/Profile'
+
+import MinigamePage from './components/Minigamepage';
 
 import Matching from './components/Matching';
 
@@ -39,6 +42,7 @@ function App() {
       {renderPage()}
 
       {/* <Matching /> */}
+      <MinigamePage />
     </div>
   );
 }
