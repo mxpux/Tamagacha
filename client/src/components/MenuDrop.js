@@ -3,13 +3,13 @@ import Menu from "./Menu";
 import DropDownCard from "./dropDownCard";
 const sampleData = ["Login", "Characters", "My Tama"];
 
-const ButtonWithDropDownCmp = () => {
+const ButtonWithDropDownCmp = (props) => {
   const [open, setOpen] = React.useState(false);
   const drop = React.useRef(null);
   function handleClick(e) {
-    if (!e.target.closest(`.${drop.current.className}`) && open) {
-      setOpen(false);
-    }
+    // if (!e.target.closest(`.${drop.current.className}`) && open) {
+    //   setOpen(false);
+    // }
   }
   React.useEffect(() => {
     document.addEventListener("click", handleClick);
@@ -27,7 +27,11 @@ const ButtonWithDropDownCmp = () => {
       }}
     >
       <Menu onClick={() => setOpen(open => !open)} />
-      {open && <DropDownCard data={sampleData} setOpen={setOpen} />}
+      {open && <DropDownCard
+      data={sampleData}
+      setOpen={setOpen}
+      handlePageChange={props.handlePageChange}
+       />}
     </div>
   );
 };

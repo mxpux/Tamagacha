@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models')
+const {signToken, withAuth} = require('../../utils/auth'); //signToken subject to change possibly
 //TODO: IMPORT withAuth
 //URL: <homeURL>/api/user
 
@@ -45,6 +46,10 @@ router.post('/signup', async (req, res) => {
 
       res.status(200).json(userData);
     })
+    const token = signToken(userData)
+
+    return {token, userData}; 
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -52,7 +57,7 @@ router.post('/signup', async (req, res) => {
 })
 
 //LOGIN
-router.post('/login', async (req, res) => {
+router.post('/login', withAuth, async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
@@ -77,6 +82,10 @@ router.post('/login', async (req, res) => {
       req.session.username = req.body.username;
       res.status(200).json({ user: userData, message: "You are now logged in!" })
     });
+
+    const token = signToken(userData);
+    return {token, userData};
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -10,8 +10,8 @@ router.get('/', async (req, res) => {
       include:
       [
         // {all: true, nested: true},
-        { as: "tamas_owned", 
-        model: Tama, 
+        { as: "tamas_owned",
+        model: Tama,
         through: {
           attributes: {exclude: ['user_id', 'tama_id']} // | Will only include tama attributes (age, hunger, etc.) |
         }},
@@ -30,13 +30,13 @@ router.get('/', async (req, res) => {
 //ONE USER ALL TAMAS
 router.get('/:u_id', async (req, res) => {
   try {
-    const dbUserTamaData = await User.findByPk(req.params.u_id, 
+    const dbUserTamaData = await User.findByPk(req.params.u_id,
     {
       include:
       [
         // {all: true, nested: true}
-        { as: "tamas_owned", 
-        model: Tama, 
+        { as: "tamas_owned",
+        model: Tama,
         through: {
           attributes: {exclude: ['user_id', 'tama_id']} // | Will only include tama attributes (age, hunger, etc.) |
         }},
@@ -59,14 +59,14 @@ router.get('/:u_id', async (req, res) => {
 //ONE USER ONE TAMA
 router.get('/:u_id/:t_id', async (req, res) => {
   try {
-    const dbUserTamaData = await User.findByPk(req.params.u_id, 
+    const dbUserTamaData = await User.findByPk(req.params.u_id,
     {
       include:
       [
         // {all: true, nested: true},
-        { as: "tamas_owned", 
-        model: Tama, 
-        where: {id: req.params.t_id}, 
+        { as: "tamas_owned",
+        model: Tama,
+        where: {id: req.params.t_id},
         through: {
           attributes: {exclude: ['user_id', 'tama_id']} // | Will only include tama attributes (age, hunger, etc.) |
         }},
@@ -97,7 +97,7 @@ router.put('/unique/:ut_id', async (req, res) => {
         }
       }
     );
-    
+
     if (!dbUserTamaData) {
       res.status(404).json({ message: `No user or tama with user id of ${req.params.u_id} or tama id of ${req.params.t_id}!`})
     };
