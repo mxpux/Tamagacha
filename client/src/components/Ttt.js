@@ -1,31 +1,28 @@
-import React from 'react';
-import './ttt.css'
+import React, { useState } from 'react';
+import './ttt.css';
 
-function Ttt() {
-    return (
-        <div>
-            <h1> this is TTT page</h1>
+		<div className='container'>
+		
+				<tbody>
+					<tr>
+						<Cell num={0} />
+						<Cell num={1} />
+						<Cell num={2} />
+					</tr>
+					<tr>
+						<Cell num={3} />
+						<Cell num={4} />
+						<Cell num={5} />
+					</tr>
+					<tr>
+						<Cell num={6} />
+						<Cell num={7} />
+						<Cell num={8} />
+					</tr>
+				</tbody>
+			
+		</div>
+	
 
-            <div>
-                <div class='container'>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                </div>
-                <div class='container'>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                </div>
-                <div class='container'>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                </div>
-            </div>
 
-            </div>
-            )
-}
-
-            export default Ttt
+export default Ttt;
