@@ -5,6 +5,7 @@ import tama3 from '../assets/tama3.png';
 import tama4 from '../assets/tama4.png';
 import tama5 from '../assets/tama5.png';
 import '../styles/style.css';
+import Matching from './Matching'
 
 function Homepage() {
     return (
@@ -24,6 +25,7 @@ function Homepage() {
             <div class="x5">
                 <img class="y5" src={tama5} alt="tamago"/>
             </div>
+
         </body>
     );
 }
