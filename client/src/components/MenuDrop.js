@@ -7,9 +7,9 @@ const ButtonWithDropDownCmp = () => {
   const [open, setOpen] = React.useState(false);
   const drop = React.useRef(null);
   function handleClick(e) {
-    if (!e.target.closest(`.${drop.current.className}`) && open) {
-      setOpen(false);
-    }
+    // if (!e.target.closest(`.${drop.current.className}`) && open) {
+    //   setOpen(false);
+    // }
   }
   React.useEffect(() => {
     document.addEventListener("click", handleClick);

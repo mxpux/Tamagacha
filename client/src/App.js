@@ -9,12 +9,14 @@ import Login from './components/login';
 import DropDown from './components/MenuDrop';
 import Ttt from './components/Ttt';
 
+import Matching from './components/Matching';
+
 function App() {
   return (
     <div>
       <Home />
       <Homepage />
-      <Ttt />
+      <Matching />
     </div>
   );
 }
