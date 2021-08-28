@@ -10,6 +10,7 @@ import DropDown from './components/MenuDrop';
 import Ttt from './components/Ttt';
 import Profile from './components/Profile'
 
+import MinigamePage from './components/Minigamepage';
 
 import Matching from './components/Matching';
 
@@ -18,7 +19,7 @@ function App() {
     <div>
       <Home />
       <Homepage />
-      <Matching />
+      <MinigamePage />
     </div>
   );
 }

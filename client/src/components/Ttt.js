@@ -1,5 +1,5 @@
 import React from 'react';
-import './ttt.css'
+import '../styles/ttt.css'
 
 function Ttt() {
     return (
