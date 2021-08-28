@@ -32,23 +32,40 @@ UserTama.init(
     hunger: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 100,
     },
     happiness: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 100,
     },
     bladder: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 100,
     },
     date_modified: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW
     },
+    date_created: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
+    },
+    is_alive: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
+    },
+    is_awake: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
     status: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 100,
     },
   },
   {

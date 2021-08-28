@@ -1,0 +1,18 @@
+/* .container {
+    background-color: rgb(237, 165, 10);
+    display: flex;
+  justify-content: center;
+} */
+
+.box {
+    background-color: lightyellow;
+    width: 200px;
+  height: 200px;
+  border: 1px solid rgb(190, 188, 188);
+  text-align: center;
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px
+}
