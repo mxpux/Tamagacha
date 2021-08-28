@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import tama1 from '../assets/tama1.png';
-import tama2 from '../assets/tama2.png';
-import tama3 from '../assets/tama3.png';
-import tama4 from '../assets/tama4.png';
-import tama5 from '../assets/tama5.png';
-import './../styles/profile.css'
+import tama1 from '../../assets/tama1.png';
+import tama2 from '../../assets/tama2.png';
+import tama3 from '../../assets/tama3.png';
+import tama4 from '../../assets/tama4.png';
+import tama5 from '../../assets/tama5.png';
+import './profile.css'
 
 function getUserTamaStats () {
     fetch ('/api/usertama/unique/1') //! Need user id for the parameters

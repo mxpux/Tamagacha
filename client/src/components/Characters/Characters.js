@@ -1,10 +1,10 @@
 import React from "react";
-import tama1 from '../assets/tama1.png';
-import tama2 from '../assets/tama2.png';
-import tama3 from '../assets/tama3.png';
-import tama4 from '../assets/tama4.png';
-import tama5 from '../assets/tama5.png';
-import '../styles/characters.css';
+import tama1 from '../../assets/tama1.png';
+import tama2 from '../../assets/tama2.png';
+import tama3 from '../../assets/tama3.png';
+import tama4 from '../../assets/tama4.png';
+import tama5 from '../../assets/tama5.png';
+import './characters.css';
 
 function Characters() {
     return (

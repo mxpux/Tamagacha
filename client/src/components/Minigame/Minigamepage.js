@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import TamaMatch from '../assets/TamaMatch.png';
-import TamaTTT from '../assets/TamaTTT.png';
-import '../styles/minigamepage.css';
+import TamaMatch from '../../assets/TamaMatch.png';
+import TamaTTT from '../../assets/TamaTTT.png';
+import './minigamepage.css';
 
 function MinigamePage() {
     

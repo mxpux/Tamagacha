@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import '../styles/matching.css'
+import './matching.css'
 import Card from './Card.js'
 
 //Name & pic link

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/ttt.css';
+import './ttt.css';
 // import x from '../styles/test1.png';
 
 
