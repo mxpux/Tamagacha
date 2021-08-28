@@ -31,7 +31,7 @@ function App() {
     } else if (pageToRender === 'My Tama'){
       console.log('dont have anything to render yet')
     } else {
-      //something else ?
+      //something else ??
     }
   }
 
@@ -41,7 +41,8 @@ function App() {
       <Homepage />
       {renderPage()}
 
-      {/* <Matching /> */}
+      <Matching />
+
       <MinigamePage />
     </div>
   );

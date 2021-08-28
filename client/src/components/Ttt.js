@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ttt.css';
+import '../styles/ttt.css';
 // import x from '../styles/test1.png';
 
 
@@ -32,7 +32,7 @@ const Ttt = () => {
 				if (
 					squares[pattern[0]] === '' || squares[pattern[1]] === '' || squares[pattern[2]] === ''
 				) {
-					// == 
+					// ==
 				} else if (
 					squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]
 				) {
