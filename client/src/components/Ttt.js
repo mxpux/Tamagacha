@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import './ttt.css';
-import x from '../styles/test1.png';
+// import x from '../styles/test1.png';
+
+
+const Ttt = () => {
+	const [turn, setTurn] = useState(<img src={x} alt="yellow-turn" />);
+	const [boxes, setBoxes] = useState(Array(9).fill(''));
+	const [winner, setWinner] = useState();
 
 	const winningComb = (squares) => {
 		var combos = {
@@ -19,6 +25,21 @@ import x from '../styles/test1.png';
 				[2, 4, 6],
 			],
 		};
+
+		for (var combo in combos) {
+			combos[combo].forEach((pattern) => {
+				if (
+					squares[pattern[0]] === '' || squares[pattern[1]] === '' || squares[pattern[2]] === ''
+				) {
+					// == 
+				} else if (
+					squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]
+				) {
+					setWinner(squares[pattern[0]]);
+				}
+			});
+		}
+	};
 
 		<div className='container'>
 		
