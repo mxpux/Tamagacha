@@ -11,13 +11,14 @@ import Ttt from './components/Ttt';
 import Profile from './components/Profile'
 
 
+import Matching from './components/Matching';
+
 function App() {
   return (
     <div>
       <Home />
       <Homepage />
-      {/* <Ttt /> */}
-      <Profile />
+      <Matching />
     </div>
   );
 }
