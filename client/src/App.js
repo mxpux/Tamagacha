@@ -12,6 +12,9 @@ import Profile from './components/Profile'
 import Gacha from './components/gacha_page/gacha'
 
 // import Matching from './components/Matching';
+import MinigamePage from './components/Minigamepage';
+
+import Matching from './components/Matching';
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
       <Homepage />
       {/* <Matching /> */}
       <Gacha />
+      <MinigamePage />
     </div>
   );
 }
