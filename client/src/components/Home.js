@@ -4,16 +4,18 @@ import DropDown from './MenuDrop';
 import '../styles/style.css';
 
 
-function Home() {
-  // const [isOpen, setOpen] = useState(false)
+function Home(props) {
+
 
   return (
     <div>
       <div class="header">
         <div class='menu'>
-          <DropDown />
+          <DropDown handlePageChange={props.handlePageChange}/>
         </div>
-        <h1>TAMAGACHA</h1>
+        <h1 onClick={() => {
+          props.handlePageChange('HomePage')
+        }}>TAMAGACHA</h1>
       </div>
     </div>
   );
