@@ -3,7 +3,7 @@ import Menu from "./Menu";
 import DropDownCard from "./dropDownCard";
 const sampleData = ["Login", "Characters", "My Tama"];
 
-const ButtonWithDropDownCmp = (props) => {
+const MenuDrop = (props) => {
   const [open, setOpen] = React.useState(false);
   const drop = React.useRef(null);
   function handleClick(e) {
@@ -36,4 +36,4 @@ const ButtonWithDropDownCmp = (props) => {
   );
 };
 
-export default ButtonWithDropDownCmp;
+export default MenuDrop;

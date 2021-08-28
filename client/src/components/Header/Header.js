@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import Hamburger from 'hamburger-react';
-import DropDown from './MenuDrop';
-import '../styles/style.css';
+import MenuDrop from './MenuDrop';
+import './header.css';
 
 
-function Home(props) {
+function Header(props) {
 
 
   return (
     <div>
       <div class="header">
         <div class='menu'>
-          <DropDown handlePageChange={props.handlePageChange}/>
+          <MenuDrop handlePageChange={props.handlePageChange}/>
         </div>
         <h1 onClick={() => {
           props.handlePageChange('HomePage')
@@ -21,4 +21,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default Header;
