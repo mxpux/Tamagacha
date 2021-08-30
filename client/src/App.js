@@ -41,12 +41,15 @@ function App() {
 
   return (
     <div>
+
       <Header handlePageChange={handlePageChange}/>
       <Homepage />
       {renderPage()}
 
-      {/* <Matching /> */}
+
       <MinigamePage />
+      {/* <Matching /> */}
+      <Characters />
     </div>
   );
 }

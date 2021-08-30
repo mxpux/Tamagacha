@@ -18,11 +18,6 @@ const liCls =
           '<input id="swal-input1" class="swal2-input">' +
           '<input type="password" id="swal-input2" class="swal2-input">',
         focusConfirm: false,
-        // inputAttributes: {
-        //   maxlength: 10,
-        //   autocapitalize: 'off',
-        //   autocorrect: 'off'
-        // },
         preConfirm: () => {
           return [
             document.getElementById('swal-input1').value,
