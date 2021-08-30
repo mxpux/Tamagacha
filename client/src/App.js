@@ -16,6 +16,7 @@ import MinigamePage from './components/Minigame/Minigamepage';
 
 import Matching from './components/Matching/Matching';
 
+
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
 
@@ -36,6 +37,7 @@ function App() {
       //something else ?
     }
   }
+
 
   return (
     <div>
