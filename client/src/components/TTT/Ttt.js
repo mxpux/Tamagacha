@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './ttt.css';
-// import x from '../styles/test1.png';
+import player1 from '../../assets/tama2.png';
+import player2 from '../../assets/tama4.png';
 
+const playerOne = <img src={player1} alt="player1"/>;
+const playerTwo = <img src={player2} alt="player1"/>
 
 const Ttt = () => {
-	// const [turn, setTurn] = useState(<img src={x} alt="yellow-turn" />);
-    const [turn, setTurn] = useState('x');
+	// const [turn, setTurn] = useState('player1');
+	const [turn, setTurn] = useState(<img src={player1} alt="player1"/>);
 	const [boxes, setBoxes] = useState(Array(9).fill(''));
 	const [winner, setWinner] = useState();
 
@@ -44,18 +47,19 @@ const Ttt = () => {
 
 	const handleClick = (num) => {
 		if (boxes[num] !== '') {
-			alert('already clicked');
+			alert('oops! Please choose another space!');
 			return;
 		}
 
 		var squares = [...boxes];
 
-		if (turn === 'x') {
-			squares[num] = 'x';
-			setTurn('o');
+
+		if (turn === playerOne) {
+			squares[num] = playerOne;
+			setTurn(playerTwo);
 		} else {
-			squares[num] = 'o';
-			setTurn('x');
+			squares[num] = playerTwo;
+			setTurn(playerOne);
 		}
 
 		winningComb(squares);
@@ -72,7 +76,7 @@ const Ttt = () => {
 	};
 
 	return (
-		<div className='container'>
+		<div className='tttcontainer'>
 			<table>
 				Turn: {turn}
 				<tbody>
@@ -95,7 +99,7 @@ const Ttt = () => {
 			</table>
 			{winner && (
 				<>
-					<p>{winner} is the winner!</p>
+					<p class="tttwinner">{winner} is the winner!</p>
 					<button onClick={() => handleRestart()}>Play Again</button>
 				</>
 			)}
