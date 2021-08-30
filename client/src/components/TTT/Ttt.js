@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ttt.css';
-import player1 from './test1.png';
-import player2 from './test2.png';
+import player1 from '../../assets/tama2.png';
+import player2 from '../../assets/tama4.png';
 
 const playerOne = <img src={player1} alt="player1"/>;
 const playerTwo = <img src={player2} alt="player1"/>
@@ -47,7 +47,7 @@ const Ttt = () => {
 
 	const handleClick = (num) => {
 		if (boxes[num] !== '') {
-			alert('already clicked');
+			alert('oops! Please choose another space!');
 			return;
 		}
 
@@ -99,7 +99,7 @@ const Ttt = () => {
 			</table>
 			{winner && (
 				<>
-					<p>{winner} is the winner!</p>
+					<p class="tttwinner">{winner} is the winner!</p>
 					<button onClick={() => handleRestart()}>Play Again</button>
 				</>
 			)}
