@@ -20,9 +20,9 @@ h2 {
     text-align: center;
 }
 
-.card:hover { 
-    opacity: 1; 
-    transform: scale(1.2); 
+.card:hover {
+    opacity: 1;
+    transform: scale(1.2);
     transition-delay: 0ms, 0ms;
 }
 

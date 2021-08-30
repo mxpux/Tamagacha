@@ -16,6 +16,7 @@ import MinigamePage from './components/Minigame/Minigamepage';
 
 import Matching from './components/Matching/Matching';
 
+
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
 
@@ -37,14 +38,18 @@ function App() {
     }
   }
 
+
   return (
     <div>
+
       <Header handlePageChange={handlePageChange}/>
       <Homepage />
       {renderPage()}
 
-      {/* <Matching /> */}
+
       <MinigamePage />
+      {/* <Matching /> */}
+      <Characters />
     </div>
   );
 }
