@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import DropDownCard from "./dropDownCard";
-const sampleData = ["Login", "Characters", "My Tama"];
+const menuData = ["Login", "Sign Up", "Characters", "My Tama"];
 
 const MenuDrop = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -28,7 +28,7 @@ const MenuDrop = (props) => {
     >
       <Menu onClick={() => setOpen(open => !open)} />
       {open && <DropDownCard
-      data={sampleData}
+      data={menuData}
       setOpen={setOpen}
       handlePageChange={props.handlePageChange}
        />}

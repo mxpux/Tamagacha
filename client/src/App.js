@@ -16,6 +16,7 @@ import MinigamePage from './components/Minigame/Minigamepage';
 
 import Matching from './components/Matching/Matching';
 
+import Signup from './components/Signup/Signup';
 
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
@@ -28,7 +29,9 @@ function App() {
     if(pageToRender === 'Homepage') {
       return <Homepage />
     } else if (pageToRender === 'Login') {
-      return <Login />
+      // return <Login />
+    } else if (pageToRender === 'Sign Up') {
+      // return sign up sweetalert
     } else if (pageToRender === 'Characters') {
       return <Characters />
     } else if (pageToRender === 'My Tama'){
@@ -45,7 +48,6 @@ function App() {
       <Header handlePageChange={handlePageChange}/>
       <Homepage />
       {renderPage()}
-
 
       <MinigamePage />
       {/* <Matching /> */}
