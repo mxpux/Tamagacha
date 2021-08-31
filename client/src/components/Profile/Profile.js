@@ -7,16 +7,20 @@ import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
 import './profile.css'
 
-
 function getUserTamaStats () {
-    return fetch ('/api/usertama/unique/1') //! Need user id for the parameters
+    return fetch ('/api/usertama/unique/1') //! Need user id or userTama id for the parameters
   .then((response) => response.json())
 }
 
 function Profile () {
   const [stat, setStat] = useState(getUserTamaStats());
   console.log(stat);
-
+  /**
+   * Stat ===
+   * User: {id, username, email, password, tamas_owned}
+   * tamas_owned: {id, name, description, pictures, userTama}
+   * userTama: {id, age, hunger, happiness, bladder, date_modified, date_created, is_alive, is_awake, status}
+   */
   const feedTama = () => {
     setStat(stat.tamas_owned.userTama.hunger+1)
   }
