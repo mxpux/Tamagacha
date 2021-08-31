@@ -5,7 +5,7 @@ import Homepage from './components/Homepage/Homepage';
 import Characters from './components/Characters/Characters';
 import Hamburger from 'hamburger-react';
 // import './styles/style.css';
-import Login from './components/Login/login';
+// import Login from './components/Login/login';
 // import DropDown from './components/MenuDrop';
 import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
@@ -46,12 +46,13 @@ function App() {
     <div>
 
       <Header handlePageChange={handlePageChange}/>
-      <Homepage />
-      {renderPage()}
+      {/* <Homepage />
+      {renderPage()} */}
 
       <MinigamePage />
+      {/* <Ttt /> */}
       {/* <Matching /> */}
-      <Characters />
+      {/* <Characters /> */}
     </div>
   );
 }
