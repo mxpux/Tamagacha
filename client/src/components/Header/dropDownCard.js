@@ -124,7 +124,7 @@ const liCls =
 
 
     return (
-      <div className="shadow h-auto w-auto" style={{backgroundColor: "white", position: "absolute", right: "0px"}}>
+      <div className="shadow h-auto" style={{backgroundColor: "white", position: "absolute", right: "0px", width: "175px", paddingTop: "10px"}}>
       <ul className="text-center">
         {data.map((item, i) => (
           <li
