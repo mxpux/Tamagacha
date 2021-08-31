@@ -1,15 +1,26 @@
 .minigame-container {
-    background-color: rgb(37, 189, 209);
+    margin-top: 80px;
     display: flex;
+    align-items: center;
     justify-content: center;
+
+}
+.minigame-cardcontainer {
+    background-color: rgb(221, 237, 252);
+    text-align: center;
+    
+}
+
+.minigame-title {
+    /* background-color: rgb(20, 255, 255); */
+    text-align: center;
 }
 
 .minigame-card {
-    width: 300px;
+    width: 500px;
+    /* background-color: rgb(20, 117, 245); */
     display: inline-block;
     margin: 50px;
-    margin-left: 200px;
-    margin-right: auto;
     align-items: center;
     text-align: center;
 }
@@ -18,6 +29,7 @@
     transform: scale(1.2); 
     transition-delay: 0ms, 0ms;
 }
+
 
 .minigame-card h3 {
     text-align: center;
@@ -29,4 +41,5 @@
     margin-right: auto;
     width: 500px;
     height: 500px;
+    /* background-color: coral; */
 }
