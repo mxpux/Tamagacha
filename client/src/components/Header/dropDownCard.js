@@ -24,8 +24,8 @@ const liCls =
             document.getElementById('swal-input2').value
           ]
         },
-
-      })
+        allowOutsideClick: false
+      });
       if (formValues[0] === '' || formValues[1] === '') {
         Swal.fire({
           icon: 'error',
