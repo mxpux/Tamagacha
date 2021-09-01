@@ -4,9 +4,9 @@ import tama2 from '../../assets/tama2.png';
 import tama3 from '../../assets/tama3.png';
 import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
-import './characters.css';
+import './myTama.css';
 
-function Characters() {
+function MyTama() {
     return (
         <body>
             <h2>Meet the Characters!</h2>
@@ -75,4 +75,4 @@ function Characters() {
     );
 }
 
-export default Characters;
+export default MyTama;
