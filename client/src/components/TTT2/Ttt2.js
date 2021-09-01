@@ -15,6 +15,13 @@ function Ttt2 () {
   const [winner, setWinner] = useState(null);
   const [userWon, setUserWon] = useState(false) //if user won - value set to true
 	const [gameOver, setGameOver] = useState(false);
+<<<<<<< HEAD
+=======
+
+	useEffect(() => {
+
+  },[userWon])
+>>>>>>> 6c1046b4f04014957d378b2a2e6ce24435d71b91
 
 	useEffect(() => {
 
@@ -108,6 +115,18 @@ function Ttt2 () {
 			}
 		},750)
 
+	const setComputerMove = () => {
+		if(gameOver === false) {
+			setTimeout(() => {
+					setBoxes(prevState => {
+						prevState[randomIndex()] = playerTwo;
+						return [...prevState]
+					})
+			},750)
+		}
+
+
+	}
 
 	}
 
@@ -118,16 +137,21 @@ function Ttt2 () {
         title: `oops! Please choose another space!`,
         timer: 1500
       })
-
 			return;
 		}
 
     setBoxes(prevState => {
       console.log('prevvvvv beforee', prevState)
       prevState[num] = playerOne;
+<<<<<<< HEAD
 		if(gameOver === false) {
 			setComputerMove()
 		}
+=======
+			if(gameOver === false) {
+				setComputerMove()
+			}
+>>>>>>> 6c1046b4f04014957d378b2a2e6ce24435d71b91
       console.log('prevvvvv afterrrrr', prevState)
       return [...prevState]
     })
@@ -153,8 +177,12 @@ function Ttt2 () {
 
 	return (
 		<div className='tttcontainer'>
-      {playerOne}<h3>User</h3>
-      {playerTwo}<h3>Com</h3>
+			<div>
+				<div className='ttt2-charOne'>{playerOne}<h3>User</h3></div>
+				<div className='ttt2-charTwo'>{playerTwo}<h3>Com</h3></div>
+			</div>
+
+
 			<table>
 				{/* Turn: {turn} */}
 				<tbody>
