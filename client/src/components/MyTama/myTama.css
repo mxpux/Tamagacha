@@ -1,8 +1,8 @@
-.container {
+.characters-container {
     /* Make centered */
 }
 
-h2 {
+.characters-h2 {
     text-align: center;
     padding-top: 40px;
 }

@@ -57,6 +57,12 @@ function App() {
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Ttt /> */}
+      {/* <Matching /> */}
+      {/* <Tamadex /> */}
+      {/* <Characters /> */}
+      <Ttt2 />
+      {/* {/* <Ttt /> */}
+      {/* <Profile /> */}
     </div>
   );
 }
