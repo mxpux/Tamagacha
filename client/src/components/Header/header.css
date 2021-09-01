@@ -32,6 +32,11 @@ button {
 
 li {
     list-style-type: none;
+    cursor: pointer;
+}
+
+li:hover {
+    font-weight: bold;
 }
 
 li span {
