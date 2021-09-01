@@ -133,8 +133,12 @@ function Ttt2 () {
 
 	return (
 		<div className='tttcontainer'>
-      {playerOne}<h3>User</h3>
-      {playerTwo}<h3>Com</h3>
+			<div>
+				<div className='ttt2-charOne'>{playerOne}<h3>User</h3></div>
+				<div className='ttt2-charTwo'>{playerTwo}<h3>Com</h3></div>
+			</div>
+
+
 			<table>
 				{/* Turn: {turn} */}
 				<tbody>
