@@ -6,6 +6,7 @@ import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
 import './selectTama.css';
 import {getMe} from '../../utils/API';
+import Auth from '../../utils/auth';
 
 function getTamasOwned () {
   return fetch ('/api/usertama/me') //! Need user id
