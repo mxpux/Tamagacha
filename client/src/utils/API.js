@@ -16,7 +16,7 @@ export const loginUser = (userData) => {
     },
     body: JSON.stringify(userData),
   });
-}
+};
 
 export const getMe = (token) => {
   return fetch('/api/usertama/me', {
