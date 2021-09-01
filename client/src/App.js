@@ -4,10 +4,9 @@ import Nav from './components/Nav';
 import Homepage from './components/Homepage/Homepage';
 import MyTama from './components/MyTama/MyTama';
 import Hamburger from 'hamburger-react';
-
+import Gacha from './components/gacha_page/gacha'
 import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
-import Gacha from './components/gacha_page/gacha'
 
 import MinigamePage from './components/Minigame/Minigamepage';
 
@@ -49,7 +48,7 @@ function App() {
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage />
       {renderPage()} */}
-     
+      {/* <Gacha /> */}
       {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}

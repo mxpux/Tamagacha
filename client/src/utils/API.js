@@ -48,3 +48,14 @@ export const updateTama = (tamaData, token) => {
     body: JSON.stringify(tamaData),
   });
 };
+
+export const newTama = (user_id, token) => { //! FOR GACHA PURPOSES
+  const tama_id = Math.floor(Math.random()*5+1)
+  return fetch(`/api/usertama/${user_id}/${tama_id}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    }
+  })
+}

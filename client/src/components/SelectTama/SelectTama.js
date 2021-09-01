@@ -41,17 +41,11 @@ export default function SelectTama() {
     }
   }
 
-  // getUserData();
-  // const tamasOwnedLength = tamasOwned.length;
-  // console.log(Auth.getToken());
-  // console.log(getMe(Auth.getToken()))
-
   useEffect(() => {
     getUserData();
   }, [])
 
   const handleSelectTama = (tama_id) => {
-    //TODO: use local storage and set the userTama ID
     //TODO: Redirect the user to the profile page which uses the userTama ID to populate it with stats
     setCurrentTama(tama_id);
     return
