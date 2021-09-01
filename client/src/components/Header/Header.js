@@ -9,8 +9,8 @@ function Header(props) {
 
   return (
     <div>
-      <div class="header">
-        <div class='menu'>
+      <div className="header">
+        <div className='menu'>
           <MenuDrop handlePageChange={props.handlePageChange}/>
         </div>
         <h1 className='header-h1' onClick={() => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
-import DropDownCard from "./DropDownCard";
+import DropDownCard from "./dropDownCard";
 import Auth from "../../utils/auth"
 const menuData = ["Login", "Sign Up", "Characters", "My Tama"];
 
@@ -44,7 +44,7 @@ const MenuDrop = (props) => {
     >
       <Menu onClick={() => setOpen(open => !open)} />
       {open && <DropDownCard
-      data={menuData}
+      data={menuItem}
       setOpen={setOpen}
       handlePageChange={props.handlePageChange}
        />}
