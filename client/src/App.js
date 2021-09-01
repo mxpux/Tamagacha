@@ -4,12 +4,7 @@ import Nav from './components/Nav';
 import Homepage from './components/Homepage/Homepage';
 import Characters from './components/Characters/Characters';
 import Hamburger from 'hamburger-react';
-// import './styles/style.css';
-<<<<<<< HEAD
-=======
-// import Login from './components/Login/login';
->>>>>>> fca4c4dfd61f72a328ac19e3b6501484096f5f83
-// import DropDown from './components/MenuDrop';
+
 import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
 import Gacha from './components/gacha_page/gacha'
@@ -59,14 +54,10 @@ function App() {
       <MinigamePage />
       {/* <Ttt /> */}
       {/* <Matching /> */}
-<<<<<<< HEAD
 
       {/* <Characters /> */}
       <Ttt2 />
       {/* <Ttt /> */}
-=======
-      {/* <Characters /> */}
->>>>>>> fca4c4dfd61f72a328ac19e3b6501484096f5f83
     </div>
   );
 }
