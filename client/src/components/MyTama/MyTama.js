@@ -15,7 +15,7 @@ function MyTama() {
             <div className="card">
                 <div className="icon">
                     <img
-                        className="card-img-top"
+                        className="mytamacard-img-top"
                         src={tama1}
                         alt="Mametchi"
                     />

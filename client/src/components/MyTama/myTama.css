@@ -36,12 +36,19 @@ h2 {
     visibility: visible;
 } */
 
-
+.mytamacard-img-top{
+    background-color: transparent;
+    align-content: left;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    margin-left: 60px;
+}
 .card {
     width: 100%;
-    max-width: 300px;
-    min-width: 200px;
-    height: 250px;
+    max-width: 450px;
+    min-width: 450px;
+    height: 230px;
     background-color: #d12323;
     margin: 10px;
     border-radius: 10px;
@@ -61,8 +68,8 @@ h2 {
  .icon {
     margin: 0 auto;
     width: 100%;
-    height: 80px;
-    max-width:80px;
+    height: 100px;
+    max-width: 100px;
     background: linear-gradient(90deg, #FF7E7E 0%, #FF4848 40%, rgba(0, 0, 0, 0.28) 60%);
     border-radius: 100%;
     display: flex;
@@ -71,37 +78,36 @@ h2 {
     color: white;
     transition: all 0.8s ease;
     background-position: 0px;
-    background-size: 200px;
+    background-size: 250px;
  }
- 
- .material-icons.md-18 { font-size: 18px; }
- .material-icons.md-24 { font-size: 24px; }
- .material-icons.md-36 { font-size: 36px; }
- .material-icons.md-48 { font-size: 48px; }
  
  .card .title {
     width: 100%;
-    margin: 0;
     text-align: center;
-    margin-top: 30px;
+    justify-content: center;
+    margin-left: -50px;
     color: white;
+    font-size: 30px;
     font-weight: 600;
     text-transform: uppercase;
+    background-color: violet;
     letter-spacing: 4px;
+    font-family: 'Schoolbell', cursive;
+
  }
  
  .card .text {
-    width: 80%;
     margin: 0 auto;
     font-size: 13px;
     text-align: center;
     margin-top: 20px;
     color: white;
-    font-weight: 200;
+    font-weight: 200px;
     letter-spacing: 2px;
     opacity: 0;
     max-height:0;
     transition: all 0.3s ease;
+    min-width: 250px;
  }
  
  .card:hover {
