@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
-import DropDownCard from "./dropDownCard";
+import DropDownCard from "./DropDownCard";
+import Auth from "../../utils/auth"
 const menuData = ["Login", "Sign Up", "Characters", "My Tama"];
 
 const MenuDrop = (props) => {
   const [open, setOpen] = React.useState(false);
   const drop = React.useRef(null);
+  const [menuItem, setMenuItem] = useState(menuData)
+
+  useEffect(() => {
+    setMenuItemFunction()
+  }, [])
+
+  const setMenuItemFunction = () => {
+    const userSignOut = ["Login", "Sign Up", "Characters", "My Tama"];
+    const userSignIn = ["Sign Out", "Characters", "My Tama"]
+    if(Auth.loggedIn()) { //user is sign in
+      setMenuItem(userSignIn)
+    } else { //if user is not login
+      setMenuItem(userSignOut)
+    }
+
+
+  }
   function handleClick(e) {
-    // if (!e.target.closest(`.${drop.current.className}`) && open) {
-    //   setOpen(false);
-    // }
+
   }
   React.useEffect(() => {
     document.addEventListener("click", handleClick);
