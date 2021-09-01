@@ -19,11 +19,6 @@ function Ttt2 () {
 	useEffect(() => {
 
   },[userWon])
-
-	useEffect(() => {
-
-	},[userWon])
-  
 	
   useEffect(() => {
     winningComb([...boxes])
@@ -109,21 +104,8 @@ function Ttt2 () {
 						prevState[randomIndex()] = playerTwo;
 						return [...prevState]
 					})
-			}
+			} 
 		},750)
-
-	const setComputerMove = () => {
-		if(gameOver === false) {
-			setTimeout(() => {
-					setBoxes(prevState => {
-						prevState[randomIndex()] = playerTwo;
-						return [...prevState]
-					})
-			},750)
-		}
-
-
-	}
 
 	}
 
