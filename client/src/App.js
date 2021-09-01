@@ -5,7 +5,6 @@ import Homepage from './components/Homepage/Homepage';
 import Characters from './components/Characters/Characters';
 import Hamburger from 'hamburger-react';
 // import './styles/style.css';
-import Login from './components/Login/login';
 // import DropDown from './components/MenuDrop';
 import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
@@ -17,6 +16,10 @@ import MinigamePage from './components/Minigame/Minigamepage';
 import Matching from './components/Matching/Matching';
 
 import Signup from './components/Signup/Signup';
+
+import Ttt2 from './components/TTT2/Ttt2';
+
+
 
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
@@ -51,7 +54,9 @@ function App() {
 
       <MinigamePage />
       {/* <Matching /> */}
-      <Characters />
+
+      {/* <Characters /> */}
+      {/* <Ttt2 /> */}
     </div>
   );
 }
