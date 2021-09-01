@@ -55,8 +55,9 @@ function App() {
       {/* <Matching /> */}
 
       <Tamadex />
-      {/* <Ttt2 /> */}
+      <Ttt2 />
       {/* <Ttt /> */}
+      {/* <Profile /> */}
     </div>
   );
 }
