@@ -18,8 +18,8 @@ const liCls =
         // const a = await Swal.fire({
         title: 'Login',
         html:
-          '<input id="swal-input1" class="swal2-input">' +
-          '<input type="password" id="swal-input2" class="swal2-input">',
+          '<input placeholder="username" id="swal-input1" class="swal2-input">' +
+          '<input placeholder="password" type="password" id="swal-input2" class="swal2-input">',
         focusConfirm: false,
         showCancelButton: true,
         confirmButtonText: `Login`,
@@ -88,15 +88,17 @@ const liCls =
         // const a = await Swal.fire({
         title: 'Sign Up',
         html:
-          '<input id="swal-input1" class="swal2-input">' +
-          '<input type="password" id="swal-input2" class="swal2-input">',
+          '<input placeholder="Username" type="user" id="swal-input1" class="swal2-input">' +
+          '<input placeholder="Email" type="email" id="swal-input2" class="swal2-input">' +
+          '<input placeholder="Password" type="password" id="swal-input3" class="swal2-input">',
         focusConfirm: false,
         showCancelButton: true,
         confirmButtonText: `Sign Up`,
         preConfirm: () => {
           return [
             document.getElementById('swal-input1').value,
-            document.getElementById('swal-input2').value
+            document.getElementById('swal-input2').value,
+            document.getElementById('swal-input3').value,
           ]
         },
         allowOutsideClick: false,
@@ -108,7 +110,7 @@ const liCls =
       if (sweetRespond.isConfirmed) {
 
         //if either username or password are empty
-        if(userInput[0] === '' || userInput[1] === '') {
+        if(userInput[0] === '' || userInput[1] === '' || userInput[2] === '') {
           // Return SweetAlert Error
           Swal.fire({
             icon: 'error',
@@ -121,7 +123,7 @@ const liCls =
           //Need to check username and password from database..........
           try { //!SIGNUP TRY CATCH
             const response = await createUser(
-              { username: userInput[0], password: userInput[0]}
+              { username: userInput[0], email: userInput[1], password: userInput[2]}
             );
 
             if (!response.ok) {
