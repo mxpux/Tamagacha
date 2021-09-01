@@ -20,8 +20,10 @@ function MyTama() {
                         alt="Mametchi"
                     />
                     {/* <div className="card-body"> */}
+                    <div class="mytamatextcont">
                         <h5 className="title">Mametchi</h5>
                         <p className="text">Favorite Food: Hamburger</p>
+                    </div>
                     </div>
                 {/* </div> */}
 
