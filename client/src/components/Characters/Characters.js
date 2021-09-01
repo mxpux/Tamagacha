@@ -9,8 +9,8 @@ import './characters.css';
 function Characters() {
     return (
         <body>
-            <h2>Meet the Characters!</h2>
-            <div className="containter">
+            <h2 className='characters-h2'>Meet the Characters!</h2>
+            <div className="containter characters-container">
                 <div className="card">
                     <img
                         className="card-img-top"
