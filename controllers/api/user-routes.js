@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models')
 const {signToken, withAuth} = require('../../utils/auth'); //signToken subject to change possibly
-//TODO: IMPORT withAuth
+const { authMiddleware } = require('../../utils/auth')
 //URL: <homeURL>/api/user
 
 
@@ -40,15 +40,15 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
     });
 
-    req.session.save(() => {
-      req.session.loggedIn = true;
-      req.session.username = req.body.username;
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
+    //   req.session.username = req.body.username;
 
-      res.status(200).json(userData);
-    })
+    //   res.status(200).json(userData);
+    // })
     const token = signToken(userData)
 
-    return {token, userData}; 
+    res.json({ token, userData });
 
   } catch (err) {
     console.log(err);
@@ -57,7 +57,7 @@ router.post('/signup', async (req, res) => {
 })
 
 //LOGIN
-router.post('/login', withAuth, async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
@@ -77,14 +77,14 @@ router.post('/login', withAuth, async (req, res) => {
       return;
     };
 
-    req.session.save(() => {
-      req.session.loggedIn = true;
-      req.session.username = req.body.username;
-      res.status(200).json({ user: userData, message: "You are now logged in!" })
-    });
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
+    //   req.session.username = req.body.username;
+    //   res.status(200).json({ user: userData, message: "You are now logged in!" })
+    // });
 
     const token = signToken(userData);
-    return {token, userData};
+    res.json({ token, userData })
 
   } catch (err) {
     console.log(err);

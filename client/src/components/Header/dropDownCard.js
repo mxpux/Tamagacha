@@ -3,6 +3,8 @@ import React from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 // const MySwal = withReactContent(Swal)
+import { loginUser, createUser } from "../../utils/API";
+import Auth from '../../utils/auth'
 
 const liCls =
   "p-3 text-gray-700 hover:text-white hover:bg-indigo-700 cursor-pointer";
@@ -47,12 +49,31 @@ const liCls =
           //We got username and password
           console.log('userinput Array--->', userInput)
           //Need to check username and password from database..........
+          try { //!LOGIN TRY CATCH
+            const response = await loginUser(
+              { username: userInput[0], password: userInput[1] }
+            )
+            if (!response.ok) {
+              throw new Error('Something went wrong!')
+            };
 
-          Swal.fire({
-            icon: 'success',
-            title: `Welcome Back ${userInput[0]}`,
-            timer: 1500
-          })
+            const {token, userData } = await response.json();
+            console.log('response.json() userData login', userData);
+            Auth.login(token, userData.id);
+
+            Swal.fire({
+              icon: 'success',
+              title: `Welcome Back ${userInput[0]}`,
+              timer: 1500
+            })
+          } catch (err) {
+            console.error(err)
+            Swal.fire({
+              icon: 'error',
+              title: `Something wrong with logging in`,
+              timer: 1500
+            })
+          }
         }
       }
 
@@ -98,12 +119,33 @@ const liCls =
           //We got username and password
           console.log('userinput Array--->', userInput)
           //Need to check username and password from database..........
+          try { //!SIGNUP TRY CATCH
+            const response = await createUser(
+              { username: userInput[0], password: userInput[0]}
+            );
 
-          Swal.fire({
-            icon: 'success',
-            title: `${userInput[0]} Sign Up `,
-            timer: 1500
-          })
+            if (!response.ok) {
+              throw new Error("Something went wrong!");
+            }
+
+            const { token, userData } = await response.json();
+            console.log('response.json() userData signup', userData)
+            Auth.login(token, userData.id);
+
+            Swal.fire({
+              icon: 'success',
+              title: `${userInput[0]} Sign Up `,
+              timer: 1500
+            })
+          } catch (err) {
+            console.error(err)
+            Swal.fire({
+              icon: 'error',
+              title: `Something wrong with logging in`,
+              timer: 1500
+            })
+          }
+          
         }
       }
 

@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ttt.css';
 import player1 from '../../assets/tama2.png';
 import player2 from '../../assets/tama4.png';
 
 const playerOne = <img src={player1} alt="player1"/>;
-const playerTwo = <img src={player2} alt="player1"/>
+const playerTwo = <img src={player2} alt="player2"/>
 
 const Ttt = () => {
 	// const [turn, setTurn] = useState('player1');
+	const [whoTurn, setWhoTurn] = useState('player') //player or computer
 	const [turn, setTurn] = useState(<img src={player1} alt="player1"/>);
 	const [boxes, setBoxes] = useState(Array(9).fill(''));
-	const [winner, setWinner] = useState();
+	const [winner, setWinner] = useState(null);
 
 	const winningComb = (squares) => {
 		var combos = {
@@ -35,7 +36,7 @@ const Ttt = () => {
 				if (
 					squares[pattern[0]] === '' || squares[pattern[1]] === '' || squares[pattern[2]] === ''
 				) {
-					// == 
+					// ==
 				} else if (
 					squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]
 				) {
@@ -44,6 +45,37 @@ const Ttt = () => {
 			});
 		}
 	};
+	// useEffect(() => {
+	// 	handleRestart()
+	// },[])
+
+	const whenComputerTurn = () => {
+		// handleClick
+		if(whoTurn === 'computer') {
+			var randomNumber = randomIndex()
+			handleClick(randomNumber)
+		}
+		// var squares = [...boxes];
+		// var openIndex = randomIndex()
+		// squares[openIndex] = playerTwo;
+		// setTurn(playerOne);
+	}
+
+	//check to see boxes that which boxes are still open and return a open random box number
+	const randomIndex = () => {
+		var stillOpen = []
+		for(var i = 0; i < boxes.length; i++) {
+			if (boxes[i] === '') {
+				stillOpen.push(i)
+			}
+		}
+		console.log('stillOpen---->', stillOpen.length )
+		var randomIndex = Math.floor(Math.random() * stillOpen.length)
+
+		console.log('random index', stillOpen[randomIndex])
+		return stillOpen[randomIndex]
+	}
+
 
 	const handleClick = (num) => {
 		if (boxes[num] !== '') {
@@ -53,13 +85,19 @@ const Ttt = () => {
 
 		var squares = [...boxes];
 
-
 		if (turn === playerOne) {
+			console.log('inside playerOne click')
 			squares[num] = playerOne;
+			// setWhoTurn('computer')
 			setTurn(playerTwo);
+			// console.log('whoturn', whoTurn)
 		} else {
+			console.log('inside playerOne click')
 			squares[num] = playerTwo;
+			// setWhoTurn('player')
 			setTurn(playerOne);
+			// handleClick(randomIndex())
+
 		}
 
 		winningComb(squares);

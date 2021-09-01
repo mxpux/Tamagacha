@@ -1,13 +1,10 @@
 const router = require('express').Router();
 const { Tama } = require('../../models')
-// const withAuth = require('../utils/auth');
+const { authMiddleware } = require('../../utils/auth')
 
-
-//TODO: IMPORT withAuth
 //URL: <homeURL>/api/tama
 
 //GET ALL TAMAS
-//TODO: GET ROUTE
 router.get('/', async (req, res) => {
     try {
         // Get the tamas for the current user
@@ -23,7 +20,6 @@ router.get('/', async (req, res) => {
 });
 
 //GET ONE TAMA
-//TODO: GET ROUTE
 router.get('/:id', async (req, res) => {
     try {
         const tamaData = await Tama.findByPk(req.params.id);
@@ -36,7 +32,6 @@ router.get('/:id', async (req, res) => {
 });
 
 //ADD A TAMA
-//TODO: POST ROUTE
 router.post('/add', async (req, res) => {
     console.log("body", req.body)
     try {

@@ -6,7 +6,7 @@
     justify-content: 'center';
 }
 
-h1 {
+.header-h1 {
     font-family: 'Luckiest Guy', cursive;
     color: lightyellow;
     text-align: center;
@@ -14,7 +14,7 @@ h1 {
     padding-bottom: 20px;
 }
 
-h1:hover {
+.header-h1:hover {
     color: black;
 }
 
@@ -52,7 +52,7 @@ img {
     width: 250px;
     height: 250px;
 }
-  
+
 .x {
     animation: x 13s linear infinite alternate;
     position: absolute;
@@ -67,7 +67,7 @@ img {
       transform: translateX( calc(100vw - 250px) );
     }
 }
-  
+
 @keyframes y {
     100% {
       transform: translateY( calc(75vh - 250px) );
@@ -88,7 +88,7 @@ img {
       transform: translateX( calc(100vw - 250px) );
     }
 }
-  
+
 @keyframes y2 {
     100% {
       transform: translateY( calc(75vh - 250px) );
@@ -109,7 +109,7 @@ img {
       transform: translateX( calc(100vw - 250px) );
     }
 }
-  
+
 @keyframes y3 {
     100% {
       transform: translateY( calc(75vh - 250px) );
@@ -130,7 +130,7 @@ img {
       transform: translateX( calc(100vw - 250px) );
     }
 }
-  
+
 @keyframes y4 {
     100% {
       transform: translateY( calc(75vh - 250px) );
@@ -151,7 +151,7 @@ img {
       transform: translateX( calc(100vw - 250px) );
     }
 }
-  
+
 @keyframes y5 {
     100% {
       transform: translateY( calc(75vh - 250px) );

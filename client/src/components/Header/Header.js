@@ -13,7 +13,7 @@ function Header(props) {
         <div class='menu'>
           <MenuDrop handlePageChange={props.handlePageChange}/>
         </div>
-        <h1 onClick={() => {
+        <h1 className='header-h1' onClick={() => {
           props.handlePageChange('HomePage')
         }}>TAMAGACHA</h1>
       </div>

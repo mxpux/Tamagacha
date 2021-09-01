@@ -4,19 +4,21 @@ import Nav from './components/Nav';
 import Homepage from './components/Homepage/Homepage';
 import Characters from './components/Characters/Characters';
 import Hamburger from 'hamburger-react';
-// import './styles/style.css';
-// import Login from './components/Login/login';
-// import DropDown from './components/MenuDrop';
+
 import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
 import Gacha from './components/gacha_page/gacha'
 
-// import Matching from './components/Matching';
 import MinigamePage from './components/Minigame/Minigamepage';
 
 import Matching from './components/Matching/Matching';
 
 import Signup from './components/Signup/Signup';
+import Tamadex from './components/Tamadex/Tamadex';
+
+import Ttt2 from './components/TTT2/Ttt2';
+
+
 
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
@@ -48,11 +50,15 @@ function App() {
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage />
       {renderPage()} */}
-
-      <MinigamePage />
+     
+      {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
+
       {/* <Characters /> */}
+      <Tamadex />
+      {/* <Ttt2 /> */}
+      {/* <Ttt /> */}
     </div>
   );
 }
