@@ -1,21 +1,44 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import tama1 from '../../assets/tama1.png';
 import tama2 from '../../assets/tama2.png';
 import tama3 from '../../assets/tama3.png';
 import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
 import './selectTama.css';
+import {getMe} from '../../utils/API';
+import Auth from '../../utils/auth';
 
 function getTamasOwned () {
-  return fetch ('/api/usertama/:id') //! Need user id
+  return fetch ('/api/usertama/me') //! Need user id
 .then((response) => response.json())
 }
 
 export default function SelectTama() {
-  const [tamasOwned, setTamasOwned] = useState(getTamasOwned())
+  const [tamasOwned, setTamasOwned] = useState([])
   console.log(tamasOwned);
   //* tamasOwned should be a userObject with a property of tamas_owned
 
+  useEffect(() => {
+    const getUserData = async() => {
+      try {
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+        if (!token) {
+          throw new Error('Not logged in!')
+        }
+
+        const response = await getMe(token);
+
+        if (!response.ok) {
+          throw new Error('something went wrong!');
+        }
+
+        const user = await response.json();
+      } catch (err) {
+        console.error(err)
+      }
+    }
+  })
   const handleSelectTama = (id) => {
     //TODO: use local storage and set the userTama ID
     //TODO: Redirect the user to the profile page which uses the userTama ID to populate it with stats

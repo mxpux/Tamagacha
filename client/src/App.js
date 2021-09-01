@@ -53,10 +53,20 @@ function App() {
       {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
+<<<<<<< HEAD
       <MyTama />
+=======
+      {/* <SelectTama /> */}
+>>>>>>> 1f3908911ffe93a3c798928dbe554bf53d75677b
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Ttt /> */}
+      {/* <Matching /> */}
+      {/* <Tamadex /> */}
+      {/* <Characters /> */}
+      <Ttt2 />
+      {/* {/* <Ttt /> */}
+      {/* <Profile /> */}
     </div>
   );
 }
