@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { UserTama,  Tama, User} = require('../../models')
-//TODO: IMPORT withAuth
+const { authMiddleware } = require('../../utils/auth')
 //URL: <homeURL>/api/usertama
 
 //ALL USER ALL TAMAS
@@ -45,6 +45,35 @@ router.get('/:u_id', async (req, res) => {
 
     if (!dbUserTamaData) {
       res.status(404).json({ message: `No user with this ${req.params.u_id} id !`})
+    };
+
+    const UserTamaData = dbUserTamaData.get({ plain: true })
+
+    res.status(200).json(UserTamaData)
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+router.get('/me', authMiddleware, async (req, res) => {
+  try {
+    const dbUserTamaData = await User.findByPk(req.body.id,
+    {
+      include:
+      [
+        // {all: true, nested: true}
+        { as: "tamas_owned",
+        model: Tama,
+        through: {
+          attributes: {exclude: ['user_id', 'tama_id']} // | Will only include tama attributes (age, hunger, etc.) |
+        }},
+      ]
+    })
+    console.log(req.body)
+    if (!dbUserTamaData) {
+      res.status(404).json({ message: `No user with this ${req.body.id} id !`})
     };
 
     const UserTamaData = dbUserTamaData.get({ plain: true })
