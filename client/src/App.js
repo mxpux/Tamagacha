@@ -56,7 +56,8 @@ function App() {
       {/* <Matching /> */}
 
       {/* <Characters /> */}
-      {/* <Ttt2 /> */}
+      <Ttt2 />
+      {/* <Ttt /> */}
     </div>
   );
 }
