@@ -1,5 +1,9 @@
-.container {
-    /* Make centered */
+.mytamacontainer {
+        margin: 100px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        
 }
 
 h2 {

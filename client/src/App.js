@@ -53,8 +53,8 @@ function App() {
       {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
-
-      <Tamadex />
+      <MyTama />
+      {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Ttt /> */}
     </div>

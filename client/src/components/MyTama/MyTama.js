@@ -9,8 +9,8 @@ import './myTama.css';
 function MyTama() {
     return (
         <body>
-            <h2>Meet the Characters!</h2>
-            <div className="containter">
+            <h2>Select your Tama!</h2>
+            <div className="mytamacontainer">
                 <div className="card">
                     <img
                         className="card-img-top"
