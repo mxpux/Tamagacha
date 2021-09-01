@@ -76,7 +76,7 @@ function Tamadex() {
                             />
                             <div class="flip-card-back">
                                 <h2>Memetchi</h2>
-                                Memetchi is  a very stylish, feminine Tama who loves to have fun. She enjoys daydreaming, dancing, dressing up. She is often seeing with pink roll cake and swirly-faced teddy bears.Despite being bright and cheerful, she is sensitive and somewhat defensive of her appearance. 
+                                Memetchi is  a very stylish, feminine Tama who loves to have fun. She enjoys daydreaming, dancing, dressing up. She is often seeing with pink roll cake and swirly-faced teddy bears. Despite being bright and cheerful, she is sensitive and somewhat defensive of her appearance. 
                             </div>
                         </div>
                     </div>
