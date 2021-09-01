@@ -116,7 +116,7 @@ router.get('/:u_id/:t_id', async (req, res) => {
   }
 })
 
-//ONE USER ONE TAMA CHANGE STATS
+//ONE USER ONE TAMA CHANGE STATS 
 router.put('/unique/:ut_id', async (req, res) => {
   try{
     const dbUserTamaData = await UserTama.update(
@@ -139,8 +139,33 @@ router.put('/unique/:ut_id', async (req, res) => {
   }
 })
 
+//ONE USER ONE TAMA CHANGE STATS (WITH USER TOKEN)
+router.put('/unique/', authMiddleware, async (req, res) => {
+  try{
+    const dbUserTamaData = await UserTama.update(
+      req.body, {
+        where: {
+          id: req.body.id // |Make changes to unique row in UserTama |
+        }
+      }
+    );
+    
+    console.log(req.body)
+
+    if (!dbUserTamaData) {
+      res.status(404).json({ message: `No user or tama with user id of ${req.params.u_id} or tama id of ${req.params.t_id}!`})
+    };
+
+    res.status(200).json({dbUserTamaData, message: "Tama stats changed!"});
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 //ONE USER NEW TAMA
-router.post('/:u_id/:t_id', async (req, res) => {
+router.post('/:u_id/:t_id', authMiddleware, async (req, res) => {
   try {
     const newUserTama = await UserTama.create({
       user_id: req.params.u_id,

@@ -26,3 +26,16 @@ export const getMe = (token) => {
     },
   });
 };
+
+export const updateTama = (tamaData, token) => {
+  //tamaData should be the userTama object that the user owns
+  console.log('tamaData to PUT', tamaData)
+  return fetch('/api/usertama/unique/', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(tamaData),
+  });
+};
