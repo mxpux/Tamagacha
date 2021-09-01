@@ -9,7 +9,6 @@ import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
 import Gacha from './components/gacha_page/gacha'
 
-// import Matching from './components/Matching';
 import MinigamePage from './components/Minigame/Minigamepage';
 
 import Matching from './components/Matching/Matching';
