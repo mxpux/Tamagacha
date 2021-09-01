@@ -164,6 +164,9 @@ const liCls =
       if(item === 'Sign Up') {
         return sweetAlertSignUp()
       }
+      if (item ==='Sign Out') {
+        Auth.logout()
+      }
     }
 
 
