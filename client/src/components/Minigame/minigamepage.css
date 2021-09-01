@@ -1,17 +1,30 @@
 .minigame-container {
-    background-color: rgb(37, 189, 209);
+    margin-top: 80px;
     display: flex;
+    align-items: center;
     justify-content: center;
+
+}
+.minigame-cardcontainer {
+    background-color: rgb(252, 249, 221);
+    text-align: center;
+    
+}
+
+.minigame-title {
+    text-align: center;
+    font-family: 'Schoolbell', cursive;
+    color: rgb(59, 69, 92);
+    font-size: 26px;
 }
 
 .minigame-card {
-    width: 300px;
+    width: 400px;
     display: inline-block;
     margin: 50px;
-    margin-left: 200px;
-    margin-right: auto;
     align-items: center;
     text-align: center;
+
 }
 
 .minigame-card:hover {
@@ -19,14 +32,19 @@
     transition-delay: 0ms, 0ms;
 }
 
+
 .minigame-card h3 {
     text-align: center;
+    font-family: 'Schoolbell', cursive;
+    color: rgb(71, 76, 94);
+    font-size: 18px;
 }
 
 .minigame-card-img {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
+
