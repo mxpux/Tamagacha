@@ -15,13 +15,10 @@ function Ttt2 () {
   const [winner, setWinner] = useState(null);
   const [userWon, setUserWon] = useState(false) //if user won - value set to true
 	const [gameOver, setGameOver] = useState(false);
-<<<<<<< HEAD
-=======
 
 	useEffect(() => {
 
   },[userWon])
->>>>>>> 6c1046b4f04014957d378b2a2e6ce24435d71b91
 
 	useEffect(() => {
 
@@ -143,15 +140,9 @@ function Ttt2 () {
     setBoxes(prevState => {
       console.log('prevvvvv beforee', prevState)
       prevState[num] = playerOne;
-<<<<<<< HEAD
-		if(gameOver === false) {
-			setComputerMove()
-		}
-=======
 			if(gameOver === false) {
 				setComputerMove()
 			}
->>>>>>> 6c1046b4f04014957d378b2a2e6ce24435d71b91
       console.log('prevvvvv afterrrrr', prevState)
       return [...prevState]
     })
