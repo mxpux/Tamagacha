@@ -9,7 +9,7 @@ import './tamadex.css';
 function Tamadex() {
     return (
         <body>
-            <h2>TAMADEX!</h2>
+            <h2>Meet the Tamagacha!</h2>
             <div className="tamadexcontainer">
                 <div class="flip-card">
                     <div class="flip-card-inner">

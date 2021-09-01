@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './matching.css'
 import Card from './Card.js'
-
 //Name & pic link
 const images2 = [
   {
@@ -69,11 +68,13 @@ const images2 = [
 ]
 
 function Matching() {
-
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
 
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])
   const [move, setMove] = useState(0)
+  const [gaveOver, setGameOver] = useState(false); //When score === 6 gameOver will set to true.
+  const [score, setScore] = useState(0); // 6 = win
 
 
 
@@ -90,8 +91,17 @@ function Matching() {
    checkBothCards()
   },[userPick])
 
+  useEffect(() => {
+    checkGameOver()
+  },[score])
 
 
+
+  const checkGameOver = () => {
+    if(score === 6) {
+      setGameOver(true)
+    }
+  }
 
   const randomCard = () => {
     var random = images2.sort(() => Math.random() - 0.5)
@@ -121,18 +131,6 @@ function Matching() {
     else {
       setMove(0)
     }
-
-    // //Set the card open
-    // setRandomImageLink(prevState => {
-    //   prevState[index].flip = !prevState[index].flip
-    //   return prevState;
-    // })
-
-    //add the user click image index and tama name
-    // if (userPick.length <= 2) {
-    //   setUserPick(prev => [...prev, {index: index, name:name}])
-    // }
-
   }
 
 
@@ -147,6 +145,7 @@ function Matching() {
       //check to see if both card name are the same
       if(userPick[0].name === userPick[1].name) {
         // console.log('user picked the right card')
+        setScore(prev => prev += 1)
         setUserPick([])
       }
        else {
@@ -158,7 +157,7 @@ function Matching() {
             var index2 = userPick[1].index
             prevState[index1].flip = false
             prevState[index2].flip = false
-            return prevState
+            return [...prevState]
           })
           setUserPick([])
         },500)
