@@ -21,6 +21,16 @@
     font-weight: bolder;
   }
 
-  .ttt2-inline {
+
+  .ttt2-charOne {
     display: inline-block;
+    float:left;
   }
+
+  .ttt2-charTwo {
+    display: inline-block;
+    float: right;
+  }
+  /* .ttt2-test {
+    display: inline-block;
+  } */
