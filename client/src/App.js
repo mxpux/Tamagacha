@@ -47,10 +47,12 @@ function App() {
     <div>
 
       <Header handlePageChange={handlePageChange}/>
+
       {/* <Homepage /> */}
       {renderPage()}
 
       <MinigamePage /> */}
+
       {/* <Ttt /> */}
       {/* <Matching /> */}
       {/* <Tamadex /> */}
