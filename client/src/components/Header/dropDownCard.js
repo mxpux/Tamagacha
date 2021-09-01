@@ -18,8 +18,8 @@ const liCls =
         // const a = await Swal.fire({
         title: 'Login',
         html:
-          '<input id="swal-input1" class="swal2-input">' +
-          '<input type="password" id="swal-input2" class="swal2-input">',
+          '<input id="swal-input1" class="swal2-input" placeholder="Username">' +
+          '<input type="password" id="swal-input2" class="swal2-input" placeholder="Password">',
         focusConfirm: false,
         showCancelButton: true,
         confirmButtonText: `Login`,
@@ -88,8 +88,8 @@ const liCls =
         // const a = await Swal.fire({
         title: 'Sign Up',
         html:
-          '<input id="swal-input1" class="swal2-input">' +
-          '<input type="password" id="swal-input2" class="swal2-input">',
+          '<input id="swal-input1" class="swal2-input" placeholder="Username">' +
+          '<input type="password" id="swal-input2" class="swal2-input" placeholder="Password">',
         focusConfirm: false,
         showCancelButton: true,
         confirmButtonText: `Sign Up`,
