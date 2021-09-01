@@ -12,7 +12,7 @@ function MyTama() {
             <h2>Select your Tama!</h2>
 
         <div className="mytamacontainer">
-            <div className="card">
+            <div className="mytamacard">
                 <div className="icon">
                     <img
                         className="mytamacard-img-top"
