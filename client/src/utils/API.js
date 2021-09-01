@@ -27,6 +27,15 @@ export const getMe = (token) => {
   });
 };
 
+export const getUser = (u_id, token) => {
+  return fetch(`/api/usertama/${u_id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+  });
+};
+
 export const updateTama = (tamaData, token) => {
   //tamaData should be the userTama object that the user owns
   console.log('tamaData to PUT', tamaData)

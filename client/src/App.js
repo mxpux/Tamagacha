@@ -53,14 +53,14 @@ function App() {
       {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
-      {/* <SelectTama /> */}
+      <SelectTama />
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Characters /> */}
-      <Ttt2 />
+      {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
       {/* <Profile /> */}
     </div>
