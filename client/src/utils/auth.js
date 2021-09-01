@@ -1,4 +1,5 @@
 import decode from 'jwt-decode';
+import { setUserId } from './localStorage'
 
 class AuthService {
   getProfile() {
@@ -23,7 +24,8 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
+  login(idToken, user_id) {
+    setUserId(user_id); //* set localstorage user_id key to value of user_id in parameter *//
     localStorage.setItem('id_token', idToken);
     window.location.assign('/');
   }
