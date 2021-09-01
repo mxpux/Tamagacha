@@ -17,6 +17,7 @@ import MinigamePage from './components/Minigame/Minigamepage';
 import Matching from './components/Matching/Matching';
 
 import Signup from './components/Signup/Signup';
+import Tamadex from './components/Tamadex/Tamadex';
 
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
@@ -48,11 +49,12 @@ function App() {
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage />
       {renderPage()} */}
-
-      <MinigamePage />
+     
+      {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
       {/* <Characters /> */}
+      <Tamadex />
     </div>
   );
 }
