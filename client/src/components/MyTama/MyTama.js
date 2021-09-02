@@ -31,6 +31,7 @@ function MyTama() {
                     </div>
                 </div>
 
+
                 {/* === TAMA PER CARD === */}
                 <div className="mytamacardcont">
                     <div className="mytamamaincard">
