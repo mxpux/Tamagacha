@@ -65,7 +65,7 @@ function Tamadex() {
                             <img
                                 className="card-img-top"
                                 src={tama4}
-                                alt="Memetchi"
+                                alt="Orenchi"
                             />
                             <div class="flip-card-back">
                                 <h2>Orenchi</h2>

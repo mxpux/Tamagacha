@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import Header from './components/Header/Header';
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
 import Homepage from './components/Homepage/Homepage';
-import Characters from './components/Characters/Characters';
+import MyTama from './components/MyTama/MyTama';
 import Hamburger from 'hamburger-react';
-
+import Gacha from './components/gacha_page/gacha'
 import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
-import Gacha from './components/gacha_page/gacha'
 
 import MinigamePage from './components/Minigame/Minigamepage';
 import MyTama from './components/MyTama/MyTama';
@@ -18,8 +17,7 @@ import Signup from './components/Signup/Signup';
 import Tamadex from './components/Tamadex/Tamadex';
 
 import Ttt2 from './components/TTT2/Ttt2';
-
-
+import SelectTama from './components/SelectTama/SelectTama';
 
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
@@ -36,9 +34,9 @@ function App() {
     } else if (pageToRender === 'Sign Up') {
       // return sign up sweetalert
     } else if (pageToRender === 'Characters') {
-      return <Characters />
+      return <Tamadex />
     } else if (pageToRender === 'My Tama'){
-      console.log('dont have anything to render yet')
+      return <MyTama />
     } else {
       //something else ?
     }
@@ -49,21 +47,18 @@ function App() {
     <div>
 
       <Header handlePageChange={handlePageChange}/>
-      {/* <Homepage /> */}
+      <Homepage />
       {/* {renderPage()} */}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
       {/* <MyTama /> */}
       {/* <Matching /> */}
       {/* <SelectTama /> */}
-      {/* <Ttt2 />*/}
-      {/* <Ttt /> */}
-      {/* <Matching /> */}
+
       {/* <Characters /> */}
-      <Tamadex />
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
-      {/* <Profile /> */}
+      <Profile />
       {/* <Gacha /> */}
     </div>
   );

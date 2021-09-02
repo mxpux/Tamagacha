@@ -12,11 +12,18 @@ function Ttt2 () {
   // const [turn, setTurn] =useState('player')
   const [boxes, setBoxes] = useState(Array(9).fill(''));
   // const [gameOver, setGameOver] = useState('false')
-  const [winner, setWinner] = useState(null);
-  const [userWon, setUserWon] = useState() //if user won - value set to true
+  const [winner, setWinner] = useState(null); //<img src={player1} alt="player1" className='ttt2-inline'/>
+  const [userWon, setUserWon] = useState(false) //if user won - value set to true
+	const [gameOver, setGameOver] = useState(false);
+
+	// useEffect(() => {
+
+  // },[userWon])
 
   useEffect(() => {
+		console.log('useeffect run on the boxes')
     winningComb([...boxes])
+
   },[boxes])
 
   useEffect(() => {
@@ -75,6 +82,7 @@ function Ttt2 () {
 					squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]
 				) {
 					setWinner(squares[pattern[0]]);
+					setGameOver(true)
           // setUserWon(true)
 				}
 			});
@@ -92,6 +100,18 @@ function Ttt2 () {
 		return stillOpen[randomIndex]
 	}
 
+	const setComputerMove = () => {
+		if(gameOver === false) {
+			setTimeout(() => {
+					setBoxes(prevState => {
+						prevState[randomIndex()] = playerTwo;
+						return [...prevState]
+					})
+			},750)
+		}
+
+
+	}
 
   const handleClick = (num) => {
     if (boxes[num] !== '') {
@@ -100,14 +120,15 @@ function Ttt2 () {
         title: `oops! Please choose another space!`,
         timer: 1500
       })
-
 			return;
 		}
 
     setBoxes(prevState => {
       console.log('prevvvvv beforee', prevState)
       prevState[num] = playerOne;
-      prevState[randomIndex()] = playerTwo;
+			if(gameOver === false) {
+				setComputerMove()
+			}
       console.log('prevvvvv afterrrrr', prevState)
       return [...prevState]
     })
@@ -133,8 +154,12 @@ function Ttt2 () {
 
 	return (
 		<div className='tttcontainer'>
-      {playerOne}<h3>User</h3>
-      {playerTwo}<h3>Com</h3>
+			<div>
+				<div className='ttt2-charOne'>{playerOne}<h3>User</h3></div>
+				<div className='ttt2-charTwo'>{playerTwo}<h3>Com</h3></div>
+			</div>
+
+
 			<table>
 				{/* Turn: {turn} */}
 				<tbody>
