@@ -126,7 +126,7 @@ function Ttt2 () {
     setBoxes(prevState => {
       console.log('prevvvvv beforee', prevState)
       prevState[num] = playerOne;
-			if(gameOver === false) {
+			if(gameOver === false)  {
 				setComputerMove()
 			}
       console.log('prevvvvv afterrrrr', prevState)

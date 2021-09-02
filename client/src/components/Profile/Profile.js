@@ -21,7 +21,9 @@ import MinigamePage from '../Minigame/Minigamepage'
 
 function Profile () {
   const [stat, setStat] = useState({});
-
+// console.log('stat', stat)
+// console.log('stat', stat.id)
+// console.log('stat', stat.tamas_owned[0])
   const [pageToRender, setPageToRender] = useState(false)
 
   const handlePageChange = () => {
@@ -40,8 +42,8 @@ function Profile () {
       let userId = await getUserId()
       // console.log('aaaaa', userId)
       let token = await Auth.getToken() //Do we need the token?
-      // console.log('token', token)
-      let response = await getUser(1) //Hard coded for now
+      console.log('token', token)
+      let response = await getUser(1, token) //Hard coded for now
       // console.log('response', response)
 
       if (!response.ok) {
@@ -82,8 +84,8 @@ function Profile () {
         </pfp>
         <div className="row btnRow">
         {stat.tamas_owned && stat.tamas_owned[0] && <Stats userTama={stat.tamas_owned[0].userTama} />}
-          {/* <Stats userTama={stat.tamas_owned[0].userTama} />
-          <Stats userTama={stat} /> */}
+          {/* <Stats userTama={stat.tamas_owned[0].userTama} /> */}
+          {/* <Stats userTama={stat} /> */}
         </div>
         <div className="row btnRow">
           <button

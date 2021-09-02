@@ -12,10 +12,10 @@ export default function Stats ({ userTama }) {
       {/* <p>
         <a class="btn btn-primary" data-bs-toggle="collapse" href="#tama_stats" role="button" aria-expanded="false" aria-controls="tama_stats">Show/Hide Stats</a>
       </p> */}
-      <div class="row">
-        <div class="col">
-          <div class="" id="tama_stats">
-            <div class="card card-body">
+      <div className="row">
+        <div className="col">
+          <div className="" id="tama_stats">
+            <div className="card card-body">
             <h1>testing</h1>
               <p>Status: {userTama.status} 💖 </p>
               <p>Fullness: {userTama.hunger} / 100 🍛</p>
