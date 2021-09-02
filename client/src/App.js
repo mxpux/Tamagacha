@@ -64,11 +64,7 @@ function App() {
       {renderPage()}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
-<<<<<<< HEAD
       {/* <MyTama /> */}
-=======
-      <MyTama />
->>>>>>> 34291cda0c0ca864088ad597647e79d6d66e338a
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
