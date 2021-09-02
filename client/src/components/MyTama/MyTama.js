@@ -11,35 +11,103 @@ function MyTama() {
         <body>
             <h2>Select your Tama!</h2>
 
-        <div className="mytamacontainer">
-            <div className="card">
-                <div className="icon">
-                    <img
-                        className="mytamacard-img-top"
-                        src={tama1}
-                        alt="Mametchi"
-                    />
-                    {/* <div className="card-body"> */}
-                    <div class="mytamatextcont">
-                        <h5 className="title">Mametchi</h5>
-                        <p className="mytamatext">Favorite Food: Hamburger</p>
+            <div className="mytamacontainer">
+
+
+                <div className="mytamacardcont">
+
+                    <div className="mytamamaincard">
+                        <div className="icon">
+                            <img
+                                className="mytamacard-img-top"
+                                src={tama1}
+                                alt="Mametchi"
+                            />
+                            <div class="mytamatextcont">
+                                <h5 className="title">Mametchi</h5>
+                                <p className="mytamatext">Favorite Food: Hamburger</p>
+                            </div>
+                        </div>
                     </div>
+
+                    {/* </div> */}
+
+                    <div className="mytamacardcont">
+
+                        <div className="mytamamaincard">
+                            <div className="icon">
+                                <img
+                                    className="mytamacard-img-top"
+                                    src={tama2}
+                                    alt="Mametchi"
+                                />
+                                <div class="mytamatextcont">
+                                    <h5 className="title">Mametchi</h5>
+                                    <p className="mytamatext">Favorite Food: Hamburger</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mytamacardcont">
+
+                            <div className="mytamamaincard">
+                                <div className="icon">
+                                    <img
+                                        className="mytamacard-img-top"
+                                        src={tama3}
+                                        alt="Mametchi"
+                                    />
+                                    <div class="mytamatextcont">
+                                        <h5 className="title">Mametchi</h5>
+                                        <p className="mytamatext">Favorite Food: Hamburger</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mytamacardcont">
+
+                                <div className="mytamamaincard">
+                                    <div className="icon">
+                                        <img
+                                            className="mytamacard-img-top"
+                                            src={tama4}
+                                            alt="Mametchi"
+                                        />
+                                        <div class="mytamatextcont">
+                                            <h5 className="title">Mametchi</h5>
+                                            <p className="mytamatext">Favorite Food: Hamburger</p>
+                                        </div>
+                                    </div>
+                            
+
+                                </div>
+
+                                <div className="mytamacardcont">
+
+                            <div className="mytamamaincard">
+                                <div className="icon">
+                                    <img
+                                        className="mytamacard-img-top"
+                                        src={tama5}
+                                        alt="Mametchi"
+                                    />
+                                    <div class="mytamatextcont">
+                                        <h5 className="title">Mametchi</h5>
+                                        <p className="mytamatext">Favorite Food: Hamburger</p>
+                                    </div>
+                                </div>
+                            </div></div>
+
+                            </div></div>
                     </div>
 
 
-                    
-                {/* </div> */}
 
 
 
-            
 
-               
 
-             
-           
-
-         </div>
+                </div>
             </div>
         </body>
     );

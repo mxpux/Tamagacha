@@ -1,10 +1,19 @@
 .mytamacontainer {
-    margin: 100px;
+    margin: 20px;
     justify-content: center;
     align-items: center;
     display: flex;
-       
+    /* background-color: rgb(240, 240, 174); */
 }
+
+.mytamacardcont{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* background-color: #0ea540; */
+    margin:auto;
+}
+
 
 .mytamacard-img-top{
     background-color: transparent;
@@ -13,11 +22,10 @@
     margin-left: 30px;
     display: flex;
     width: 200px;
-    height: 200px;
-    
-   
+    height: 200px
+
 }
-.card {
+.mytamamaincard {
     width: 100%;
     max-width: 350px;
     min-width: 350px;
@@ -53,7 +61,7 @@
     background-size: 400px;
  }
  
- .card .title {
+ .mytamamaincard .title {
     text-align: center;
     justify-content: center;
     /* margin-left: -10px; */
@@ -65,7 +73,7 @@
     visibility: hidden;
  }
  
- .card .mytamatext {
+ .mytamamaincard .mytamatext {
     font-size: 13px;
     margin-top: 200px;
     margin-block-start: 20px;
@@ -79,39 +87,41 @@
     align-items: center;
  }
  
- .card:hover {
+ .mytamamaincard:hover {
     height: 400px;
     transition: all 0.3s ease;
+
  }
 
- .card:hover .mytamacard-img-top{
+ .mytamamaincard:hover .mytamacard-img-top{
     margin-top: -140px;
     transition: all 0.8s ease;
  }
 
- .card:hover .mytamatext {
+ .mytamamaincard:hover .mytamatext {
     transition: all 0.3s ease;
     opacity: 1;
     justify-content: center;
     align-items: center;
     visibility: visible;
+
  }
  
- .card:hover .icon {
+ .mytamamaincard:hover .icon {
     background-position: -120px;
     transition: all 0.3s ease;
     background-color: rgb(64, 176, 224);
 
  }
  
- .card:hover .icon i {
+ .mytamamaincard:hover .icon i {
     background: linear-gradient(90deg, #0ea540, #034d05);
     opacity: 1;
     transition: all 0.3s ease;
 
  }
 
- .card:hover .title{
+ .mytamamaincard:hover .title{
     visibility: visible;
     margin-top: 60px;
     transition: all 0.8s ease;
