@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Header from './components/Header/Header';
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
 import Homepage from './components/Homepage/Homepage';
 import MyTama from './components/MyTama/MyTama';
 import Hamburger from 'hamburger-react';
@@ -46,22 +46,22 @@ function App() {
     <div>
 
       <Header handlePageChange={handlePageChange}/>
-      {/* <Homepage />
-      {renderPage()} */}
+      <Homepage />
+      {/* {renderPage()} */}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
-      {/* <Ttt /> */}
+      {/* <MyTama /> */}
       {/* <Matching /> */}
-      < MyTama />
+      {/* <SelectTama /> */}
       {/* <Tamadex /> */}
-      {/* <Ttt2 /> */}
+      {/* <Ttt2 />*/}
       {/* <Ttt /> */}
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Characters /> */}
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
-      {/* <Profile /> */}
+      <Profile />
       {/* <Gacha /> */}
     </div>
   );

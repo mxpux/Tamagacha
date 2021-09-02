@@ -12,7 +12,7 @@ function MyTama() {
 
             <div className="mytamapagetitle">Select your Tama!</div>
               <div className="mytamacontainer">
-                
+
 
                 {/* === TAMA PER CARD === */}
                 <div className="mytamacardcont">
@@ -28,7 +28,7 @@ function MyTama() {
                                 <p className="mytamatext">Favorite Food: Hamburger</p>
                             </div>
                         </div>
-                        </div>
+                    </div>
 
 
                     {/* === TAMA PER CARD === */}

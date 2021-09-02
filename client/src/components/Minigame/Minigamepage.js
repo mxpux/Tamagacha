@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TamaMatch from '../../assets/match-thumb.png';
-import TamaTTT from '../../assets/ttt-thumb.png';
+import tamaMatch from '../../assets/match-thumb.png';
+import tamaTTT from '../../assets/ttt-thumb.png';
 import './minigamepage.css';
 
 function MinigamePage() {
@@ -10,19 +10,21 @@ function MinigamePage() {
             {/* <div className="minigame-container"> */}
                 <div className="minigame-cardcontainer">
                      <h2 class="minigame-title">Which Minigame would you like to play?</h2>
+
                     <div className="minigame-card">
-                    <h3>Matching Game</h3>
-                    <img
-                        className="minigame-card-img"
-                        src={TamaMatch}
-                        alt="Tama Match" />
+                        <h3>Matching Game</h3>
+                        <img
+                            className="minigame-card-img"
+                            src={tamaMatch}
+                            alt="Tama Match" />
                     </div>
+
                     <div className="minigame-card">
-                    <h3>Tic Tac Toe</h3>
-                    <img
-                        className="minigame-card-img"
-                        src={TamaTTT}
-                        alt="Tama Tic Tac Toe" />
+                        <h3>Tic Tac Toe</h3>
+                        <img
+                            className="minigame-card-img"
+                            src={tamaTTT}
+                            alt="Tama Tic Tac Toe" />
                     </div>
                 </div>
             {/* </div> */}
