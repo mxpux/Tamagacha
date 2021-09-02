@@ -52,7 +52,7 @@ function App() {
       {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
-      <SelectTama />
+
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Ttt /> */}
@@ -62,6 +62,7 @@ function App() {
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
       {/* <Profile /> */}
+      {/* <Gacha /> */}
     </div>
   );
 }
