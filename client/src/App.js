@@ -18,6 +18,9 @@ import Matching from './components/Matching/Matching';
 import Ttt2 from './components/TTT2/Ttt2';
 import Ttt from './components/TTT/Ttt'; //! Duplicate of TTT2
 
+//* LocalStorage
+import { getCurrentTama } from './utils/localStorage'
+
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
 
@@ -36,11 +39,21 @@ function App() {
       return <Tamadex />
     } else if (pageToRender === 'My Tama'){
       return <MyTama />
+    } else if (pageToRender === 'Profile'){
+      return checkIfUserHaveTama()
     } else {
-      //something else ?
+      //anything else....
     }
   }
 
+  //Check to see if User hava a Tama before render the <Profile /> components
+  const checkIfUserHaveTama = () => {
+    if(getCurrentTama()) {
+      return <Profile />
+    } else {
+      return <MyTama />
+    }
+  }
 
   return (
     <div>
@@ -48,10 +61,10 @@ function App() {
       {/* TTT, Matching, myTama, Profile, minigamePage, Gacha, Navigatable pages */}
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage /> */}
-      {/* {renderPage()} */}
+      {renderPage()}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
-      <MyTama />
+      {/* <MyTama /> */}
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
