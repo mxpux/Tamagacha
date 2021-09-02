@@ -47,9 +47,9 @@ router.get('/:u_id', async (req, res) => {
       res.status(404).json({ message: `No user with this ${req.params.u_id} id !`})
     };
 
-    const UserTamaData = dbUserTamaData.get({ plain: true })
+    // const UserTamaData = dbUserTamaData.get({ plain: true })
 
-    res.status(200).json(UserTamaData)
+    res.status(200).json(dbUserTamaData)
 
   } catch (err) {
     console.log(err);

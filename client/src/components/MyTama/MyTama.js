@@ -9,6 +9,7 @@ import './myTama.css';
 function MyTama() {
     return (
         <body>
+
             <div className="mytamapagetitle">Select your Tama!</div>
               <div className="mytamacontainer">
                 
@@ -27,7 +28,8 @@ function MyTama() {
                                 <p className="mytamatext">Favorite Food: Hamburger</p>
                             </div>
                         </div>
-                    </div>
+
+
 
                     {/* === TAMA PER CARD === */}
                      <div className="mytamacardcont">

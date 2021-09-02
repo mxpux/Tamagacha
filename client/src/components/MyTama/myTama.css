@@ -31,7 +31,9 @@
     height: 200px
 
 }
+
 .mytamamaincard {
+
     width: 100%;
     max-width: 350px;
     min-width: 350px;
@@ -67,7 +69,9 @@
     background-size: 400px;
  }
  
+
  .mytamamaincard .title {
+
     text-align: center;
     justify-content: center;
     /* margin-left: -10px; */
@@ -79,7 +83,9 @@
     visibility: hidden;
  }
  
+
  .mytamamaincard .mytamatext {
+
     font-size: 13px;
     margin-top: 200px;
     margin-block-start: 20px;
@@ -93,18 +99,24 @@
     align-items: center;
  }
  
+
  .mytamamaincard:hover {
+
     height: 400px;
     transition: all 0.3s ease;
 
  }
 
+
  .mytamamaincard:hover .mytamacard-img-top{
+
     margin-top: -140px;
     transition: all 0.8s ease;
  }
 
+
  .mytamamaincard:hover .mytamatext {
+
     transition: all 0.3s ease;
     opacity: 1;
     justify-content: center;
@@ -113,20 +125,26 @@
 
  }
  
+
  .mytamamaincard:hover .icon {
+
     background-position: -120px;
     transition: all 0.3s ease;
     background-color: rgb(64, 176, 224);
 
  }
  
+
  .mytamamaincard:hover .icon i {
+
     opacity: 1;
     transition: all 0.3s ease;
 
  }
 
+
  .mytamamaincard:hover .title{
+
     visibility: visible;
     margin-top: 60px;
     transition: all 0.8s ease;
