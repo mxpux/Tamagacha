@@ -21,15 +21,12 @@ function Tamadex() {
                             />
                             <div class="flip-card-back">
                                 <h2>Mametchi</h2>
-                                Mametchi is extremely clever with an IQ of around 250. He is a serious prodigy type, and one of the smartest Tama. However, he has poor drawing skills. Rumor has it that he is seeing someone named Mimitchi.
+                                Mametchi is a traffic director. He tries helping Kuchipatchi back up, which leads to him bumping into Orenchi, causing the Tamagachas around him to be stuck in traffic. Rumor has it that he is now seeing someone that likes pink roll cake.
                             </div>
                         </div>
                     </div>
                 </div>
-            
 
-
-           
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div className="tamadexcard">
@@ -45,9 +42,8 @@ function Tamadex() {
                         </div>
                     </div>
                 </div>
-         
 
-         <div class="flip-card">
+                <div class="flip-card">
                     <div class="flip-card-inner">
                         <div className="tamadexcard">
                             <img
@@ -57,16 +53,13 @@ function Tamadex() {
                             />
                             <div class="flip-card-back">
                                 <h2>Violetchi</h2>
-                                Violetchi is softhearted and easygoing, and is very knowledgeable about flowers and gardening. She has a profound understanding of flowers. Aside from flowers, Violetchi loves the color pink, drawing, and going on bike rides.
+                                Violetchi is very knowledgeable about flowers. Gozarutchi happens to fall down next to her when she was reading. She ends up developing a crush on him. She spends the whole day trying to get his attention, but he only seems confused by her weird behavior. She's over him.
                             </div>
                         </div>
                     </div>
                 </div>
-        
 
-
-
-        <div class="flip-card">
+                <div class="flip-card">
                     <div class="flip-card-inner">
                         <div className="tamadexcard">
                             <img
@@ -76,16 +69,13 @@ function Tamadex() {
                             />
                             <div class="flip-card-back">
                                 <h2>Orenchi</h2>
-                                Orenchi is  a very stylish, feminine Tama who loves to have fun. She enjoys daydreaming, dancing, dressing up. She is often seeing with pink roll cake and swirly-faced teddy bears. Despite being bright and cheerful, she is sensitive and somewhat defensive of her appearance. 
+                                Orenchi is a very stylish Tama who loves to have fun. She enjoys daydreaming and dressing up. She is often seeing with pink roll cake. Despite being bright and cheerful, she is sensitive and somewhat defensive of her appearance.
                             </div>
                         </div>
                     </div>
                 </div>
-        
 
-
-
-        <div class="flip-card">
+                <div class="flip-card">
                     <div class="flip-card-inner">
                         <div className="tamadexcard">
                             <img
@@ -95,12 +85,12 @@ function Tamadex() {
                             />
                             <div class="flip-card-back">
                                 <h2>Gozarutchi</h2>
-                                Gozarutchi's specialty is throwing ninja stars, and he hopes to someday be a ninja. He possesses many ninja abilities. Besides wanting to become a ninja, he is a bit shy. Gozarutchi actually has low blood pressure and is not a morning person. Violetchi has a crush on him.
+                                Gozarutchi hopes to someday be a ninja. However, he is very shy which often gets misunderstood. Gozarutchi also has low blood pressure. Hidden underneath his costume is a picture of someone reading in a garden full of flowers.
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
 
 
 

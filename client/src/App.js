@@ -9,6 +9,7 @@ import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
 
 import MinigamePage from './components/Minigame/Minigamepage';
+import MyTama from './components/MyTama/MyTama';
 
 import Matching from './components/Matching/Matching';
 
@@ -53,11 +54,7 @@ function App() {
       {/* <MyTama /> */}
       {/* <Matching /> */}
       {/* <SelectTama /> */}
-      {/* <Tamadex /> */}
-      {/* <Ttt2 />*/}
-      {/* <Ttt /> */}
-      {/* <Matching /> */}
-      {/* <Tamadex /> */}
+
       {/* <Characters /> */}
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
