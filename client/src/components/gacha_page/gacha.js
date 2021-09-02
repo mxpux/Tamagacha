@@ -14,9 +14,10 @@ function Gacha() {
     <>
       <div id='egg-container'>
         <p className='gacha-title'>What will hatch!?</p>
-        
-        <egg onMouseEnter={sound.play()}>
-        </egg>
+        <br/>
+        <br/>
+        <br/>
+        <div id='egg' />
       </div>
     </>
   )

@@ -27,8 +27,8 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 })
-//ONE USER ALL TAMAS
-router.get('/:u_id', async (req, res) => {
+//ONE USER ALL TAMAS (FE API: getUser(user_id, token))
+router.get('/:u_id', authMiddleware, async (req, res) => {
   console.log('the idddddd--------------------------->', req.params.u_id)
   try {
     // const dbUserTamaData = await User.findByPk(req.params.u_id)
@@ -110,8 +110,10 @@ router.get('/:u_id/:t_id', async (req, res) => {
     };
 
     const UserTamaData = dbUserTamaData.get({ plain: true })
-
-    res.status(200).json(UserTamaData)
+    // console.log('usertamadata', UserTamaData)
+    const currentTama = UserTamaData.tamas_owned[0]
+    // console.log('after selecting', currentTama)
+    res.status(200).json(currentTama)
 
   } catch (err) {
     console.log(err);
