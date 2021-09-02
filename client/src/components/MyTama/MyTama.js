@@ -1,107 +1,88 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import tama1 from '../../assets/tama1.png';
 import tama2 from '../../assets/tama2.png';
 import tama3 from '../../assets/tama3.png';
 import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
+import { getUser } from "../../utils/API";
+import Auth from '../../utils/auth';
+import { getUserId, setCurrentTama } from "../../utils/localStorage";
 import './myTama.css';
 
 
 function MyTama() {
-    return (
-        <body>
-            <div className="mytamapagetitle">Select your Tama!</div>
-            <div className="mytamacontainer">
+  const [tamasOwned, setTamaOwned] = useState([]);
 
-                {/* === TAMA PER CARD === */}
-                <div className="mytamacardcont">
-                    <div className="mytamamaincard">
-                        <div className="icon">
-                            <img
-                                className="mytamacard-img-top"
-                                src={tama1}
-                                name="tama1"
-                                alt="Mametchi"
-                            />
-                            <div class="mytamatextcont">
-                                <h5 className="title">Mametchi</h5>
-                                <p className="mytamatext">Favorite food: hamburger</p>
-                            </div>
-                        </div>
-                    </div>
+  const getUserData = async () => {
+    try {
+      const user_id = getUserId();
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+      if (!token) {
+        throw new Error("Not logged in!");
+      }
+      console.log("token", token);
+
+      const response = await getUser(user_id, token);
+
+      if (!response.ok) {
+        throw new Error("something went wrong!");
+      }
+      const user = await response.json();
+      console.log(user);
+      setTamaOwned(user.tamas_owned);
+      console.log("tamasOwned", tamasOwned);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  const handleSelectTama = (tama_id) => {
+    setCurrentTama(tama_id);
+  };
+
+  return (
+    <body>
+      <div className="mytamapagetitle">Select your Tama!</div>
+      {tamasOwned.map((tama) => {
+        return (
+          <div className="mytamacontainer">
+            {/* === TAMA PER CARD === */}
+            <div className="mytamacardcont">
+              <div className="mytamamaincard">
+                <div className="icon">
+                  <img
+                    className="mytamacard-img-top"
+                    src={tama1}
+                    name="tama1"
+                    alt="Mametchi"
+                  />
+                  <div class="mytamatextcont">
+                    <h5 className="title">{tama.name}</h5>
+                    <p className="mytamatext">
+                        Happiness: {tama.userTama.happiness} <br/>
+                        Bladder: {tama.userTama.bladder} <br/>
+                        Hunger: {tama.userTama.hunger}</p>
+                 
+                  </div>
+                  <button
+                    onClick={() => handleSelectTama(tama.userTama.id)}
+                    className="btn btn-success"
+                  >
+                    Select this tama!
+                  </button>
                 </div>
-
-
-                {/* === TAMA PER CARD === */}
-                <div className="mytamacardcont">
-                    <div className="mytamamaincard">
-                        <div className="icon">
-                            <img
-                                className="mytamacard-img-top"
-                                src={tama2}
-                                alt="Kuchipatchi"
-                            />
-                            <div class="mytamatextcont">
-                                <h5 className="title">Kuchipatchi</h5>
-                                <p className="mytamatext">Favorite food: mango pudding</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* === TAMA PER CARD === */}
-                <div className="mytamacardcont">
-                    <div className="mytamamaincard">
-                        <div className="icon">
-                            <img
-                                className="mytamacard-img-top"
-                                src={tama3}
-                                alt="Violetchi"
-                            />
-                            <div class="mytamatextcont">
-                                <h5 className="title">Violetchi</h5>
-                                <p className="mytamatext">Favorite food: toast and honey</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* === TAMA PER CARD === */}
-                <div className="mytamacardcont">
-                    <div className="mytamamaincard">
-                        <div className="icon">
-                            <img
-                                className="mytamacard-img-top"
-                                src={tama4}
-                                alt="Orenchi"
-                            />
-                            <div class="mytamatextcont">
-                                <h5 className="title">Orenchi</h5>
-                                <p className="mytamatext">Favorite food: donuts</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* === TAMA PER CARD === */}
-                <div className="mytamacardcont">
-                    <div className="mytamamaincard">
-                        <div className="icon">
-                            <img
-                                className="mytamacard-img-top"
-                                src={tama5}
-                                alt="Gozarutchi"
-                            />
-                            <div class="mytamatextcont">
-                                <h5 className="title">Gozarutchi</h5>
-                                <p className="mytamatext">Favorite snack: Grape juice</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </body>
-    );
+          </div>
+        );
+      })}
+    </body>
+  );
 }
 
 export default MyTama;

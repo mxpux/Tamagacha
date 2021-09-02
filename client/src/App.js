@@ -50,14 +50,14 @@ function App() {
       {/* {renderPage()} */}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
-      {/* <MyTama /> */}
+      <MyTama />
       {/* <Matching /> */}
       {/* <SelectTama /> */}
 
       {/* <Characters /> */}
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
-      <Profile />
+      {/* <Profile /> */}
       {/* <Gacha /> */}
     </div>
   );
