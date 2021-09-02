@@ -33,16 +33,16 @@ egg:hover {
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(-30deg); }
-  10% { transform: translate(-1px, -2px) rotate(-47deg); background: yellow}
+  10% { transform: translate(-1px, -2px) rotate(-47deg); background: rgb(255, 255, 209)}
   20% { transform: translate(-3px, 0px) rotate(-55deg); 
-  background: blue}
+  background: rgb(196, 196, 255)}
   30% { transform: translate(3px, 2px) rotate(-47deg); }
   40% { transform: translate(1px, -1px) rotate(-30deg); }
-  50% { transform: translate(-1px, 2px) rotate(-47deg); background:red }
+  50% { transform: translate(-1px, 2px) rotate(-47deg); background:rgb(255, 207, 177) }
   60% { transform: translate(-3px, 1px) rotate(-55deg); }
-  70% { transform: translate(3px, 1px) rotate(-47deg); background:orange}
+  70% { transform: translate(3px, 1px) rotate(-47deg); background:rgb(222, 255, 225)}
   80% { transform: translate(-1px, -1px) rotate(-30deg); 
-  background: green}
+  background: rgb(255, 204, 224)}
   90% { transform: translate(1px, 2px) rotate(-47deg); }
   100% { transform: translate(1px, -2px) rotate(-30deg); }
 }

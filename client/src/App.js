@@ -9,8 +9,6 @@ import Ttt from './components/TTT/Ttt';
 import Profile from './components/Profile/Profile';
 
 import MinigamePage from './components/Minigame/Minigamepage';
-import MyTama from './components/MyTama/MyTama';
-
 import Matching from './components/Matching/Matching';
 
 import Signup from './components/Signup/Signup';
@@ -47,9 +45,9 @@ function App() {
     <div>
 
       <Header handlePageChange={handlePageChange}/>
-      <Homepage />
+      {/* <Homepage /> */}
       {/* {renderPage()} */}
-      {/* <Gacha /> */}
+      <Gacha />
       {/* <MinigamePage /> */}
       {/* <MyTama /> */}
       {/* <Matching /> */}
@@ -58,7 +56,7 @@ function App() {
       {/* <Characters /> */}
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
-      <Profile />
+      {/* <Profile /> */}
       {/* <Gacha /> */}
     </div>
   );
