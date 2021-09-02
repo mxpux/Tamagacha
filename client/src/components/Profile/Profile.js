@@ -65,7 +65,8 @@ function Profile () {
       const token = Auth.getToken();
       const newHunger = stat.userTama.hunger + 1
 
-      let response = await updateTama({hunger: newHunger}, token, ut_id) //hardcoded 1 for now
+      let response = await updateTama({hunger: newHunger}, token, ut_id)
+
       console.log(response);
       getUserTamaStats();
     }
@@ -81,7 +82,8 @@ function Profile () {
       const token = Auth.getToken();
       const newBladder = stat.userTama.bladder + 1
 
-      let response = await updateTama({bladder: newBladder}, token, ut_id) //hardcoded 1 for now
+      let response = await updateTama({bladder: newBladder}, token, ut_id)
+
       console.log(response);
       getUserTamaStats();
     }
@@ -92,12 +94,12 @@ function Profile () {
 
     <>
     {pageToRender ? <MinigamePage /> : (<tama id="profile">
-        <h2>'Placeholder name'</h2>
+        <h2>{stat.name}</h2>
         <pfp>
           <img id='tama' src={tama4} alt=''/>
         </pfp>
         <div className="row btnRow">
-        {stat.userTama && <Stats userTama={stat.userTama} />}
+        {stat.userTama && stat.name && <Stats userTama={stat.userTama} name={stat.name} />}
           {/* <Stats userTama={stat.tamas_owned[0].userTama} />
           <Stats userTama={stat} /> */}
         </div>
