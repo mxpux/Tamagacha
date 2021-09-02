@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models')
-const {signToken, withAuth} = require('../../utils/auth'); //signToken subject to change possibly
-const { authMiddleware } = require('../../utils/auth')
+const {signToken, authMiddleware} = require('../../utils/auth'); //signToken subject to change possibly
 //URL: <homeURL>/api/user
 
 
@@ -57,7 +56,7 @@ router.post('/signup', async (req, res) => {
 })
 
 //LOGIN
-router.post('/login', async (req, res) => {
+router.post('/login', authMiddleware, async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {

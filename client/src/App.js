@@ -51,13 +51,13 @@ function App() {
       {/* {renderPage()} */}
       {/* <Gacha /> */} 
       {/* <MinigamePage /> */}
-      {/* <MyTama /> */}
+      <MyTama />
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
-      {/* <Matching /> */}
-      {/* <Tamadex /> */}
-      <Profile />
+      {/* {/* <Ttt /> */}
+      {/* <Profile /> */}
+      {/* <Gacha /> */}
     </div>
   );
 }

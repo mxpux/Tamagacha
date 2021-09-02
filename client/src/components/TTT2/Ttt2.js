@@ -99,17 +99,15 @@ function Ttt2 () {
 		var randomIndex = Math.floor(Math.random() * stillOpen.length)
 		return stillOpen[randomIndex]
 	}
-
 	const setComputerMove = () => {
-		if(gameOver === false) {
-			setTimeout(() => {
+		setTimeout(() => {
+			if(gameOver === false) {
 					setBoxes(prevState => {
 						prevState[randomIndex()] = playerTwo;
 						return [...prevState]
 					})
-			},750)
-		}
-
+			} 
+		},750)
 
 	}
 

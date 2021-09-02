@@ -33,13 +33,13 @@ function signToken ({ email, username, _id }) {
   return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
 };
 
-const withAuth = (req, res, next) => {
-    if (!req.session.loggedIn) {
-      res.redirect('/');
-    } else {
-      next();
-    }
-  };
+// const withAuth = (req, res, next) => {
+//     if (!req.session.loggedIn) {
+//       res.redirect('/');
+//     } else {
+//       next();
+//     }
+//   };
 
-  module.exports = {withAuth, signToken, authMiddleware};
+  module.exports = { signToken, authMiddleware };
   
