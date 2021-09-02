@@ -1,15 +1,17 @@
 .mytamacontainer {
-    margin: 20px;
     justify-content: center;
     align-items: center;
-    display: flex;
+    display:flex;
+    flex-wrap: wrap;
 }
+
 
 .mytamacardcont{
     justify-content: center;
     align-items: center;
-    display: flex;
-    margin:auto;
+    display:flex;
+    margin: 3px;
+    float: none;
 }
 
 .mytamapagetitle {
@@ -18,7 +20,6 @@
     text-align: center;
     font-size: 70px;    
     font-family: 'Schoolbell', cursive;
-
 }
 
 .mytamacard-img-top{
@@ -29,11 +30,9 @@
     display: flex;
     width: 200px;
     height: 200px
-
 }
 
 .mytamamaincard {
-
     width: 100%;
     max-width: 350px;
     min-width: 350px;
@@ -71,7 +70,7 @@
  
 
  .mytamamaincard .title {
-
+     
     text-align: center;
     justify-content: center;
     /* margin-left: -10px; */
@@ -159,3 +158,5 @@
      transition: all 0.8s ease;
 
  }
+
+ 

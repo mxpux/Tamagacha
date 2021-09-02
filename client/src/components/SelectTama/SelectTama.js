@@ -15,7 +15,7 @@ export default function SelectTama() {
   console.log(tamasOwned);
   //* tamasOwned should be a userObject with a property of tamas_owned
 
-  
+
   const getUserData = async() => {
     try {
       const user_id = getUserId();
@@ -64,7 +64,7 @@ export default function SelectTama() {
               <p className="card-text m-0">Bladder: {tama.userTama.bladder}</p>
               <p className="card-text m-0">Happiness: {tama.userTama.happiness}</p>
               <p className="card-text m-0">Age: {tama.userTama.age/60} minutes</p>
-              <button 
+              <button
               onClick={() => handleSelectTama(tama.userTama.id)}
               className="btn btn-success"
               >Select this tama!</button>
@@ -72,7 +72,7 @@ export default function SelectTama() {
           </div>
         )
       })}
-    </div >
+    </div>
   )
 
 }
