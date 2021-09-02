@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const secret = 'mysecretssshhhhhhh';
 const expiration = '2h';
 
-function authMiddleware ({ req }) {
+function authMiddleware (req, res, next) {
   // allows token to be sent via req.body, req.query, or headers
   let token = req.body.token || req.query.token || req.headers.authorization;
 
@@ -13,7 +13,7 @@ function authMiddleware ({ req }) {
   }
 
   if (!token) {
-    return req;
+    return res.status(400).json({message: 'You have no token!'});
   }
 
   // if token can be verified, add the decoded user's data to the request so it can be accessed in the resolver
@@ -22,10 +22,10 @@ function authMiddleware ({ req }) {
     req.user = data;
   } catch {
     console.log('Invalid token');
-  }
-
   // return the request object so it can be passed to the resolver as `context`
-  return req;
+  return res.status(400).json({message: 'invalid token!'});
+  }
+  next();
 };
 
 function signToken ({ email, username, _id }) {
