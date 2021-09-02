@@ -8,7 +8,7 @@ import player2 from '../../assets/tama4.png';
 const playerOne = <img src={player1} alt="player1" className='ttt2-inline'/>;
 const playerTwo = <img src={player2} alt="player2" className='ttt2-inline'/>
 //!!!!!!!!!!!!!!!!! At the end of the game - userWon will either be true/false
-function Ttt2 () {
+function Ttt2 ( {userGameStatus} ) {
   // const [turn, setTurn] =useState('player')
   const [boxes, setBoxes] = useState(Array(9).fill(''));
   // const [gameOver, setGameOver] = useState('false')
@@ -30,6 +30,7 @@ function Ttt2 () {
     if(winner === playerOne) {
       console.log('playerone won')
       setUserWon(true)
+			userGameStatus(true)
       Swal.fire({
         title: 'Sweet!',
         text: 'User Win!!',
@@ -99,17 +100,15 @@ function Ttt2 () {
 		var randomIndex = Math.floor(Math.random() * stillOpen.length)
 		return stillOpen[randomIndex]
 	}
-
 	const setComputerMove = () => {
-		if(gameOver === false) {
-			setTimeout(() => {
+		setTimeout(() => {
+			if(gameOver === false) {
 					setBoxes(prevState => {
 						prevState[randomIndex()] = playerTwo;
 						return [...prevState]
 					})
-			},750)
-		}
-
+			} 
+		},750)
 
 	}
 
@@ -126,7 +125,7 @@ function Ttt2 () {
     setBoxes(prevState => {
       console.log('prevvvvv beforee', prevState)
       prevState[num] = playerOne;
-			if(gameOver === false) {
+			if(gameOver === false)  {
 				setComputerMove()
 			}
       console.log('prevvvvv afterrrrr', prevState)

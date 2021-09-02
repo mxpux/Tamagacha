@@ -67,7 +67,7 @@ const images2 = [
 
 ]
 
-function Matching() {
+function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
 
   const [randomImageLink, setRandomImageLink] = useState([]);
@@ -100,6 +100,7 @@ function Matching() {
   const checkGameOver = () => {
     if(score === 6) {
       setGameOver(true)
+      userGameStatus(true)
     }
   }
 

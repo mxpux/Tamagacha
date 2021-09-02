@@ -4,7 +4,7 @@ import './card.css'
 
 
 
-function Card ({key, index, name, image, flip, handleOnClick, setUserPick}) {
+function Card ({ index, name, image, flip, handleOnClick, setUserPick}) {
   // const [flip, setFlip] = useState(false)
 
 
