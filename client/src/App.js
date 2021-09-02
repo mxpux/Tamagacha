@@ -1,22 +1,22 @@
+//! IMPORT REACT
 import React, {useState} from 'react';
+//* BASE COMPONENTS
 import Header from './components/Header/Header';
-// import Nav from './components/Nav';
 import Homepage from './components/Homepage/Homepage';
-import MyTama from './components/MyTama/MyTama';
-import Hamburger from 'hamburger-react';
-import Gacha from './components/gacha_page/gacha'
-import Ttt from './components/TTT/Ttt';
+// import Hamburger from 'hamburger-react';
+
+//*TAMA RELATED COMPONENTS
 import Profile from './components/Profile/Profile';
-
-import MinigamePage from './components/Minigame/Minigamepage';
-
-import Matching from './components/Matching/Matching';
-
-import Signup from './components/Signup/Signup';
 import Tamadex from './components/Tamadex/Tamadex';
+import Gacha from './components/gacha_page/gacha'
+import MyTama from './components/MyTama/MyTama'; 
+import SelectTama from './components/SelectTama/SelectTama'; //! Duplicate of MyTama, import into mytama
 
+//* MINIGAMES
+import MinigamePage from './components/Minigame/Minigamepage';
+import Matching from './components/Matching/Matching';
 import Ttt2 from './components/TTT2/Ttt2';
-import SelectTama from './components/SelectTama/SelectTama';
+import Ttt from './components/TTT/Ttt'; //! Duplicate of TTT2
 
 function App() {
   const [pageToRender, setPageToRender] = useState('Homepage')
@@ -44,17 +44,16 @@ function App() {
 
   return (
     <div>
-
+      {/*  tamadex ✔️, header ✔️, homepage ✔️, */}
+      {/* TTT, Matching, myTama, Profile, minigamePage, Gacha, Navigatable pages */}
       <Header handlePageChange={handlePageChange}/>
       <Homepage />
       {/* {renderPage()} */}
-      {/* <Gacha /> */}
+      {/* <Gacha /> */} 
       {/* <MinigamePage /> */}
       <MyTama />
       {/* <Matching /> */}
-      {/* <SelectTama /> */}
-
-      {/* <Characters /> */}
+      {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
       {/* <Profile /> */}
