@@ -62,6 +62,7 @@ function App() {
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
       {/* <Profile /> */}
+      {/* <Gacha /> */}
     </div>
   );
 }
