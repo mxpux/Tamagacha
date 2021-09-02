@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './ttt.css';
 import player1 from '../../assets/tama2.png';
 import player2 from '../../assets/tama4.png';

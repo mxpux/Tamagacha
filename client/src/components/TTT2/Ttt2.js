@@ -12,16 +12,18 @@ function Ttt2 () {
   // const [turn, setTurn] =useState('player')
   const [boxes, setBoxes] = useState(Array(9).fill(''));
   // const [gameOver, setGameOver] = useState('false')
-  const [winner, setWinner] = useState(null);
+  const [winner, setWinner] = useState(null); //<img src={player1} alt="player1" className='ttt2-inline'/>
   const [userWon, setUserWon] = useState(false) //if user won - value set to true
 	const [gameOver, setGameOver] = useState(false);
 
-	useEffect(() => {
+	// useEffect(() => {
 
-  },[userWon])
-	
+  // },[userWon])
+
   useEffect(() => {
+		console.log('useeffect run on the boxes')
     winningComb([...boxes])
+
   },[boxes])
 
   useEffect(() => {

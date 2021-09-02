@@ -9,13 +9,14 @@ export default function Stats ({ userTama }) {
   else {emoji = happiness[2]}
   return (
     <>
-      <p>
+      {/* <p>
         <a class="btn btn-primary" data-bs-toggle="collapse" href="#tama_stats" role="button" aria-expanded="false" aria-controls="tama_stats">Show/Hide Stats</a>
-      </p>
+      </p> */}
       <div class="row">
         <div class="col">
-          <div class="collapse multi-collapse" id="tama_stats">
+          <div class="" id="tama_stats">
             <div class="card card-body">
+            <h1>testing</h1>
               <p>Status: {userTama.status} 💖 </p>
               <p>Fullness: {userTama.hunger} / 100 🍛</p>
               <p>Bladder: {userTama.bladder} / 100 🧻</p>
@@ -30,3 +31,27 @@ export default function Stats ({ userTama }) {
     </>
   )
 }
+
+//the original return statement
+// return (
+//   <>
+//     <p>
+//       <a class="btn btn-primary" data-bs-toggle="collapse" href="#tama_stats" role="button" aria-expanded="false" aria-controls="tama_stats">Show/Hide Stats</a>
+//     </p>
+//     <div class="row">
+//       <div class="col">
+//         <div class="collapse multi-collapse" id="tama_stats">
+//           <div class="card card-body">
+//             <p>Status: {userTama.status} 💖 </p>
+//             <p>Fullness: {userTama.hunger} / 100 🍛</p>
+//             <p>Bladder: {userTama.bladder} / 100 🧻</p>
+//             <p>Happiness: {userTama.happiness} / 100 {emoji} </p>
+//             <p>Age: {userTama.age/60} minutes ⏲️ </p>
+//             <p>Birthday: {userTama.date_created.split('T')[0]} 🎂</p>
+//             {/* is alive? is awake? */}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </>
+// )

@@ -5,68 +5,74 @@ import tama3 from '../../assets/tama3.png';
 import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
 import './selectTama.css';
-import {getMe} from '../../utils/API';
+import {getMe, getUser} from '../../utils/API';
 import Auth from '../../utils/auth';
+import { setCurrentTama, getUserId } from '../../utils/localStorage'
 
-function getTamasOwned () {
-  return fetch ('/api/usertama/me') //! Need user id
-.then((response) => response.json())
-}
 
 export default function SelectTama() {
   const [tamasOwned, setTamasOwned] = useState([])
   console.log(tamasOwned);
   //* tamasOwned should be a userObject with a property of tamas_owned
 
-  useEffect(() => {
-    const getUserData = async() => {
-      try {
-        const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-        if (!token) {
-          throw new Error('Not logged in!')
-        }
+  const getUserData = async() => {
+    try {
+      const user_id = getUserId();
+      const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-        const response = await getMe(token);
-
-        if (!response.ok) {
-          throw new Error('something went wrong!');
-        }
-
-        const user = await response.json();
-      } catch (err) {
-        console.error(err)
+      if (!token) {
+        throw new Error('Not logged in!')
       }
+      console.log('token', token);
+
+      const response = await getUser(user_id, token);
+
+      if (!response.ok) {
+        throw new Error('something went wrong!');
+      }
+
+      const user = await response.json();
+      console.log(user);
+      setTamasOwned(user.tamas_owned);
+      console.log('tamasOwned', tamasOwned);
+    } catch (err) {
+      console.error(err)
     }
-  })
-  const handleSelectTama = (id) => {
-    //TODO: use local storage and set the userTama ID
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, [])
+
+  const handleSelectTama = (tama_id) => {
     //TODO: Redirect the user to the profile page which uses the userTama ID to populate it with stats
+    setCurrentTama(tama_id);
     return
   }
 
   return (
-    <div class="row">
-      {tamasOwned.tamas_owned.map((tama) => {
+    <div className="row">
+      {tamasOwned.map((tama) => {
         return (
-          <div key={tama.userTama.id} class="card selectTamaCard">
-            <img src={tama4} class="card-img-top" alt="name" />
-            <div class="card-body">
-              <h5 class="card-title">{tama.name}</h5>
-              <p class="card-text m-0">Status: {tama.userTama.status}</p>
-              <p class="card-text m-0">Hunger: {tama.userTama.hunger}</p>
-              <p class="card-text m-0">Bladder: {tama.userTama.bladder}</p>
-              <p class="card-text m-0">Happiness: {tama.userTama.happiness}</p>
-              <p class="card-text m-0">Age: {tama.userTama.age/60} minutes</p>
-              <button 
+          <div key={tama.userTama.id} className="card selectTamaCard">
+            <img src={tama4} className="card-img-top" alt="name" />
+            <div className="card-body">
+              <h5 className="card-title">{tama.name}</h5>
+              <p className="card-text m-0">Status: {tama.userTama.status}</p>
+              <p className="card-text m-0">Hunger: {tama.userTama.hunger}</p>
+              <p className="card-text m-0">Bladder: {tama.userTama.bladder}</p>
+              <p className="card-text m-0">Happiness: {tama.userTama.happiness}</p>
+              <p className="card-text m-0">Age: {tama.userTama.age/60} minutes</p>
+              <button
               onClick={() => handleSelectTama(tama.userTama.id)}
-              class="btn btn-success"
+              className="btn btn-success"
               >Select this tama!</button>
             </div>
           </div>
         )
       })}
-    </div >
+    </div>
   )
 
 }

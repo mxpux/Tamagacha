@@ -18,8 +18,8 @@ const liCls =
         // const a = await Swal.fire({
         title: 'Login',
         html:
-          '<input placeholder="username" id="swal-input1" class="swal2-input">' +
-          '<input placeholder="password" type="password" id="swal-input2" class="swal2-input">',
+          '<input placeholder="Username" id="swal-input1" class="swal2-input">' +
+          '<input placeholder="Password" type="password" id="swal-input2" class="swal2-input">',
         focusConfirm: false,
         showCancelButton: true,
         confirmButtonText: `Login`,

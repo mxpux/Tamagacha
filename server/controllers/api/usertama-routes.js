@@ -29,7 +29,9 @@ router.get('/', async (req, res) => {
 })
 //ONE USER ALL TAMAS
 router.get('/:u_id', async (req, res) => {
+  console.log('the idddddd--------------------------->', req.params.u_id)
   try {
+    // const dbUserTamaData = await User.findByPk(req.params.u_id)
     const dbUserTamaData = await User.findByPk(req.params.u_id,
     {
       include:
@@ -47,11 +49,12 @@ router.get('/:u_id', async (req, res) => {
       res.status(404).json({ message: `No user with this ${req.params.u_id} id !`})
     };
 
-    const UserTamaData = dbUserTamaData.get({ plain: true })
+    // const UserTamaData = dbUserTamaData.get({ plain: true })
 
-    res.status(200).json(UserTamaData)
+    res.status(200).json(dbUserTamaData)
 
   } catch (err) {
+    console.log('errorrrrrrrrrrrrrr')
     console.log(err);
     res.status(500).json(err);
   }
@@ -116,7 +119,7 @@ router.get('/:u_id/:t_id', async (req, res) => {
   }
 })
 
-//ONE USER ONE TAMA CHANGE STATS 
+//ONE USER ONE TAMA CHANGE STATS
 router.put('/unique/:ut_id', async (req, res) => {
   try{
     const dbUserTamaData = await UserTama.update(
@@ -149,7 +152,7 @@ router.put('/unique/', authMiddleware, async (req, res) => {
         }
       }
     );
-    
+
     console.log(req.body)
 
     if (!dbUserTamaData) {

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Hamburger from 'hamburger-react';
+// import Hamburger from 'hamburger-react';
 import MenuDrop from './MenuDrop';
 import './header.css';
-
+import {Howl, Howler} from 'howler';
 
 function Header(props) {
 
