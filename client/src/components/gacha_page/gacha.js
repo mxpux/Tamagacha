@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import {Howl, Howler} from 'howler';
-import useSound from 'use-sound';
+import React, { useEffect } from 'react';
+import {Howl} from 'howler';
 import pop from './pop.mp3'
 import './gacha.css';
 
@@ -16,7 +15,7 @@ function Gacha() {
       <div id='egg-container'>
         <p className='gacha-title'>What will hatch!?</p>
         
-        <egg onMouseOver={sound.play()}>
+        <egg onMouseEnter={sound.play()}>
         </egg>
       </div>
     </>

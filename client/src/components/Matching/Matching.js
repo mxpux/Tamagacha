@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
+import {Howl} from 'howler';
+import music from '../../assets/musicmatch.mp3'
 import './matching.css'
 import Card from './Card.js'
 //Name & pic link
@@ -66,6 +68,12 @@ const images2 = [
 
 
 ]
+
+const sound = new Howl ({
+  src: [music],
+  loop: true,
+  volume: 0.1,
+});
 
 function Matching() {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
@@ -169,6 +177,7 @@ function Matching() {
 
   return (
     <div>
+      {sound.play()}
       <h1>from matching</h1>
       <div className='container'>
         <div class='row'>

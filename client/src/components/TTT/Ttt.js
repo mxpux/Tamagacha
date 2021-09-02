@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Howl} from 'howler';
 import './ttt.css';
 import player1 from '../../assets/tama2.png';
 import player2 from '../../assets/tama4.png';
