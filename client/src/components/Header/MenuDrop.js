@@ -14,8 +14,8 @@ const MenuDrop = (props) => {
   }, [])
 
   const setMenuItemFunction = () => {
-    const userSignOut = ["Login", "Sign Up", "Characters", "My Tama"];
-    const userSignIn = ["Sign Out", "Characters", "My Tama"]
+    const userSignOut = ["Login", "Sign Up", "Characters"];
+    const userSignIn = ["Profile", "My Tama", "Characters", "Sign Out"]
     if(Auth.loggedIn()) { //user is sign in
       setMenuItem(userSignIn)
     } else { //if user is not login

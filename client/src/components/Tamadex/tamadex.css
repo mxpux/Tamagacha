@@ -1,21 +1,29 @@
-.tamadexcontainer {
-    margin: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+    .tamadexcontainer {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
     }
     
+    .flip-card {
+        width: 300px;
+        height: 200px;
+        perspective: 1000px;
+        margin-bottom: 380px;
+    }
+
     h2 {
         text-align: center;
         font-size: 40px;    
         font-family: 'Schoolbell', cursive;
+        margin-top: 10px;
     }
     
     .tamadexcard {
         background-color: rgb(214, 233, 252);
         width: 300px;
         margin-right: 20px;
-     
     }
     
     .dexcard-body {
@@ -32,14 +40,7 @@
     .card:hover .dexcard-body {
         visibility: visible;
     }
-    
-    
-    .flip-card {
-        width: 300px;
-        height: 200px;
-        perspective: 1000px; 
-    }
-      
+
       .flip-card-inner {
         position: relative;
         width: 100%;
@@ -60,12 +61,14 @@
         -webkit-backface-visibility: hidden; 
         backface-visibility: hidden;
     }
-      
     
       .flip-card-back {
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(250, 247, 247);
         width: 300px;
+        height: 320px;
         color: rgb(91, 88, 88);
         transform: rotateY(180deg);
+        padding: 10px;
+        text-align: center;
     }
         
