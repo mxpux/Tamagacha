@@ -9,13 +9,12 @@ import './myTama.css';
 function MyTama() {
     return (
         <body>
-            <h2>Select your Tama!</h2>
+            <div className="mytamapagetitle">Select your Tama!</div>
+              <div className="mytamacontainer">
+                
 
-            <div className="mytamacontainer">
-
-
+                {/* === TAMA PER CARD === */}
                 <div className="mytamacardcont">
-
                     <div className="mytamamaincard">
                         <div className="icon">
                             <img
@@ -30,10 +29,8 @@ function MyTama() {
                         </div>
                     </div>
 
-                    {/* </div> */}
-
-                    <div className="mytamacardcont">
-
+                    {/* === TAMA PER CARD === */}
+                     <div className="mytamacardcont">
                         <div className="mytamamaincard">
                             <div className="icon">
                                 <img
@@ -48,8 +45,8 @@ function MyTama() {
                             </div>
                         </div>
 
+                    {/* === TAMA PER CARD === */}
                         <div className="mytamacardcont">
-
                             <div className="mytamamaincard">
                                 <div className="icon">
                                     <img
@@ -64,8 +61,8 @@ function MyTama() {
                                 </div>
                             </div>
 
+                    {/* === TAMA PER CARD === */}
                             <div className="mytamacardcont">
-
                                 <div className="mytamamaincard">
                                     <div className="icon">
                                         <img
@@ -78,27 +75,27 @@ function MyTama() {
                                             <p className="mytamatext">Favorite Food: Hamburger</p>
                                         </div>
                                     </div>
-                            
-
                                 </div>
 
-                                <div className="mytamacardcont">
-
-                            <div className="mytamamaincard">
-                                <div className="icon">
-                                    <img
-                                        className="mytamacard-img-top"
-                                        src={tama5}
-                                        alt="Mametchi"
-                                    />
-                                    <div class="mytamatextcont">
-                                        <h5 className="title">Mametchi</h5>
-                                        <p className="mytamatext">Favorite Food: Hamburger</p>
+                    {/* === TAMA PER CARD === */}
+                    <div className="mytamacardcont">
+                                <div className="mytamamaincard">
+                                        <div className="icon">
+                                            <img
+                                                className="mytamacard-img-top"
+                                                src={tama5}
+                                                alt="Mametchi"
+                                            />
+                                            <div class="mytamatextcont">
+                                                <h5 className="title">Mametchi</h5>
+                                                <p className="mytamatext">Favorite Food: Hamburger</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div></div>
 
-                            </div></div>
+                            </div>
+                        </div>
                     </div>
 
 

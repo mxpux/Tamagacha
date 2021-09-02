@@ -3,17 +3,23 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    /* background-color: rgb(240, 240, 174); */
 }
 
 .mytamacardcont{
     justify-content: center;
     align-items: center;
     display: flex;
-    /* background-color: #0ea540; */
     margin:auto;
 }
 
+.mytamapagetitle {
+    color: rgb(64, 176, 224);
+    padding: 60px;
+    text-align: center;
+    font-size: 70px;    
+    font-family: 'Schoolbell', cursive;
+
+}
 
 .mytamacard-img-top{
     background-color: transparent;
@@ -115,7 +121,6 @@
  }
  
  .mytamamaincard:hover .icon i {
-    background: linear-gradient(90deg, #0ea540, #034d05);
     opacity: 1;
     transition: all 0.3s ease;
 
