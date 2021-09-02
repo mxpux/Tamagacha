@@ -60,7 +60,9 @@ export default function Stats ( { userTama }) {
         <div className="col">
           <div className="" id="tama_stats">
             <div className="card card-body">
+
             <h1>{quote}</h1>
+
               <p>Status: {userTama.status} 💖 </p>
               <p>Fullness: {userTama.hunger} / 100 🍛</p>
               <p>Bladder: {userTama.bladder} / 100 🧻</p>

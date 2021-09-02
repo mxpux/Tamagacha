@@ -9,7 +9,7 @@ import Homepage from './components/Homepage/Homepage';
 import Profile from './components/Profile/Profile';
 import Tamadex from './components/Tamadex/Tamadex';
 import Gacha from './components/gacha_page/gacha'
-import MyTama from './components/MyTama/MyTama'; 
+import MyTama from './components/MyTama/MyTama';
 import SelectTama from './components/SelectTama/SelectTama'; //! Duplicate of MyTama, import into mytama
 
 //* MINIGAMES
@@ -47,17 +47,17 @@ function App() {
       {/*  tamadex ✔️, header ✔️, homepage ✔️, */}
       {/* TTT, Matching, myTama, Profile, minigamePage, Gacha, Navigatable pages */}
       <Header handlePageChange={handlePageChange}/>
-      <Homepage />
+      {/* <Homepage /> */}
       {/* {renderPage()} */}
-      {/* <Gacha /> */} 
-      {/* <MinigamePage /> */}
-      <MyTama />
+      {/* <Gacha /> */}
+      <MinigamePage />
+      {/* <MyTama /> */}
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
-      {/* {/* <Ttt /> */}
+      {/* <Matching /> */}
+      {/* <Tamadex /> */}
       {/* <Profile /> */}
-      {/* <Gacha /> */}
     </div>
   );
 }

@@ -13,7 +13,9 @@ import MinigamePage from '../Minigame/Minigamepage'
 
 function Profile () {
   const [stat, setStat] = useState({});
-
+// console.log('stat', stat)
+// console.log('stat', stat.id)
+// console.log('stat', stat.tamas_owned[0])
   const [pageToRender, setPageToRender] = useState(false)
 
   const handlePageChange = () => {
@@ -31,7 +33,7 @@ function Profile () {
     try {
       let u_id = getUserId();
       let ut_id = getCurrentTama();
-      let token = Auth.getToken() 
+      let token = Auth.getToken()
 
       let response = await getTama(u_id, ut_id , token)
 
@@ -62,8 +64,9 @@ function Profile () {
       const ut_id = getCurrentTama();
       const token = Auth.getToken();
       const newHunger = stat.userTama.hunger + 1
-      
+
       let response = await updateTama({hunger: newHunger}, token, ut_id)
+
       console.log(response);
       getUserTamaStats();
     }
@@ -78,13 +81,14 @@ function Profile () {
       const ut_id = getCurrentTama();
       const token = Auth.getToken();
       const newBladder = stat.userTama.bladder + 1
-      
+
       let response = await updateTama({bladder: newBladder}, token, ut_id)
+
       console.log(response);
       getUserTamaStats();
     }
   }
-  
+
 
   return (
 
