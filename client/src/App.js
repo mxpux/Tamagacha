@@ -44,25 +44,20 @@ function App() {
 
   return (
     <div>
-
+      {/*  tamadex ✔️, header ✔️, homepage ✔️, */}
+      {/* TTT, Matching, myTama, Profile, minigamePage, Gacha, Navigatable pages */}
       <Header handlePageChange={handlePageChange}/>
       <Homepage />
       {/* {renderPage()} */}
-      {/* <Gacha /> */}
+      {/* <Gacha /> */} 
       {/* <MinigamePage /> */}
       {/* <MyTama /> */}
       {/* <Matching /> */}
-      {/* <SelectTama /> */}
       {/* <Tamadex /> */}
-      {/* <Ttt2 />*/}
-      {/* <Ttt /> */}
+      {/* <Ttt2 /> */}
       {/* <Matching /> */}
       {/* <Tamadex /> */}
-      {/* <Characters /> */}
-      {/* <Ttt2 /> */}
-      {/* {/* <Ttt /> */}
       <Profile />
-      {/* <Gacha /> */}
     </div>
   );
 }
