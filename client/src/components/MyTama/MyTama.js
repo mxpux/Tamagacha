@@ -22,9 +22,12 @@ function MyTama() {
                     {/* <div className="card-body"> */}
                     <div class="mytamatextcont">
                         <h5 className="title">Mametchi</h5>
-                        <p className="text">Favorite Food: Hamburger</p>
+                        <p className="mytamatext">Favorite Food: Hamburger</p>
                     </div>
                     </div>
+
+
+                    
                 {/* </div> */}
 
 
