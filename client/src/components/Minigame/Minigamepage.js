@@ -1,35 +1,113 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import tamaMatch from '../../assets/match-thumb.png';
 import tamaTTT from '../../assets/ttt-thumb.png';
 import './minigamepage.css';
 import Ttt2 from '../TTT2/Ttt2'
 import Matching from '../Matching/Matching'
+import  { getUserId, getCurrentTama }  from '../../utils/localStorage'
+import { getTama, updateTama } from '../../utils/API';
+import Auth from '../../utils/auth' //gettoken
 
 function MinigamePage() {
+    //set page render
     const [page, setPage] = useState('MiniGame')
-    const [buttonClick, setButtonClick] = useState(false)
+    const [buttonClick, setButtonClick] = useState(false) //When either game got click
+    const [userWin, setUserWin] = useState() //When game play is over userWin will set either true/false
 
+
+    //for tama data
+    const [currentTamaData, setCurrentTamaDate] = useState({})
+
+    //When page first render run the 'getCurrentUserTama()' to get all usertama data
+    useEffect(() => {
+        getCurrentUserTama()
+    },[])
+
+    //Watch to see if the game is over, once is done set the happiness
+    useEffect(() => {
+        setHappiness()
+        updateUserTama()
+    },[userWin])
+
+
+    //function to pass down to both game to set 'userWin' state
+     const userGameStatus = (value) => {
+        setUserWin(value)
+    }
+
+    //Set happinessssssss + 10 if user won
+    const setHappiness = () => {
+        if(userWin) {
+            setCurrentTamaDate(prevState => {
+                prevState.userTama.happiness += 10;
+                if(prevState.userTama.happiness >= 100) {
+                    prevState.userTama.happiness = 100;
+                }
+                return prevState;
+            })
+        }
+    }
+
+    //////////////For render page /////////////
+    //check which game got click
     const handleOnClick = (page) => {
         setButtonClick(true)
         setPage(page)
     }
-
+    //render page when user click on either game
     const renderPageFunction = (page) => {
         if(page === 'Matching') {
-            return <Matching />
+            return <Matching userGameStatus={userGameStatus}/>
         } else if (page === 'Ttt2') {
-            return <Ttt2 />
+            return <Ttt2 userGameStatus={userGameStatus}/>
         } else {
             //nothing
         }
     }
 
+    //get current usertama data and set it to the state 'currentTamaData'
+    const getCurrentUserTama = async () => {
+        try {
+            let u_id = getUserId(); // from local
+            let ut_id = getCurrentTama(); // from local
+            let token = Auth.getToken() // from local
+
+            // let response = await getTama(u_id, ut_id , token)
+            //Testing
+            let response = await getTama(1,1, token)
 
 
+            if (!response.ok) {
+                throw new Error('Something went wrong!')
+              };
+            let data = await response.json();
+            setCurrentTamaDate(data)
+        }
+        catch (err) {
+            console.log('error--->', err)
+        }
+    }
 
+    const updateUserTama = async () => {
+        try {
+            let ut_id = getCurrentTama(); // from local
+            let token = Auth.getToken() // from local
+            // let response = await updateTama(currentTamaData, token, ut_id)
 
-    // each game will need a onclick.
-    // When click render diff things
+            //testing
+            let response = await updateTama(currentTamaData, token, 1)
+
+            if (!response.ok) {
+                throw new Error('Something went wrong!')
+              };
+
+            console.log('update sucess')
+        }
+        catch (err) {
+            console.log('error---->', err)
+        }
+    }
+
     return (
         <>
         {buttonClick ? renderPageFunction(page) : ( <div className="minigame-container">
