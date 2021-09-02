@@ -52,7 +52,7 @@ function App() {
       {/* <MinigamePage /> */}
       {/* <Ttt /> */}
       {/* <Matching /> */}
-
+      < MyTama />
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Ttt /> */}
