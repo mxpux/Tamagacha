@@ -10,7 +10,7 @@ import  { getUserId }  from '../../utils/localStorage'
 import { getUser } from '../../utils/API';
 import Auth from '../../utils/auth'
 import MinigamePage from '../Minigame/Minigamepage'
-console.log('gtuserid', getUserId)
+
 
 // function getUserTamaStats () {
 //     return fetch ('/api/usertama/unique/1') //! Need user id or userTama id for the parameters
@@ -20,7 +20,8 @@ console.log('gtuserid', getUserId)
 
 
 function Profile () {
-  const [stat, setStat] = useState();
+  const [stat, setStat] = useState({});
+
   const [pageToRender, setPageToRender] = useState(false)
 
   const handlePageChange = () => {
@@ -37,18 +38,18 @@ function Profile () {
    const getUserTamaStats = async () => {
     try {
       let userId = await getUserId()
-      console.log('aaaaa', userId)
+      // console.log('aaaaa', userId)
       let token = await Auth.getToken() //Do we need the token?
-      console.log('token', token)
-      let response = await getUser(userId)
-      console.log('response', response)
+      // console.log('token', token)
+      let response = await getUser(1) //Hard coded for now
+      // console.log('response', response)
 
       if (!response.ok) {
         throw new Error('Something went wrong!')
       };
 
       let data = await response.json()
-      console.log('data----->', data)
+      // console.log('data----->', data)
       setStat(data)
     }
     catch (err){
@@ -58,7 +59,9 @@ function Profile () {
 
 
   useEffect(() => {
-    getUserTamaStats()
+
+      getUserTamaStats()
+
   },[])
 
   const feedTama = () => {
@@ -75,11 +78,12 @@ function Profile () {
     {pageToRender ? <MinigamePage /> : (<tama id="profile">
         <h2>'Placeholder name'</h2>
         <pfp>
-          <img id='tama' src={tama4}/>
+          <img id='tama' src={tama4} alt=''/>
         </pfp>
         <div className="row btnRow">
-          {/* <Stats userTama={stat.tamas_owned.userTama}/> */}
-          {/* <Stats /> */}
+        {stat.tamas_owned && stat.tamas_owned[0] && <Stats userTama={stat.tamas_owned[0].userTama} />}
+          {/* <Stats userTama={stat.tamas_owned[0].userTama} />
+          <Stats userTama={stat} /> */}
         </div>
         <div className="row btnRow">
           <button

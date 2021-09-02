@@ -47,10 +47,10 @@ function App() {
 
       <Header handlePageChange={handlePageChange}/>
       <Homepage />
-      {renderPage()}
+      {/* {renderPage()} */}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
-      {/* <Ttt /> */}
+      {/* <MyTama /> */}
       {/* <Matching /> */}
       {/* <SelectTama /> */}
       {/* <Tamadex /> */}
@@ -61,7 +61,7 @@ function App() {
       {/* <Characters /> */}
       {/* <Ttt2 /> */}
       {/* {/* <Ttt /> */}
-      {/* <Profile /> */}
+      <Profile />
       {/* <Gacha /> */}
     </div>
   );
