@@ -37,6 +37,7 @@ li {
 
 li:hover {
     font-weight: bold;
+    color:rgb(64, 176, 224);
 }
 
 li span {
