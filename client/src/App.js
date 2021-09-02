@@ -50,8 +50,8 @@ function App() {
       {/* <Homepage /> */}
       {/* {renderPage()} */}
       {/* <Gacha /> */}
-      <MinigamePage />
-      {/* <MyTama /> */}
+      {/* <MinigamePage /> */}
+      <MyTama />
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
