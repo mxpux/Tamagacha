@@ -10,6 +10,7 @@ import Profile from './components/Profile/Profile';
 import Gacha from './components/gacha_page/gacha'
 
 import MinigamePage from './components/Minigame/Minigamepage';
+import MyTama from './components/MyTama/MyTama';
 
 import Matching from './components/Matching/Matching';
 
@@ -48,17 +49,22 @@ function App() {
     <div>
 
       <Header handlePageChange={handlePageChange}/>
-      {/* <Homepage />
-      {renderPage()} */}
-     
+      {/* <Homepage /> */}
+      {/* {renderPage()} */}
+      {/* <Gacha /> */}
       {/* <MinigamePage /> */}
+      {/* <MyTama /> */}
+      {/* <Matching /> */}
+      {/* <SelectTama /> */}
+      {/* <Ttt2 />*/}
       {/* <Ttt /> */}
       {/* <Matching /> */}
-
       {/* <Characters /> */}
       <Tamadex />
       {/* <Ttt2 /> */}
-      {/* <Ttt /> */}
+      {/* {/* <Ttt /> */}
+      {/* <Profile /> */}
+      {/* <Gacha /> */}
     </div>
   );
 }
