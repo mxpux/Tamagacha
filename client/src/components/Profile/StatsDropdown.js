@@ -59,7 +59,7 @@ export default function Stats ( { userTama }) {
       <div className="row">
         <div className="col">
           <div className="" id="tama_stats">
-            <div className="card card-body">
+            <div className="cardprofile">
 
             <h1>{quote}</h1>
 
