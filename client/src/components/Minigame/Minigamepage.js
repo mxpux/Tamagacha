@@ -116,7 +116,7 @@ function MinigamePage() {
         {buttonClick ? renderPageFunction(page) : ( <div className="minigame-container">
 
         <div className="minigame-cardcontainer">
-             <h2 class="minigame-title">Which Minigame would you like to play?</h2>
+             <h2 className="minigame-title">Which Minigame would you like to play?</h2>
 
             <div className="minigame-card">
                 <h3>Matching Game</h3>

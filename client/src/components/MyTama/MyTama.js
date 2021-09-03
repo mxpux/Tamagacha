@@ -76,7 +76,7 @@ function MyTama() {
                                         name="tama1"
                                         alt="Mametchi"
                                     />
-                                    <div class="mytamatextcont">
+                                    <div className="mytamatextcont">
                                         <h5 className="title">{tama.name}</h5>
                                         <p className="mytamatext">
                                             Happiness: {tama.userTama.happiness} <br />

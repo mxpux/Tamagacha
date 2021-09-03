@@ -10,20 +10,20 @@ import '../Header/Header';
 function Homepage() {
     return (
         <body>
-            <div class="x">
-                <img class="y" src={tama1} alt="tamago"/>
+            <div className="x">
+                <img className="y" src={tama1} alt="tamago"/>
             </div>
-            <div class="x2">
-                <img class="y2" src={tama2} alt="tamago"/>
+            <div className="x2">
+                <img className="y2" src={tama2} alt="tamago"/>
             </div>
-            <div class="x3">
-                <img class="y3" src={tama3} alt="tamago"/>
+            <div className="x3">
+                <img className="y3" src={tama3} alt="tamago"/>
             </div>
-            <div class="x4">
-                <img class="y4" src={tama4} alt="tamago"/>
+            <div className="x4">
+                <img className="y4" src={tama4} alt="tamago"/>
             </div>
-            <div class="x5">
-                <img class="y5" src={tama5} alt="tamago"/>
+            <div className="x5">
+                <img className="y5" src={tama5} alt="tamago"/>
             </div>
 
         </body>

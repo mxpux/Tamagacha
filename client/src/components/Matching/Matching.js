@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
+import {Howl} from 'howler';
+import music from '../../assets/musicmatch.mp3'
 import './matching.css'
 import Card from './Card.js'
 import Profile from '../Profile/Profile'
@@ -68,8 +70,14 @@ const images2 = [
 
 ]
 
+const sound = new Howl ({
+  src: [music],
+  volume: 0.1,
+});
+
 function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
+  
 
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])
@@ -180,7 +188,7 @@ function Matching( { userGameStatus }) {
         <div>
           <h1>from matching</h1>
           <div className='container'>
-            <div class='row'>
+            <div className='row'>
               {randomImageLink.map((item, index) => {
                 return (
                   <Card

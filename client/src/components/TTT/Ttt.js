@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Howl} from 'howler';
 import './ttt.css';
 import player1 from '../../assets/tama2.png';
 import player2 from '../../assets/tama4.png';
@@ -137,7 +138,7 @@ const Ttt = () => {
 			</table>
 			{winner && (
 				<>
-					<p class="tttwinner">{winner} is the winner!</p>
+					<p className="tttwinner">{winner} is the winner!</p>
 					<button onClick={() => handleRestart()}>Play Again</button>
 				</>
 			)}
