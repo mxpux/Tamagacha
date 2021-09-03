@@ -25,27 +25,50 @@ function MinigamePage() {
 
     //Watch to see if the game is over, once is done set the happiness
     useEffect(() => {
+        const setHappiness = () => {
+            if(userWin) {
+                setCurrentTamaDate(prevState => {
+                    prevState.userTama.happiness += 10;
+                    if(prevState.userTama.happiness >= 100) {
+                        prevState.userTama.happiness = 100;
+                    }
+                    return prevState;
+                })
+            }
+            setUserWin(false);
+        }
+
+        const updateUserTama = async () => {
+            try {
+                let ut_id = getCurrentTama(); // from local
+                let token = Auth.getToken() // from local
+                console.log("currentTamaData", currentTamaData);
+                let response = await updateTama({happiness: currentTamaData.userTama.happiness}, token, ut_id)
+                
+    
+                //testing
+                // let response = await updateTama(currentTamaData, token, 1)
+    
+                if (!response.ok) {
+                    throw new Error('Something went wrong!')
+                  };
+                let data = await response.json()
+                console.log(data)  
+                console.log('update sucess')
+            }
+            catch (err) {
+                console.log('error---->', err)
+            }
+        }
+
         setHappiness()
         updateUserTama()
-    },[userWin])
+    },[currentTamaData, userWin])
 
 
     //function to pass down to both game to set 'userWin' state
      const userGameStatus = (value) => {
         setUserWin(value)
-    }
-
-    //Set happinessssssss + 10 if user won
-    const setHappiness = () => {
-        if(userWin) {
-            setCurrentTamaDate(prevState => {
-                prevState.userTama.happiness += 10;
-                if(prevState.userTama.happiness >= 100) {
-                    prevState.userTama.happiness = 100;
-                }
-                return prevState;
-            })
-        }
     }
 
     //////////////For render page /////////////
@@ -85,29 +108,6 @@ function MinigamePage() {
         }
         catch (err) {
             console.log('error--->', err)
-        }
-    }
-
-    const updateUserTama = async () => {
-        try {
-            let ut_id = getCurrentTama(); // from local
-            let token = Auth.getToken() // from local
-            console.log(currentTamaData)
-            let response = await updateTama(currentTamaData, token, ut_id)
-            
-
-            //testing
-            // let response = await updateTama(currentTamaData, token, 1)
-
-            if (!response.ok) {
-                throw new Error('Something went wrong!')
-              };
-            let data = await response.json()
-            console.log(data)  
-            console.log('update sucess')
-        }
-        catch (err) {
-            console.log('error---->', err)
         }
     }
 
