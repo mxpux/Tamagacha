@@ -62,7 +62,7 @@ function App() {
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage /> */}
       {renderPage()}
-      {/* <Gacha /> */}
+      <Gacha />
       {/* <MinigamePage /> */}
       {/* <MyTama /> */}
       {/* <Matching /> */}
