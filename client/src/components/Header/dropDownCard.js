@@ -126,27 +126,28 @@ const liCls =
         //if username/email/password are empty
         if(userInput[0] === '' || userInput[1] === '' || userInput[2] === '') {
           // Return SweetAlert - All Fields are Required!
-          Swal.fire({
+          await Swal.fire({
             icon: 'error',
             title: `All Fields are Required!`,
             timer: 1500
           })
           //if invalid email
         } else if (!validateEmail(userInput[1])) {
-          Swal.fire({
+          await Swal.fire({
             icon: 'error',
             title: `Invalid Email!`,
             timer: 1500
           })
           //if password is less then 6 characters
         } else if (userInput[2].length < 6) {
-          Swal.fire({
+          await Swal.fire({
             icon: 'error',
             title: `Password must be at least 6 characters!`,
             timer: 1500
           })
-        } else if(getAllUserEmail(userInput[1])) {
-          Swal.fire({
+        } else if(await getAllUserEmail(userInput[1])) {
+          console.log('hahahahaha', await getAllUserEmail(userInput[1]))
+          await Swal.fire({
             icon: 'error',
             title: `The Email address is already in use!`,
             timer: 1500
@@ -169,14 +170,14 @@ const liCls =
             console.log('response.json() userData signup', userData)
             Auth.login(token, userData.id);
 
-            Swal.fire({
+            await Swal.fire({
               icon: 'success',
               title: `${userInput[0]} Sign Up `,
               timer: 1500
             })
           } catch (err) {
             console.error(err)
-            Swal.fire({
+            await Swal.fire({
               icon: 'error',
               title: `Something wrong with logging in`,
               timer: 1500
