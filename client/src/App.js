@@ -57,8 +57,6 @@ function App() {
 
   return (
     <div>
-      {/*  tamadex ✔️, header ✔️, homepage ✔️, */}
-      {/* TTT, Matching, myTama, Profile, minigamePage, Gacha, Navigatable pages */}
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage /> */}
       {renderPage()}

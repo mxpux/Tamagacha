@@ -23,7 +23,7 @@ function Ttt2 ( {userGameStatus} ) {
   // },[userWon])
 
   useEffect(() => {
-		console.log('useeffect run on the boxes')
+		// console.log('useeffect run on the boxes')
     winningComb([...boxes])
 
   },[boxes])
@@ -129,12 +129,12 @@ function Ttt2 ( {userGameStatus} ) {
 		}
 
     setBoxes(prevState => {
-      console.log('prevvvvv beforee', prevState)
+      // console.log('prevvvvv beforee', prevState)
       prevState[num] = playerOne;
 			if(gameOver === false)  {
 				setComputerMove()
 			}
-      console.log('prevvvvv afterrrrr', prevState)
+      // console.log('prevvvvv afterrrrr', prevState)
       return [...prevState]
     })
     // squares[num] = playerOne;
