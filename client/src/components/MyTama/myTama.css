@@ -20,6 +20,10 @@
     text-align: center;
     font-size: 70px;    
     font-family: 'Schoolbell', cursive;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+  
 }
 
 .mytamacard-img-top{
@@ -67,6 +71,8 @@
     transition: all 0.8s ease;
     background-position: 0px;
     background-size: 400px;
+    font-weight: bolder;
+    font-size: 14px;
  }
  
 
@@ -166,24 +172,34 @@
      border-radius: 50%;
      margin-top: -50px;
      font-family: 'Schoolbell', cursive;
-     size: 40px;
-     color: white;
-
-     
+     font-size: 30px;
+     color: white;  
  }
 
  .mytamabutton:hover {
-    background-color: rgb(154, 162, 224);
-    border-color: rgb(255, 255, 255);
-    /* border-style: dotted;
-    border-width: 3px; */
-
      padding: 30px;
      border-radius: 50%;
      font-family: 'Schoolbell', cursive;
-     size: 40px;
-     color: white;
+     font-size: 30px;
 
  }
+
+
+ .mytamagachabutton {
+    font-family: 'Schoolbell', cursive;
+    font-size: 30px;
+    background-color:cornsilk;
+    border-radius: 3%;
+    font-size: 20px;
+    padding: 10px;    
+    font-family: 'Schoolbell', cursive;
+    margin: 0;
+    position: fixed;
+    top: 330px;
+    left: 56%;
+    color: rgb(64, 176, 224)
+ }
+
+
 
  

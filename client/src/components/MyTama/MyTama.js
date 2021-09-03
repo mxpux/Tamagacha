@@ -51,7 +51,9 @@ function MyTama() {
             {tamasOwned.map((tama) => {
                 return (
                     <div key={tama.userTama.id} className="mytamacontainer">
-
+                    <button className="mytamagachabutton"> Get a Tama! </button>
+                    
+            {/* ===END OF TITLE AND GACHA BUTTON=== */}
                         
                         {/* === TAMA PER CARD === */}
                         <div className="mytamacardcont">
