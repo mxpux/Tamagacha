@@ -69,7 +69,7 @@ export default function Stats ( { userTama }) {
               <p>Happiness: {userTama.happiness} / 100 
               {emoji}
                </p>
-              <p>Age: {userTama.age/60} minutes ⏲️ </p>
+              <p>Age: {Math.round(userTama.age/60)} minutes ⏲️ </p>
               <p>Birthday: {userTama.date_created.split('T')[0]} 🎂</p>
             </div>
           </div>

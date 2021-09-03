@@ -36,8 +36,19 @@ export const getUser = (u_id, token) => {
   });
 };
 
-export const getTama = (u_id, ut_id, token) => {
-  return fetch(`/api/usertama/${u_id}/${ut_id}`, {
+export const getTama = (u_id, t_id, token) => {
+  console.log(`u_id ${u_id}, t_id ${t_id}, token ${token}`)
+  return fetch(`/api/usertama/${u_id}/${t_id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const getUniqueTama = (ut_id, token) => {
+  console.log(`ut_id ${ut_id}, token ${token}`)
+  return fetch(`/api/usertama/uniquetama/${ut_id}`, {
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
@@ -49,7 +60,7 @@ export const updateTama = (tamaData, token, ut_id) => {
   //tamaData should be the userTama object that the user owns
   //ut_id, tamaData (happiness change), token Auth.getToken(0)
   console.log('tamaData to PUT', tamaData)
-  return fetch(`/api/usertama/unique/${ut_id}`, {
+  return fetch(`/api/usertama/uniquetama/${ut_id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

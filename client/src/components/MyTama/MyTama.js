@@ -6,7 +6,7 @@ import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
 import Gacha from "../gacha_page/gacha";
 import Profile from "../Profile/Profile";
-import { getUser } from "../../utils/API";
+import { getUser, newTama } from "../../utils/API";
 import Auth from '../../utils/auth';
 import { getUserId, setCurrentTama } from "../../utils/localStorage";
 import './myTama.css';
@@ -45,6 +45,24 @@ function MyTama() {
     getUserData();
   }, []);
 
+  const gachaPull = async () => {
+      const u_id = getUserId();
+      const token =  Auth.getToken()
+
+      const response = await newTama(u_id, token)
+      if (!response.ok) {
+          return
+      }
+      
+      console.log('gacha pull response: ', response)
+      const data = await response.json();
+      console.log('gacha pull data: ', data);
+      if (setCurrentTama(data.id)) {
+          setCurrentTama(data.id)
+      };
+      
+  }
+
   const handleSelectTama = (tama_id) => {
     setCurrentTama(tama_id);
     setButtonClick(true);
@@ -58,7 +76,9 @@ function MyTama() {
 
   const renderPageFunction = (page) => {
     if(page === 'Gacha'){
-      return <Gacha />
+        gachaPull()
+
+        return <Gacha />
     } else {
       return <Profile />
     }

@@ -88,8 +88,25 @@ router.get('/me', authMiddleware, async (req, res) => {
     res.status(500).json(err);
   }
 })
+
+router.get('/uniquetama/:ut_id', authMiddleware, async (req, res) => {
+  try{
+    const dbUserTamaData = await UserTama.findByPk(req.params.ut_id);
+
+    if (!dbUserTamaData) {
+      res.status(404).json({ message: `No user or tama with user id of ${req.params.u_id} or tama id of ${req.params.t_id}!`})
+    };
+
+    res.status(200).json(dbUserTamaData);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 //ONE USER ONE TAMA
-router.get('/:u_id/:t_id', async (req, res) => {
+router.get('/:u_id/:t_id', authMiddleware, async (req, res) => {
   try {
     const dbUserTamaData = await User.findByPk(req.params.u_id,
     {
@@ -121,6 +138,8 @@ router.get('/:u_id/:t_id', async (req, res) => {
   }
 })
 
+
+
 //ONE USER ONE TAMA CHANGE STATS
 router.put('/unique/:ut_id', async (req, res) => {
   try{
@@ -145,12 +164,12 @@ router.put('/unique/:ut_id', async (req, res) => {
 })
 
 //ONE USER ONE TAMA CHANGE STATS (WITH USER TOKEN)
-router.put('/unique/', authMiddleware, async (req, res) => {
+router.put('/uniquetama/:ut_id', authMiddleware, async (req, res) => {
   try{
     const dbUserTamaData = await UserTama.update(
       req.body, {
         where: {
-          id: req.body.id // |Make changes to unique row in UserTama |
+          id: req.params.ut_id // |Make changes to unique row in UserTama |
         }
       }
     );
@@ -179,12 +198,15 @@ router.post('/:u_id/:t_id', authMiddleware, async (req, res) => {
       hunger: 100,
       happiness: 100,
       bladder: 100,
-      status: 10
+      status: 10,
+      is_alive: true,
+      is_awake: true,
     });
 
     const usertama = newUserTama.get({ plain: true })
+    console.log('POST usertama data', usertama);
     res.status(200).json(usertama);
-  } catch {
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
