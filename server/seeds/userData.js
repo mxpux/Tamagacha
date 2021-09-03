@@ -9,17 +9,17 @@ const userData = [
   {
     username: 'maria',
     email: 'maria@mail.com',
-    password: 'maria1234'
+    password: '$2b$10$J.QAdHBeBab7y84f6MEkju9b1/eG.jeesOSwvlSi54dAw7FfiTJjG'
   },
   {
     username: 'johnny',
     email: 'johnny@mail.com',
-    password: 'johnny1234'
+    password: '$2b$10$J.QAdHBeBab7y84f6MEkju9b1/eG.jeesOSwvlSi54dAw7FfiTJjG'
   },
   {
     username: 'samantha',
     email: 'samantha@mail.com',
-    password: 'samantha1234'
+    password: '$2b$10$J.QAdHBeBab7y84f6MEkju9b1/eG.jeesOSwvlSi54dAw7FfiTJjG'
   },
   {
     username: 'eddie',
