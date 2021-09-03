@@ -11,78 +11,83 @@ import './myTama.css';
 
 
 function MyTama() {
-  const [tamasOwned, setTamaOwned] = useState([]);
+    const [tamasOwned, setTamaOwned] = useState([]);
 
-  const getUserData = async () => {
-    try {
-      const user_id = getUserId();
-      const token = Auth.loggedIn() ? Auth.getToken() : null;
+    const getUserData = async () => {
+        try {
+            const user_id = getUserId();
+            const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-      if (!token) {
-        throw new Error("Not logged in!");
-      }
-      console.log("token", token);
+            if (!token) {
+                throw new Error("Not logged in!");
+            }
+            console.log("token", token);
 
-      const response = await getUser(user_id, token);
+            const response = await getUser(user_id, token);
 
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
-      const user = await response.json();
-      console.log(user);
-      setTamaOwned(user.tamas_owned);
-      console.log("tamasOwned", tamasOwned);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+            if (!response.ok) {
+                throw new Error("something went wrong!");
+            }
+            const user = await response.json();
+            console.log(user);
+            setTamaOwned(user.tamas_owned);
+            console.log("tamasOwned", tamasOwned);
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
-  useEffect(() => {
-    getUserData();
-  }, []);
+    useEffect(() => {
+        getUserData();
+    }, []);
 
-  const handleSelectTama = (tama_id) => {
-    setCurrentTama(tama_id);
-  };
+    const handleSelectTama = (tama_id) => {
+        setCurrentTama(tama_id);
+    };
 
-  return (
-    <body>
-      <div className="mytamapagetitle">Select your Tama!</div>
-      {tamasOwned.map((tama) => {
-        return (
-          <div className="mytamacontainer">
-            {/* === TAMA PER CARD === */}
-            <div className="mytamacardcont">
-              <div className="mytamamaincard">
-                <div className="icon">
-                  <img
-                    className="mytamacard-img-top"
-                    src={tama1}
-                    name="tama1"
-                    alt="Mametchi"
-                  />
-                  <div class="mytamatextcont">
-                    <h5 className="title">{tama.name}</h5>
-                    <p className="mytamatext">
-                        Happiness: {tama.userTama.happiness} <br/>
-                        Bladder: {tama.userTama.bladder} <br/>
-                        Hunger: {tama.userTama.hunger}</p>
-                 
-                  </div>
-                  <button
-                    onClick={() => handleSelectTama(tama.userTama.id)}
-                    className="btn btn-success"
-                  >
-                    Select this tama!
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </body>
-  );
+    return (
+        <body>
+            <div className="mytamapagetitle">Select your Tama!</div>
+            {tamasOwned.map((tama) => {
+                return (
+                    <div key={tama.userTama.id} className="mytamacontainer">
+
+                        
+                        {/* === TAMA PER CARD === */}
+                        <div className="mytamacardcont">
+                            <div className="mytamamaincard">
+
+   <div>
+                                    <button
+                                        onClick={() => handleSelectTama(tama.userTama.id)}
+                                        className="mytamabutton"> Select!
+                                    </button>
+                                </div>
+
+                                <div className="icon">
+                                    <img
+                                        className="mytamacard-img-top"
+                                        src={tama2}
+                                        name="tama1"
+                                        alt="Mametchi"
+                                    />
+                                    <div class="mytamatextcont">
+                                        <h5 className="title">{tama.name}</h5>
+                                        <p className="mytamatext">
+                                            Happiness: {tama.userTama.happiness} <br />
+                                            Bladder: {tama.userTama.bladder} <br />
+                                            Hunger: {tama.userTama.hunger} <br />
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            })}
+        </body>
+    );
 }
 
 export default MyTama;
