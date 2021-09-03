@@ -90,14 +90,7 @@ function MyTama() {
       : (
         <body>
           <div className="mytamapagetitle">Select your Tama!</div>
-          {tamasOwned.map((tama) => {
-            return (
-              <div key={tama.userTama.id} className="mytamacontainer">
-                {/* <button className="mytamagachabutton"> Get a Tama! </button> */}
-
-                {/* ===END OF TITLE AND GACHA BUTTON=== */}
-
-                <div class="wrappergachabutton">
+          <div class="wrappergachabutton">
                   <div class="icongachabutton egggachabutton" onClick={() =>{handleOnClick('Gacha')}}>
                     <div class="toolgachabutton">Get a Tama!</div>
                     <span>
@@ -105,6 +98,14 @@ function MyTama() {
                     </span>
                   </div>
                 </div>
+          {tamasOwned.map((tama) => {
+            return (
+              <div key={tama.userTama.id} className="mytamacontainer">
+                {/* <button className="mytamagachabutton"> Get a Tama! </button> */}
+
+                {/* ===END OF TITLE AND GACHA BUTTON=== */}
+
+
 
                 {/* TRIAL BUTTON */}
 
