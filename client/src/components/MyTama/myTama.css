@@ -29,7 +29,8 @@
     margin-left: 30px;
     display: flex;
     width: 200px;
-    height: 200px
+    height: 200px;
+    margin-top: -70px;
 }
 
 .mytamamaincard {
@@ -66,6 +67,8 @@
     transition: all 0.8s ease;
     background-position: 0px;
     background-size: 400px;
+    font-weight: bolder;
+    font-size: 14px;
  }
  
 
@@ -156,6 +159,24 @@
      margin-left: -220px;  
      margin-top: 60px;
      transition: all 0.8s ease;
+
+ }
+
+ .mytamabutton {
+    background-color: rgb(187, 192, 228);
+     padding: 30px;
+     border-radius: 50%;
+     margin-top: -50px;
+     font-family: 'Schoolbell', cursive;
+     font-size: 30px;
+     color: white;  
+ }
+
+ .mytamabutton:hover {
+     padding: 30px;
+     border-radius: 50%;
+     font-family: 'Schoolbell', cursive;
+     font-size: 30px;
 
  }
 

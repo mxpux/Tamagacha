@@ -72,9 +72,9 @@ function MinigamePage() {
             let ut_id = getCurrentTama(); // from local
             let token = Auth.getToken() // from local
 
-            // let response = await getTama(u_id, ut_id , token)
+            let response = await getTama(u_id, ut_id , token)
             //Testing
-            let response = await getTama(1,1, token)
+            // let response = await getTama(1,1, token)
 
 
             if (!response.ok) {
@@ -92,15 +92,18 @@ function MinigamePage() {
         try {
             let ut_id = getCurrentTama(); // from local
             let token = Auth.getToken() // from local
-            // let response = await updateTama(currentTamaData, token, ut_id)
+            console.log(currentTamaData)
+            let response = await updateTama(currentTamaData, token, ut_id)
+            
 
             //testing
-            let response = await updateTama(currentTamaData, token, 1)
+            // let response = await updateTama(currentTamaData, token, 1)
 
             if (!response.ok) {
                 throw new Error('Something went wrong!')
               };
-
+            let data = await response.json()
+            console.log(data)  
             console.log('update sucess')
         }
         catch (err) {
