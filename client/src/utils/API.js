@@ -37,7 +37,8 @@ export const getUser = (u_id, token) => {
 };
 
 export const getTama = (u_id, ut_id, token) => {
-  return fetch(`/api/usertama/${u_id}/${ut_id}`, {
+  console.log(`u_id ${u_id}, ut_id ${ut_id}, token ${token}`)
+  return fetch(`/api/usertama/uniquetama/${ut_id}`, {
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,

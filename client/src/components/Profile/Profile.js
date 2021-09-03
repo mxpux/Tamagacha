@@ -13,6 +13,7 @@ import MinigamePage from '../Minigame/Minigamepage'
 
 function Profile () {
   const [stat, setStat] = useState({});
+  const [tama, setTama] = useState({})
 // console.log('stat', stat)
 // console.log('stat', stat.id)
 // console.log('stat', stat.tamas_owned[0])
@@ -99,7 +100,7 @@ function Profile () {
           <img id='tama' src={stat.pictures} alt=''/>
         </pfp>
         <div className="row btnRow">
-        {stat.userTama && stat.name && <Stats userTama={stat.userTama} name={stat.name} />}
+        {stat.id && <Stats userTama={stat} name={stat.name} />}
           {/* <Stats userTama={stat.tamas_owned[0].userTama} />
           <Stats userTama={stat} /> */}
         </div>
