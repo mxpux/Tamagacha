@@ -53,7 +53,7 @@ function Profile () {
 
   useEffect(() => {
       getUserTamaStats()
-  },[])
+  }, [])
 
   const feedTama = async () => {
     console.log('hunger stat', stat.userTama.hunger)
@@ -96,7 +96,7 @@ function Profile () {
     {pageToRender ? <MinigamePage /> : (<tama id="profile">
         <h2>{stat.name}</h2>
         <pfp>
-          <img id='tama' src={tama4} alt=''/>
+          <img id='tama' src={stat.pictures} alt=''/>
         </pfp>
         <div className="row btnRow">
         {stat.userTama && stat.name && <Stats userTama={stat.userTama} name={stat.name} />}

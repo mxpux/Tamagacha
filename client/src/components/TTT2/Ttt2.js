@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ttt2.css';
 import Swal from 'sweetalert2'
+import Profile from '../Profile/Profile'
 
 import player1 from '../../assets/tama2.png';
 import player2 from '../../assets/tama4.png';
@@ -15,6 +16,7 @@ function Ttt2 ( {userGameStatus} ) {
   const [winner, setWinner] = useState(null); //<img src={player1} alt="player1" className='ttt2-inline'/>
   const [userWon, setUserWon] = useState(false) //if user won - value set to true
 	const [gameOver, setGameOver] = useState(false);
+	const [backToProfile ,setBackToProfile] = useState(false)
 
 	// useEffect(() => {
 
@@ -107,10 +109,14 @@ function Ttt2 ( {userGameStatus} ) {
 						prevState[randomIndex()] = playerTwo;
 						return [...prevState]
 					})
-			} 
+			}
 		},750)
 
 	}
+
+	const handleBackButtonClick = () => {
+    setBackToProfile(true)
+  }
 
   const handleClick = (num) => {
     if (boxes[num] !== '') {
@@ -152,13 +158,13 @@ function Ttt2 ( {userGameStatus} ) {
 	};
 
 	return (
-		<div className='tttcontainer'>
+		<>
+		{backToProfile ? <Profile /> : (
+			<div className='tttcontainer'>
 			<div>
 				<div className='ttt2-charOne'>{playerOne}<h3>User</h3></div>
 				<div className='ttt2-charTwo'>{playerTwo}<h3>Com</h3></div>
 			</div>
-
-
 			<table>
 				{/* Turn: {turn} */}
 				<tbody>
@@ -181,11 +187,16 @@ function Ttt2 ( {userGameStatus} ) {
 			</table>
 			{winner && (
 				<>
-					<p class="tttwinner">{winner} is the winner!</p>
+					<p className="tttwinner">{winner} is the winner!</p>
 					<button onClick={() => handleRestart()}>Play Again</button>
 				</>
 			)}
+			{gameOver ? <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
 		</div>
+		)}
+
+
+		</>
 	);
 }
 

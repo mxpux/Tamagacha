@@ -4,6 +4,7 @@ import tama2 from '../../assets/tama2.png';
 import tama3 from '../../assets/tama3.png';
 import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
+import Profile from "../Profile/Profile";
 import { getUser } from "../../utils/API";
 import Auth from '../../utils/auth';
 import { getUserId, setCurrentTama } from "../../utils/localStorage";
@@ -12,6 +13,7 @@ import './myTama.css';
 
 function MyTama() {
     const [tamasOwned, setTamaOwned] = useState([]);
+    const [backToProfile, setBackToProfile] = useState(false)
 
     const getUserData = async () => {
         try {
@@ -42,10 +44,14 @@ function MyTama() {
     }, []);
 
     const handleSelectTama = (tama_id) => {
-        setCurrentTama(tama_id);
+        setCurrentTama(tama_id)
+        setBackToProfile(true)
     };
 
+
     return (
+      <>
+      {backToProfile ? <Profile /> : (
         <body>
             <div className="mytamapagetitle">Select your Tama!</div>
             {tamasOwned.map((tama) => {
@@ -58,22 +64,21 @@ function MyTama() {
                         {/* === TAMA PER CARD === */}
                         <div className="mytamacardcont">
                             <div className="mytamamaincard">
-
-   <div>
+                                <div>
                                     <button
                                         onClick={() => handleSelectTama(tama.userTama.id)}
                                         className="mytamabutton"> Select!
                                     </button>
                                 </div>
-
+                                
                                 <div className="icon">
                                     <img
                                         className="mytamacard-img-top"
-                                        src={tama2}
+                                        src={tama.pictures}
                                         name="tama1"
                                         alt="Mametchi"
                                     />
-                                    <div class="mytamatextcont">
+                                    <div className="mytamatextcont">
                                         <h5 className="title">{tama.name}</h5>
                                         <p className="mytamatext">
                                             Happiness: {tama.userTama.happiness} <br />
@@ -89,6 +94,9 @@ function MyTama() {
                 );
             })}
         </body>
+        
+      )}
+    </>
     );
 }
 

@@ -22,14 +22,14 @@ import Ttt from './components/TTT/Ttt'; //! Duplicate of TTT2
 import { getCurrentTama } from './utils/localStorage'
 
 function App() {
-  const [pageToRender, setPageToRender] = useState('Homepage')
+  const [pageToRender, setPageToRender] = useState('HomePage')
 
   const handlePageChange = page => {
     setPageToRender(page)
   }
 
   const renderPage = () => {
-    if(pageToRender === 'Homepage') {
+    if(pageToRender === 'HomePage') {
       return <Homepage />
     } else if (pageToRender === 'Login') {
       // return <Login />
@@ -61,15 +61,14 @@ function App() {
       {/* TTT, Matching, myTama, Profile, minigamePage, Gacha, Navigatable pages */}
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage /> */}
-      {/* {renderPage()} */}
+      {renderPage()}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
-      <MyTama />
+      {/* <MyTama /> */}
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Matching /> */}
-      {/* <Tamadex /> */}
       {/* <Profile /> */}
     </div>
   );

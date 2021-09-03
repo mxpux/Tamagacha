@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .gacha-title {
@@ -11,7 +12,9 @@
   padding-top: 20px
 }
 
-egg {
+#egg {
+  animation: jump 1.2s;
+  animation-iteration-count: infinite;
   min-width: 120px;
   min-height: 120px;
   width: 250px;
@@ -19,30 +22,40 @@ egg {
   border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
   border: 3px solid #1c446b;
   transform: rotate(-45deg);
+  transform: translateY(-40px);
   margin: 5%;
   background: snow
 
 }
 
-egg:hover {
+#egg:hover {
   cursor: pointer;
   animation: shake 2s;
   animation-iteration-count: infinite
 }
 
+@keyframes jump {
+  0%   { transform: scale(1,1)    translateY(0); }
+  10%  { transform: scale(1.1,.9) translateY(0); }
+  30%  { transform: scale(.9,1.1) translateY(-100px); }
+  50%  { transform: scale(1,1)    translateY(0); }
+  57%  { transform: scale(1,1)    translateY(-7px); }
+  64%  { transform: scale(1,1)    translateY(0); }
+  100% { transform: scale(1,1)    translateY(0); }
+}
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(-30deg); }
-  10% { transform: translate(-1px, -2px) rotate(-47deg); background: yellow}
+  10% { transform: translate(-1px, -2px) rotate(-47deg); background: rgb(255, 255, 209)}
   20% { transform: translate(-3px, 0px) rotate(-55deg); 
-  background: blue}
+  background: rgb(196, 196, 255)}
   30% { transform: translate(3px, 2px) rotate(-47deg); }
   40% { transform: translate(1px, -1px) rotate(-30deg); }
-  50% { transform: translate(-1px, 2px) rotate(-47deg); background:red }
+  50% { transform: translate(-1px, 2px) rotate(-47deg); background:rgb(255, 207, 177) }
   60% { transform: translate(-3px, 1px) rotate(-55deg); }
-  70% { transform: translate(3px, 1px) rotate(-47deg); background:orange}
+  70% { transform: translate(3px, 1px) rotate(-47deg); background:rgb(222, 255, 225)}
   80% { transform: translate(-1px, -1px) rotate(-30deg); 
-  background: green}
+  background: rgb(255, 204, 224)}
   90% { transform: translate(1px, 2px) rotate(-47deg); }
   100% { transform: translate(1px, -2px) rotate(-30deg); }
 }

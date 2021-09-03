@@ -1,6 +1,9 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
+import {Howl} from 'howler';
+import music from '../../assets/musicmatch.mp3'
 import './matching.css'
 import Card from './Card.js'
+import Profile from '../Profile/Profile'
 //Name & pic link
 const images2 = [
   {
@@ -67,14 +70,21 @@ const images2 = [
 
 ]
 
+const sound = new Howl ({
+  src: [music],
+  volume: 0.1,
+});
+
 function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
+  
 
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])
   const [move, setMove] = useState(0)
-  const [gaveOver, setGameOver] = useState(false); //When score === 6 gameOver will set to true.
+  const [gameOver, setGameOver] = useState(false); //When score === 6 gameOver will set to true.
   const [score, setScore] = useState(0); // 6 = win
+  const [backToProfile ,setBackToProfile] = useState(false)
 
 
 
@@ -134,6 +144,10 @@ function Matching( { userGameStatus }) {
     }
   }
 
+  const handleBackButtonClick = () => {
+    setBackToProfile(true)
+  }
+
 
 
   //check 2 user pick card
@@ -169,29 +183,32 @@ function Matching( { userGameStatus }) {
 
 
   return (
-    <div>
-      <h1>from matching</h1>
-      <div className='container'>
-        <div class='row'>
-        {randomImageLink.map((item, index) => {
-          return (
-            <Card
-              key={index}
-              item={item}
-              name={item.name}
-              image={item.image}
-              flip={item.flip}
-              index={index}
-              handleOnClick={handleOnClick}
-              setUserPick={setUserPick}
-              />
-          )
-        })}
-
-
+    <>
+      {backToProfile ? <Profile /> : (
+        <div>
+          <h1>from matching</h1>
+          <div className='container'>
+            <div className='row'>
+              {randomImageLink.map((item, index) => {
+                return (
+                  <Card
+                  key={index}
+                  item={item}
+                  name={item.name}
+                  image={item.image}
+                  flip={item.flip}
+                  index={index}
+                  handleOnClick={handleOnClick}
+                  setUserPick={setUserPick}
+                  />
+                )
+              })}
+            {gameOver ? <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
 
   )
 }
