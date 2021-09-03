@@ -134,6 +134,7 @@ function MyTama() {
                           Happiness: {tama.userTama.happiness} <br />
                           Bladder: {tama.userTama.bladder} <br />
                           Hunger: {tama.userTama.hunger} <br />
+                          Alive: {tama.userTama.is_alive === true ? "Yes" : "No"}
                         </p>
                       </div>
                     </div>
