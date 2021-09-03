@@ -63,13 +63,12 @@ function App() {
       {/* <Homepage /> */}
       {/* {renderPage()} */}
       {/* <Gacha /> */}
-      <MinigamePage />
-      {/* <MyTama /> */}
-      {/* <Matching /> */}
-      <Tamadex />
-      {/* <Ttt2 /> */}
+      {/* <MinigamePage /> */}
+      <MyTama />
       {/* <Matching /> */}
       {/* <Tamadex /> */}
+      {/* <Ttt2 /> */}
+      {/* <Matching /> */}
       {/* <Profile /> */}
     </div>
   );

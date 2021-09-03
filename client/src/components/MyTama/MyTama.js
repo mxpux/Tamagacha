@@ -52,18 +52,17 @@ function MyTama() {
                 return (
                     <div key={tama.userTama.id} className="mytamacontainer">
 
-                        
+
                         {/* === TAMA PER CARD === */}
                         <div className="mytamacardcont">
                             <div className="mytamamaincard">
-
-   <div>
+                                <div>
                                     <button
                                         onClick={() => handleSelectTama(tama.userTama.id)}
                                         className="mytamabutton"> Select!
                                     </button>
                                 </div>
-
+                                
                                 <div className="icon">
                                     <img
                                         className="mytamacard-img-top"
