@@ -3,7 +3,7 @@ import React from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 // const MySwal = withReactContent(Swal)
-import { loginUser, createUser } from "../../utils/API";
+import { loginUser, createUser, getAllUser } from "../../utils/API";
 import Auth from '../../utils/auth'
 
 const liCls =
@@ -12,6 +12,21 @@ const liCls =
 
   function DropDownCard({ data = [], setOpen, handlePageChange}) {
 
+    const getAllUserEmail = async (userInputEmail) => {
+      let response = await getAllUser()
+      let data = await response.json()
+      console.log('data-----All User data-------->', data)
+      for(var i = 0; i < data.length; i++) {
+        if(userInputEmail === data[i].email) {
+          return true;
+        }
+      }
+      return false;
+    }
+    const validateEmail = (email) => {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
 
     const sweetAlertLogin = async () => {
       const sweetRespond = await Swal.fire({
@@ -85,7 +100,6 @@ const liCls =
 
     const sweetAlertSignUp = async () => {
       const sweetRespond = await Swal.fire({
-        // const a = await Swal.fire({
         title: 'Sign Up',
         html:
           '<input placeholder="Username" type="user" id="swal-input1" class="swal2-input">' +
@@ -109,15 +123,36 @@ const liCls =
       // Sign in button clicked
       if (sweetRespond.isConfirmed) {
 
-        //if either username or password are empty
+        //if username/email/password are empty
         if(userInput[0] === '' || userInput[1] === '' || userInput[2] === '') {
-          // Return SweetAlert Error
+          // Return SweetAlert - All Fields are Required!
           Swal.fire({
             icon: 'error',
-            title: `Invalid Input`,
+            title: `All Fields are Required!`,
             timer: 1500
           })
-        } else {
+          //if invalid email
+        } else if (!validateEmail(userInput[1])) {
+          Swal.fire({
+            icon: 'error',
+            title: `Invalid Email!`,
+            timer: 1500
+          })
+          //if password is less then 6 characters
+        } else if (userInput[2].length < 6) {
+          Swal.fire({
+            icon: 'error',
+            title: `Password must be at least 6 characters!`,
+            timer: 1500
+          })
+        } else if(getAllUserEmail(userInput[1])) {
+          Swal.fire({
+            icon: 'error',
+            title: `The Email address is already in use!`,
+            timer: 1500
+          })
+        }
+        else {
           //We got username and password
           console.log('userinput Array--->', userInput)
           //Need to check username and password from database..........
@@ -147,7 +182,7 @@ const liCls =
               timer: 1500
             })
           }
-          
+
         }
       }
 

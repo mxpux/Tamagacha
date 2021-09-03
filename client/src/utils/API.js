@@ -79,5 +79,8 @@ export const newTama = (user_id, token) => { //! FOR GACHA PURPOSES
       authorization: `Bearer ${token}`,
     }
   })
-  .catch((err) => console.log(err));
 }
+
+export const getAllUser = (u_id, token) => {
+  return fetch(`/api/user`);
+};
