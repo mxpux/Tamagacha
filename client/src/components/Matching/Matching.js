@@ -71,12 +71,12 @@ const images2 = [
 
 const sound = new Howl ({
   src: [music],
-  loop: true,
   volume: 0.1,
 });
 
 function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
+  
 
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])

@@ -63,9 +63,9 @@ function App() {
       {/* <Homepage /> */}
       {renderPage()}
       {/* <Gacha /> */}
-      <MinigamePage />
+      {/* <MinigamePage /> */}
       {/* <MyTama /> */}
-      {/* <Matching /> */}
+      <Matching />
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
       {/* <Matching /> */}
