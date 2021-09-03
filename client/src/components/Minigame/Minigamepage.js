@@ -5,7 +5,7 @@ import './minigamepage.css';
 import Ttt2 from '../TTT2/Ttt2'
 import Matching from '../Matching/Matching'
 import  { getUserId, getCurrentTama }  from '../../utils/localStorage'
-import { getTama, updateTama } from '../../utils/API';
+import { getUniqueTama, updateTama } from '../../utils/API';
 import Auth from '../../utils/auth' //gettoken
 
 function MinigamePage() {
@@ -28,9 +28,9 @@ function MinigamePage() {
         const setHappiness = () => {
             if(userWin) {
                 setCurrentTamaDate(prevState => {
-                    prevState.userTama.happiness += 10;
-                    if(prevState.userTama.happiness >= 100) {
-                        prevState.userTama.happiness = 100;
+                    prevState.happiness += 10;
+                    if(prevState.happiness >= 100) {
+                        prevState.happiness = 100;
                     }
                     return prevState;
                 })
@@ -43,7 +43,7 @@ function MinigamePage() {
                 let ut_id = getCurrentTama(); // from local
                 let token = Auth.getToken() // from local
                 console.log("currentTamaData", currentTamaData);
-                let response = await updateTama({happiness: currentTamaData.userTama.happiness}, token, ut_id)
+                let response = await updateTama({happiness: currentTamaData.happiness}, token, ut_id)
                 
     
                 //testing
@@ -91,11 +91,10 @@ function MinigamePage() {
     //get current usertama data and set it to the state 'currentTamaData'
     const getCurrentUserTama = async () => {
         try {
-            let u_id = getUserId(); // from local
             let ut_id = getCurrentTama(); // from local
             let token = Auth.getToken() // from local
 
-            let response = await getTama(u_id, ut_id , token)
+            let response = await getUniqueTama(ut_id , token)
             //Testing
             // let response = await getTama(1,1, token)
 
