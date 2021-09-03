@@ -7,9 +7,10 @@ function Gacha () {
     <>
       <div id='egg-container'>
         <p className='gacha-title'>What will hatch!?</p>
-        <egg>
-
-        </egg>
+        <br/>
+        <br/>
+        <br/>
+        <div id='egg' />
       </div>
     </>
   )

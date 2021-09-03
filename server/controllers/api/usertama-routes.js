@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
   }
 })
 //ONE USER ALL TAMAS (FE API: getUser(user_id, token))
-router.get('/:u_id', authMiddleware,async (req, res) => {
+router.get('/:u_id', authMiddleware, async (req, res) => {
   console.log('the idddddd--------------------------->', req.params.u_id)
   try {
     // const dbUserTamaData = await User.findByPk(req.params.u_id)
