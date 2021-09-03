@@ -53,14 +53,14 @@ function MyTama() {
       if (!response.ok) {
           return
       }
-      
+
       console.log('gacha pull response: ', response)
       const data = await response.json();
       console.log('gacha pull data: ', data);
       if (setCurrentTama(data.id)) {
           setCurrentTama(data.id)
       };
-      
+
   }
 
   const handleSelectTama = (tama_id) => {
@@ -86,7 +86,7 @@ function MyTama() {
 
   return (
     <>
-      {buttonClick ? renderPageFunction(page)  
+      {buttonClick ? renderPageFunction(page)
       : (
         <body>
           <div className="mytamapagetitle">Select your Tama!</div>
@@ -110,10 +110,10 @@ function MyTama() {
 
                 {/* === TAMA PER CARD === */}
                 <div className="mytamacardcont">
-                  <div className="mytamamaincard">
+                  <div className="mytamamaincard" onClick={() => handleSelectTama(tama.userTama.id)}>
                     <div>
                       <button
-                        onClick={() => handleSelectTama(tama.userTama.id)}
+                        // onClick={() => handleSelectTama(tama.userTama.id)}
                         className="mytamabutton"
                       >
                         {" "}
