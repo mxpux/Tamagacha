@@ -138,7 +138,7 @@ const Ttt = () => {
 			</table>
 			{winner && (
 				<>
-					<p class="tttwinner">{winner} is the winner!</p>
+					<p className="tttwinner">{winner} is the winner!</p>
 					<button onClick={() => handleRestart()}>Play Again</button>
 				</>
 			)}

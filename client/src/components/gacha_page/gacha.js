@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, useHistory } from "react-router-dom";
-import LinkButton from './LinkButton';
 import { Howl } from 'howler';
-import pop from './pop.mp3';
+import pop from '../../assets/pop.mp3';
 import Profile from '../Profile/Profile';
 import './gacha.css';
 
@@ -22,25 +20,24 @@ function Gacha() {
   }
 
   const renderPageFunction = (page) => {
-    if(page === 'Profile') {
-        return <Profile />;
+    if (page === 'Profile') {
+      return <Profile />;
     }
-}
+  }
 
   return (
     <>
-    {buttonClick ? renderPageFunction(page) : ( 
-      <div a href id='egg-container'>
-        <p className='gacha-title'>What will hatch!?</p>
-        <br />
-        <br />
-        <br />
-        
+      {buttonClick ? renderPageFunction(page) : (
+        <div a href id='egg-container'>
+          <p className='gacha-title'>What will hatch!?</p>
+          <br />
+          <br />
+          <br />
           <div id='egg' onClick={() => {
-                        handleOnClick('Profile')
-                    }} />
+            handleOnClick('Profile')
+          }} />
 
-      </div>)}
+        </div>)}
     </>
   )
 }

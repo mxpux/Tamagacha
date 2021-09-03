@@ -181,7 +181,7 @@ function Matching( { userGameStatus }) {
       {sound.play()}
       <h1>from matching</h1>
       <div className='container'>
-        <div class='row'>
+        <div className='row'>
         {randomImageLink.map((item, index) => {
           return (
             <Card
