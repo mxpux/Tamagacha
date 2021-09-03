@@ -7,7 +7,7 @@ import tama4 from '../../assets/tama4.png';
 import tama5 from '../../assets/tama5.png';
 import './profile.css';
 import  { getUserId, getCurrentTama }  from '../../utils/localStorage'
-import { getUser, getTama, updateTama } from '../../utils/API';
+import { getUser, getTama, updateTama, getUniqueTama } from '../../utils/API';
 import Auth from '../../utils/auth'
 import MinigamePage from '../Minigame/Minigamepage'
 
@@ -29,14 +29,25 @@ function Profile () {
    * tamas_owned: {id, name, description, pictures, userTama}
    * userTama: {id, age, hunger, happiness, bladder, date_modified, date_created, is_alive, is_awake, status}
    */
-
+  const getTamaStats = async (t_id) => {
+    try{
+      const u_id = getUserId();
+      const token = Auth.getToken();
+      const response = await getTama(u_id, t_id, token);
+      console.log ('getTamaStats response: ', response);
+      const data = await response.json();
+      console.log('getTamaStats data: ', data);
+      setTama(data);
+    } catch (err) {
+      console.error(err);
+    }
+  }
    const getUserTamaStats = async () => {
     try {
-      let u_id = getUserId();
       let ut_id = getCurrentTama();
       let token = Auth.getToken()
 
-      let response = await getTama(u_id, ut_id , token)
+      let response = await getUniqueTama(ut_id , token)
 
       if (!response.ok) {
         throw new Error('Something went wrong!')
@@ -45,6 +56,7 @@ function Profile () {
       let data = await response.json()
       console.log('data----->', data)
       setStat(data)
+      getTamaStats(data.tama_id);
     }
     catch (err){
       console.error('errorr--->',err)
@@ -57,14 +69,14 @@ function Profile () {
   }, [])
 
   const feedTama = async () => {
-    console.log('hunger stat', stat.userTama.hunger)
-    if (stat.userTama.hunger >= 100 ) {
+    console.log('hunger stat', stat.hunger)
+    if (stat.hunger >= 100 ) {
       console.log('nothing happened');
       return
     } else {
       const ut_id = getCurrentTama();
       const token = Auth.getToken();
-      const newHunger = stat.userTama.hunger + 1
+      const newHunger = stat.hunger + 1
 
       let response = await updateTama({hunger: newHunger}, token, ut_id)
 
@@ -74,14 +86,14 @@ function Profile () {
   }
 
   const poopTama = async () => {
-    console.log('hunger stat', stat.userTama.bladder)
-    if (stat.userTama.bladder >= 100 ) {
+    console.log('bladder stat', stat.bladder)
+    if (stat.bladder >= 100 ) {
       console.log('nothing happened');
       return
     } else {
       const ut_id = getCurrentTama();
       const token = Auth.getToken();
-      const newBladder = stat.userTama.bladder + 1
+      const newBladder = stat.bladder + 1
 
       let response = await updateTama({bladder: newBladder}, token, ut_id)
 
@@ -95,9 +107,9 @@ function Profile () {
 
     <>
     {pageToRender ? <MinigamePage /> : (<tama id="profile">
-        <h2>{stat.name}</h2>
+        <h2>{tama.name}</h2>
         <pfp>
-          <img id='tama' src={stat.pictures} alt=''/>
+          <img id='tama' src={tama.pictures} alt=''/>
         </pfp>
         <div className="row btnRow">
         {stat.id && <Stats userTama={stat} name={stat.name} />}

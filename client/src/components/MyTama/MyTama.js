@@ -50,6 +50,10 @@ function MyTama() {
       const token =  Auth.getToken()
 
       const response = await newTama(u_id, token)
+      if (!response.ok) {
+          return
+      }
+      
       console.log('gacha pull response: ', response)
       const data = await response.json();
       console.log('gacha pull data: ', data);

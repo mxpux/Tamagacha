@@ -13,12 +13,12 @@ const PORT = process.env.PORT || 3005;
 
 // -- cron -- \\
 //!Tweak schedule based on game balance
-// cron.schedule('0,05,10,15,20,25,30,35,40,45,50,55 * * * * *', () => {
-//     getAllUserTama(PORT)
-//     .then((data) => {
-//         userTamaUpdate(createUserTamaArr(data), PORT)
-//     })
-// })
+cron.schedule('0,05,10,15,20,25,30,35,40,45,50,55 * * * * *', () => {
+    getAllUserTama(PORT)
+    .then((data) => {
+        userTamaUpdate(createUserTamaArr(data), PORT)
+    })
+})
 
 // -- middleware -- \\
 // app.use(session(sess));

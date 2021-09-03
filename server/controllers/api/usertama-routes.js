@@ -164,12 +164,12 @@ router.put('/unique/:ut_id', async (req, res) => {
 })
 
 //ONE USER ONE TAMA CHANGE STATS (WITH USER TOKEN)
-router.put('/unique/', authMiddleware, async (req, res) => {
+router.put('/uniquetama/:ut_id', authMiddleware, async (req, res) => {
   try{
     const dbUserTamaData = await UserTama.update(
       req.body, {
         where: {
-          id: req.body.id // |Make changes to unique row in UserTama |
+          id: req.params.ut_id // |Make changes to unique row in UserTama |
         }
       }
     );
