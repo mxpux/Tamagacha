@@ -202,4 +202,84 @@
 
 
 
- 
+ /* ============TRIAL Egg Button === */
+
+
+ .wrappergachabutton {
+    display: inline-flex;
+    position: fixed;
+    top: 320px;
+    left: 58%;
+    color: cornsilk;
+    font-family: 'Schoolbell', cursive;
+  }
+  
+  .wrappergachabutton .icongachabutton {
+    position: relative;
+    background-color: rgb(64, 176, 224);
+    border-radius: 50%;
+    padding: 19px;
+    margin: 10px;
+
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrappergachabutton .toolgachabutton {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background-color: #f1fa46;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    width: 100px;
+  }
+  
+  .wrappergachabutton .toolgachabutton::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #cc7f7f;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+  }
+  
+  .wrappergachabutton .icongachabutton:hover .toolgachabutton {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+   
+  }
+  
+  .wrappergachabutton .icoicongachabuttonn:hover span,
+  .wrappergachabutton .icongachabutton:hover .toolgachabutton {
+    text-shadow: 0px -1px 0px rgba(196, 97, 97, 0.1);
+   
+  }
+  
+  .wrappergachabutton .egggachabutton:hover,
+  .wrappergachabutton .egggachabutton:hover .toolgachabutton,
+  .wrappergachabutton .egggachabutton:hover .toolgachabutton::before {
+    background-color: rgb(41, 57, 102);
+    color: #fcfafa;
+    font-family: 'Schoolbell', cursive;
+    font-size: 15px;
+
+    
+  }

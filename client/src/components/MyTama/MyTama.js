@@ -51,53 +51,63 @@ function MyTama() {
 
     return (
       <>
-      {backToProfile ? <Profile /> : (
-        <body>
-            <div className="mytamapagetitle">Select your Tama!</div>
-            {tamasOwned.map((tama) => {
-                return (
-                    <div key={tama.userTama.id} className="mytamacontainer">
-                    <button className="mytamagachabutton"> Get a Tama! </button>
-                    
-            {/* ===END OF TITLE AND GACHA BUTTON=== */}
-                        
-                        {/* === TAMA PER CARD === */}
-                        <div className="mytamacardcont">
-                            <div className="mytamamaincard">
-                                <div>
-                                    <button
-                                        onClick={() => handleSelectTama(tama.userTama.id)}
-                                        className="mytamabutton"> Select!
-                                    </button>
-                                </div>
-                                
-                                <div className="icon">
-                                    <img
-                                        className="mytamacard-img-top"
-                                        src={tama.pictures}
-                                        name="tama1"
-                                        alt="Mametchi"
-                                    />
-                                    <div className="mytamatextcont">
-                                        <h5 className="title">{tama.name}</h5>
-                                        <p className="mytamatext">
-                                            Happiness: {tama.userTama.happiness} <br />
-                                            Bladder: {tama.userTama.bladder} <br />
-                                            Hunger: {tama.userTama.hunger} <br />
-                                        </p>
-                                    </div>
+            {backToProfile ? <Profile /> : (
+                <body>
+                    <div className="mytamapagetitle">Select your Tama!</div>
+                    {tamasOwned.map((tama) => {
+                        return (
+                            <div key={tama.userTama.id} className="mytamacontainer">
+                                {/* <button className="mytamagachabutton"> Get a Tama! </button> */}
 
+                                {/* ===END OF TITLE AND GACHA BUTTON=== */}
+
+                                <div class="wrappergachabutton">
+                                    <div class="icongachabutton egggachabutton">
+                                        <div class="toolgachabutton">Get a Tama!</div>
+                                        <span><i class="fas fa-egg"></i>Gacha!</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                );
+
+                                    {/* TRIAL BUTTON */}
+
+                                    {/* === TAMA PER CARD === */}
+                                    <div className="mytamacardcont">
+                                        <div className="mytamamaincard">
+                                            <div>
+                                                <button
+                                                    onClick={() => handleSelectTama(tama.userTama.id)}
+                                                    className="mytamabutton"> Select!
+                                                </button>
+                                            </div>
+
+                                            <div className="icon">
+                                                <img
+                                                    className="mytamacard-img-top"
+                                                    src={tama.pictures}
+                                                    name="tama1"
+                                                    alt="Mametchi"
+                                                />
+                                                <div className="mytamatextcont">
+                                                    <h5 className="title">{tama.name}</h5>
+                                                    <p className="mytamatext">
+                                                        Happiness: {tama.userTama.happiness} <br />
+                                                        Bladder: {tama.userTama.bladder} <br />
+                                                        Hunger: {tama.userTama.hunger} <br />
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                );
             })}
         </body>
-        
-      )}
+
+                        )
+                    }
     </>
-    );
+            );
 }
 
-export default MyTama;
+            export default MyTama;
