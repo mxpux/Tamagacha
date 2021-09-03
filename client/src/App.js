@@ -61,7 +61,7 @@ function App() {
       {/* TTT, Matching, myTama, Profile, minigamePage, Gacha, Navigatable pages */}
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage /> */}
-      {/* {renderPage()} */}
+      {renderPage()}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
       <MyTama />
