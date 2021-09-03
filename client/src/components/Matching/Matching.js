@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './matching.css'
 import Card from './Card.js'
+import Profile from '../Profile/Profile'
 //Name & pic link
 const images2 = [
   {
@@ -73,8 +74,9 @@ function Matching( { userGameStatus }) {
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])
   const [move, setMove] = useState(0)
-  const [gaveOver, setGameOver] = useState(false); //When score === 6 gameOver will set to true.
+  const [gameOver, setGameOver] = useState(false); //When score === 6 gameOver will set to true.
   const [score, setScore] = useState(0); // 6 = win
+  const [backToProfile ,setBackToProfile] = useState(false)
 
 
 
@@ -134,6 +136,10 @@ function Matching( { userGameStatus }) {
     }
   }
 
+  const handleBackButtonClick = () => {
+    setBackToProfile(true)
+  }
+
 
 
   //check 2 user pick card
@@ -169,29 +175,32 @@ function Matching( { userGameStatus }) {
 
 
   return (
-    <div>
-      <h1>from matching</h1>
-      <div className='container'>
-        <div class='row'>
-        {randomImageLink.map((item, index) => {
-          return (
-            <Card
-              key={index}
-              item={item}
-              name={item.name}
-              image={item.image}
-              flip={item.flip}
-              index={index}
-              handleOnClick={handleOnClick}
-              setUserPick={setUserPick}
-              />
-          )
-        })}
-
-
+    <>
+      {backToProfile ? <Profile /> : (
+        <div>
+          <h1>from matching</h1>
+          <div className='container'>
+            <div class='row'>
+              {randomImageLink.map((item, index) => {
+                return (
+                  <Card
+                  key={index}
+                  item={item}
+                  name={item.name}
+                  image={item.image}
+                  flip={item.flip}
+                  index={index}
+                  handleOnClick={handleOnClick}
+                  setUserPick={setUserPick}
+                  />
+                )
+              })}
+            {gameOver ? <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
 
   )
 }
