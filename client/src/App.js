@@ -59,10 +59,10 @@ function App() {
     <div>
       <Header handlePageChange={handlePageChange}/>
       {/* <Homepage /> */}
-      {renderPage()}
+      {/* {renderPage()} */}
       {/* <Gacha /> */}
       {/* <MinigamePage /> */}
-      {/* <MyTama /> */}
+      <MyTama />
       {/* <Matching /> */}
       {/* <Tamadex /> */}
       {/* <Ttt2 /> */}
