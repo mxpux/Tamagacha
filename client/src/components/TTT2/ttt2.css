@@ -8,7 +8,7 @@
 
   table td {
   background-color: rgb(247, 247, 247);
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   width: 250px;
   height: 250px;
   justify-content: center;
@@ -31,6 +31,54 @@
     display: inline-block;
     float: right;
   }
-  /* .ttt2-test {
-    display: inline-block;
-  } */
+
+.ttt2btn{
+ background-color: rgb(169, 215, 255);
+    justify-content: center;
+    padding: 20px;
+    font-size: 30px;    
+    font-family: 'Schoolbell', cursive;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.ttt2btn:hover {
+  background-color: rgb(125, 189, 245);
+   font-family: 'Schoolbell', cursive;
+   font-size: 30px;
+   color: white; 
+   opacity: 1;
+   cursor: pointer;
+}
+
+.ttt2playagainbtn {
+  background-color: rgb(169, 215, 255);
+  justify-content: center;
+  padding: 20px;
+  font-size: 30px;    
+  font-family: 'Schoolbell', cursive;
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.ttt2playagainbtn:hover {
+  background-color: #99cc33;
+  font-family: 'Schoolbell', cursive;
+  font-size: 30px;
+  color: white; 
+  opacity: 1;
+  cursor: pointer;
+}
+
+.ttt-toptitle { 
+  color: #868585;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-family: 'Schoolbell', cursive;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+}
