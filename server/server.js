@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 3005;
 // app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 // app.use(routes); 
 
 app.get('*', (req, res) => {
