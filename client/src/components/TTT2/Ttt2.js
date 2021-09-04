@@ -151,8 +151,8 @@ function Ttt2 ( {userGameStatus} ) {
 		{backToProfile ? <Profile /> : (
 			<div className='tttcontainer'>
 			<div>
-				<div className='ttt2-charOne'>{playerOne}<h3>User</h3></div>
-				<div className='ttt2-charTwo'>{playerTwo}<h3>Com</h3></div>
+				<div className='ttt2-charOne'>{playerOne}<h3 className="ttt-toptitle">You</h3></div>
+				<div className='ttt2-charTwo'>{playerTwo}<h3 className="ttt-toptitle">Com</h3></div>
 			</div>
 			<table>
 				{/* Turn: {turn} */}
@@ -177,10 +177,10 @@ function Ttt2 ( {userGameStatus} ) {
 			{winner && (
 				<>
 					<p className="tttwinner">{winner} is the winner!</p>
-					<button onClick={() => handleRestart()}>Play Again</button>
+					<button className="ttt2playagainbtn" onClick={() => handleRestart()}>Play Again</button>
 				</>
 			)}
-			{gameOver ? <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
+			{gameOver ? <button className="ttt2btn" onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
 		</div>
 		)}
 
