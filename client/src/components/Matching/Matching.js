@@ -77,7 +77,7 @@ const sound = new Howl ({
 
 function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
-  
+
 
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])
@@ -203,7 +203,9 @@ function Matching( { userGameStatus }) {
                   />
                 )
               })}
-            {gameOver ? <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
+            }
+            {gameOver ?
+            <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
             </div>
           </div>
         </div>
