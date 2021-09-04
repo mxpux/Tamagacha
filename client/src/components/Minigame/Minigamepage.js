@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import tamaMatch from '../../assets/match-thumb.png';
-import tamaTTT from '../../assets/ttt-thumb.png';
+import tamaMatch from '../../assets/match-game.png';
+import tamaTTT from '../../assets/ttt-game.png';
 import './minigamepage.css';
 import Ttt2 from '../TTT2/Ttt2'
 import Matching from '../Matching/Matching'
@@ -115,10 +115,10 @@ function MinigamePage() {
         {buttonClick ? renderPageFunction(page) : ( <div className="minigame-container">
 
         <div className="minigame-cardcontainer">
-             <h2 className="minigame-title">Which Minigame would you like to play?</h2>
+             <h2 className="minigame-title">Which minigame would you like to play?</h2>
 
             <div className="minigame-card">
-                <h3>Matching Game</h3>
+                {/* <h3>Matching Game</h3> */}
                 <img
                     className="minigame-card-img"
                     src={tamaMatch}
@@ -129,7 +129,7 @@ function MinigamePage() {
             </div>
 
             <div className="minigame-card">
-                <h3>Tic Tac Toe</h3>
+                {/* <h3>Tic Tac Toe</h3> */}
                 <img
                     className="minigame-card-img"
                     src={tamaTTT}
