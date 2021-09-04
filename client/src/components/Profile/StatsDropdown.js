@@ -13,30 +13,26 @@ export default function Stats ( { userTama }) {
 
   //SELECT BASEQUOTE
   let baseQuote = [
-    'Hello!',
-    "Let's play!",
-    "Hihi!",
     "What are we doing today?",
     "(They're lounging around..)",
     "Welcome back Master.."
   ];
 
   let hungerQuote = [
-    "Feed me..",
-    "I'm hungry!",
+    "Feed me... send bread",
+    "I'm hangry!!! arhghhh!",
     "Jerome would have fed me by now."
   ];
 
   let boredQuote = [
-    "I'm bored...!",
-    "Play with me!",
+    "I'm soooo bored...!",
     "Are we doing anything yet?",
-    "(zzz)"
+    "(zzz ~dreaming about someone~)"
   ];
 
   let dyingQuote = [
     "I'm slowly withering away...",
-    "Help me..",
+    "Help me...",
     "(Sad noises)"
   ];
 
@@ -63,14 +59,12 @@ export default function Stats ( { userTama }) {
 
             <h1>{quote}</h1>
 
-              <p>Status: {userTama.status} 💖 </p>
-              <p>Fullness: {userTama.hunger} / 100 🍛</p>
-              <p>Bladder: {userTama.bladder} / 100 🧻</p>
-              <p>Happiness: {userTama.happiness} / 100 
-              {emoji}
-               </p>
-              <p>Age: {Math.round(userTama.age/60)} minutes ⏲️ </p>
-              <p>Birthday: {userTama.date_created.split('T')[0]} 🎂</p>
+              <p>Status 💖 {userTama.status} </p>
+              <p>Happiness {emoji} {userTama.happiness} / 100 </p>
+              <p>Age ⏲️ {Math.round(userTama.age/60)} minutes </p>
+              <p>Fullness 🍛 {userTama.hunger} / 100 </p>
+              <p>Bladder 🧻 {userTama.bladder} / 100 </p>
+              <p>Birthday 🎂 {userTama.date_created.split('T')[0]} </p>
             </div>
           </div>
         </div>
