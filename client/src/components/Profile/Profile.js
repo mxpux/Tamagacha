@@ -111,7 +111,7 @@ function Profile () {
         <pfp>
           <img id='tama' src={tama.pictures} alt=''/>
         </pfp>
-       
+
         <div className="row btnRowprofile {
 ">
           <button
@@ -128,7 +128,7 @@ function Profile () {
           className='poop btnprofile'
           >Poop</button>
         </div>
-        
+
         <div className="profilestatsbox">
         <div className="cardprofile">
         {stat.id && <Stats userTama={stat} name={stat.name} />}
@@ -143,3 +143,4 @@ function Profile () {
 }
 
 export default Profile
+
