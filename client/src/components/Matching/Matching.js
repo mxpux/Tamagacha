@@ -90,7 +90,7 @@ function Matching( { userGameStatus }) {
 
   // Only render for the first time
   useEffect(() => {
-    console.log('---------only run for the fist time---------')
+    // console.log('---------only run for the fist time---------')
     randomCard()
   },[])
 
@@ -119,12 +119,12 @@ function Matching( { userGameStatus }) {
 
   const randomCard = () => {
     var random = images2.sort(() => Math.random() - 0.5)
-    console.log('-----randomcard------', random)
+    // console.log('-----randomcard------', random)
     let temp = random.map(item => {
       item.flip = false
       return item
     })
-    console.log('------temp----', temp)
+    // console.log('------temp----', temp)
     setRandomImageLink(random)
   }
 
@@ -162,7 +162,7 @@ function Matching( { userGameStatus }) {
   //check 2 user pick card
   const checkBothCards = () => {
     if(userPick.length > 2 ) {
-      console.log('userpick length are more then 2')
+      // console.log('userpick length are more then 2')
       return;
     }
     if(userPick.length === 2) {

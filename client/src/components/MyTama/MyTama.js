@@ -86,7 +86,7 @@ function MyTama({handlePageChange}) {
 
   return (
     <>
-        <body>
+        <div>
           <div className="mytamapagetitle">Select your Tama!</div>
           <div class="wrappergachabutton">
                   <div class="icongachabutton egggachabutton" onClick={() => {
@@ -141,7 +141,7 @@ function MyTama({handlePageChange}) {
                         <h5 className="title">{tama.name}</h5>
                         <p className="mytamatext">
                           Happiness: {tama.userTama.happiness} <br />
-                          Bladder: {tama.userTama.bladder}  and    
+                          Bladder: {tama.userTama.bladder}  and
                           Hunger: {tama.userTama.hunger} <br />
                           Alive: {tama.userTama.is_alive === true ? "Yes" : "REST IN PEACE"}
                         </p>
@@ -153,7 +153,7 @@ function MyTama({handlePageChange}) {
             );
           })}
           </div>
-        </body>
+        </div>
 
     </>
   );

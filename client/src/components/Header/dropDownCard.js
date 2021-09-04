@@ -58,7 +58,7 @@ const liCls =
           Swal.fire({
             icon: 'error',
             title: `Invalid Input`,
-            timer: 1500
+
           })
         } else {
           //We got username and password
@@ -75,18 +75,20 @@ const liCls =
             const {token, userData } = await response.json();
             // console.log('response.json() userData login', userData);
             Auth.login(token, userData.id);
-
-            Swal.fire({
+            console.log('before sweetalert welcone back')
+            await Swal.fire({
               icon: 'success',
               title: `Welcome Back ${userInput[0]}`,
-              timer: 1500
+              // timer: 1500
             })
+            console.log('after sweetalert welcone back')
+            handlePageChange('My Tama')
           } catch (err) {
             console.error(err)
             Swal.fire({
               icon: 'error',
               title: `Something wrong with logging in`,
-              timer: 1500
+              // timer: 1500
             })
           }
         }
@@ -173,14 +175,14 @@ const liCls =
             await Swal.fire({
               icon: 'success',
               title: `${userInput[0]} Sign Up `,
-              timer: 1500
+              // timer: 1500
             })
           } catch (err) {
             console.error(err)
             await Swal.fire({
               icon: 'error',
               title: `Something wrong with logging in`,
-              timer: 1500
+              // timer: 1500
             })
           }
 
