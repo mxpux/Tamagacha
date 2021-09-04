@@ -38,11 +38,11 @@ function App() {
     } else if (pageToRender === 'Characters') {
       return <Tamadex />
     } else if (pageToRender === 'My Tama'){
-      return <MyTama />
+      return <MyTama handlePageChange={handlePageChange}/>
     } else if (pageToRender === 'Profile'){
       return checkIfUserHaveTama()
-    } else {
-      //anything else....
+    } else if (pageToRender === 'Gacha'){
+      return <Gacha handlePageChange={handlePageChange}/>
     }
   }
 
@@ -51,7 +51,7 @@ function App() {
     if(getCurrentTama()) {
       return <Profile />
     } else {
-      return <MyTama />
+      return <MyTama handlePageChange={handlePageChange}/>
     }
   }
 

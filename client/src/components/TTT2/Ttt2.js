@@ -152,6 +152,8 @@ function Ttt2 ( {userGameStatus} ) {
   const handleRestart = () => {
 		setWinner(null);
 		setBoxes(Array(9).fill(''));
+		setUserWon(false) //if user won - value set to true
+		setGameOver(false);
 	};
   const Cell = ({ num }) => {
 		return <td onClick={() => handleClick(num)}>{boxes[num]}</td>;

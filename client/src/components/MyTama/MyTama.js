@@ -12,10 +12,10 @@ import { getUserId, setCurrentTama } from "../../utils/localStorage";
 import './myTama.css';
 
 
-function MyTama() {
-  const [page, setPage] = useState('My Tama');
+function MyTama({handlePageChange}) {
+  // const [page, setPage] = useState('My Tama');
   const [tamasOwned, setTamaOwned] = useState([]);
-  const [buttonClick, setButtonClick] = useState(false);
+  // const [buttonClick, setButtonClick] = useState(false);
 
   const getUserData = async () => {
     try {
@@ -65,33 +65,34 @@ function MyTama() {
 
   const handleSelectTama = (tama_id) => {
     setCurrentTama(tama_id);
-    setButtonClick(true);
+    // setButtonClick(true);
 
   };
 
-  const handleOnClick = (page) => {
-    setButtonClick(true)
-    setPage(page)
-  }
+  // const handleOnClick = (page) => {
+  //   // setButtonClick(true)
+  //   setPage(page)
+  // }
 
-  const renderPageFunction = (page) => {
-    if(page === 'Gacha'){
-        gachaPull()
+  // const renderPageFunction = (page) => {
+  //   if(page === 'Gacha'){
+  //       gachaPull()
 
-        return <Gacha />
-    } else {
-      return <Profile />
-    }
-  }
+  //       return <Gacha />
+  //   } else {
+  //     return <Profile />
+  //   }
+  // }
 
   return (
     <>
-      {buttonClick ? renderPageFunction(page)
-      : (
         <body>
           <div className="mytamapagetitle">Select your Tama!</div>
           <div class="wrappergachabutton">
-                  <div class="icongachabutton egggachabutton" onClick={() =>{handleOnClick('Gacha')}}>
+                  <div class="icongachabutton egggachabutton" onClick={() => {
+                    gachaPull()
+                    handlePageChange('Gacha')
+                  }}>
                     <div class="toolgachabutton">Get a Tama!</div>
                     <span>
                       <i class="fas fa-egg"></i>Gacha!
@@ -111,7 +112,12 @@ function MyTama() {
 
                 {/* === TAMA PER CARD === */}
                 <div className="mytamacardcont">
-                  <div className="mytamamaincard" onClick={() => handleSelectTama(tama.userTama.id)}>
+                  <div
+                    className="mytamamaincard"
+                    onClick={() => {
+                      handleSelectTama(tama.userTama.id)
+                      handlePageChange('Profile')}
+                    }>
                     <div>
                       <button
                         // onClick={() => handleSelectTama(tama.userTama.id)}
@@ -145,7 +151,7 @@ function MyTama() {
             );
           })}
         </body>
-      )}
+
     </>
   );
 }
