@@ -90,7 +90,7 @@ function Matching( { userGameStatus }) {
 
   // Only render for the first time
   useEffect(() => {
-    console.log('only run for the fist time')
+    console.log('---------only run for the fist time---------')
     randomCard()
   },[])
 
@@ -111,11 +111,20 @@ function Matching( { userGameStatus }) {
     if(score === 6) {
       setGameOver(true)
       userGameStatus(true)
+      // randomCard()
+      //random and flip the card back
+
     }
   }
 
   const randomCard = () => {
     var random = images2.sort(() => Math.random() - 0.5)
+    console.log('-----randomcard------', random)
+    let temp = random.map(item => {
+      item.flip = false
+      return item
+    })
+    console.log('------temp----', temp)
     setRandomImageLink(random)
   }
 
