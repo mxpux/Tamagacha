@@ -8,7 +8,7 @@ import './tamadex.css';
 
 function Tamadex() {
     return (
-        <body>
+        <div>
             <h2>Meet the Tamagacha!</h2>
             <div className="tamadexcontainer">
                 <div className="flip-card">
@@ -95,7 +95,7 @@ function Tamadex() {
 
 
 
-        </body>
+        </div>
     );
 }
 

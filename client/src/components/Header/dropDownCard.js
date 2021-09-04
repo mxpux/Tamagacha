@@ -58,11 +58,11 @@ const liCls =
           Swal.fire({
             icon: 'error',
             title: `Invalid Input`,
-            timer: 1500
+
           })
         } else {
           //We got username and password
-          console.log('userinput Array--->', userInput)
+          // console.log('userinput Array--->', userInput)
           //Need to check username and password from database..........
           try { //!LOGIN TRY CATCH
             const response = await loginUser(
@@ -73,20 +73,22 @@ const liCls =
             };
 
             const {token, userData } = await response.json();
-            console.log('response.json() userData login', userData);
+            // console.log('response.json() userData login', userData);
             Auth.login(token, userData.id);
-
-            Swal.fire({
+            console.log('before sweetalert welcone back')
+            await Swal.fire({
               icon: 'success',
               title: `Welcome Back ${userInput[0]}`,
-              timer: 1500
+              // timer: 1500
             })
+            console.log('after sweetalert welcone back')
+            handlePageChange('My Tama')
           } catch (err) {
             console.error(err)
             Swal.fire({
               icon: 'error',
               title: `Something wrong with logging in`,
-              timer: 1500
+              // timer: 1500
             })
           }
         }
@@ -94,7 +96,7 @@ const liCls =
 
       //If cancel button click
       if(sweetRespond.isDismissed) {
-        console.log('cancel button click')
+        // console.log('cancel button click')
       }
     }
 
@@ -168,20 +170,20 @@ const liCls =
             }
 
             const { token, userData } = await response.json();
-            console.log('response.json() userData signup', userData)
+            // console.log('response.json() userData signup', userData)
             Auth.login(token, userData.id);
 
             await Swal.fire({
               icon: 'success',
               title: `${userInput[0]} Sign Up `,
-              timer: 1500
+              // timer: 1500
             })
           } catch (err) {
             console.error(err)
             await Swal.fire({
               icon: 'error',
               title: `Something wrong with logging in`,
-              timer: 1500
+              // timer: 1500
             })
           }
 
@@ -190,7 +192,7 @@ const liCls =
 
       //If cancel button click
       if(sweetRespond.isDismissed) {
-        console.log('cancel button click')
+        // console.log('cancel button click')
       }
     }
 
@@ -229,26 +231,6 @@ const liCls =
     )
   }
 
-// const DropDownCard = ({ data = [], setOpen,handlePageChange }) => (
-//   <div className="shadow h-auto w-auto" style={{backgroundColor: "white", position: "absolute", right: "0px"}}>
-//     <ul className="text-center">
-//       {data.map((item, i) => (
-//         <li
-//           key={i}
-//           className={liCls}
-//           onClick={() => {
-//             setOpen(false)
-//             handlePageChange(item)
-//             sweetAlertTesting()
-//             console.log('item', item)
-//             }}>
-//             <span>
-//             {item}
-//         </span>
-//         </li>
-//       ))}
-//     </ul>
-//   </div>
-// );
+
 
 export default DropDownCard;

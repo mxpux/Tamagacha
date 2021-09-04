@@ -9,7 +9,7 @@ import '../Header/Header';
 
 function Homepage() {
     return (
-        <body>
+        <div>
             <div className="x">
                 <img className="y" src={tama1} alt="tamago"/>
             </div>
@@ -26,7 +26,7 @@ function Homepage() {
                 <img className="y5" src={tama5} alt="tamago"/>
             </div>
 
-        </body>
+        </div>
     );
 }
 

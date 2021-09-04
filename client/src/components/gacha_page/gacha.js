@@ -10,34 +10,34 @@ const sound = new Howl({
   volume: 0.1,
 });
 
-function Gacha() {
-  const [page, setPage] = useState('Gacha')
-  const [buttonClick, setButtonClick] = useState(false)
+function Gacha({handlePageChange}) {
+  // const [page, setPage] = useState('Gacha')
+  // const [buttonClick, setButtonClick] = useState(false)
 
-  const handleOnClick = (page) => {
-    setButtonClick(true)
-    setPage(page)
-  }
+  // const handleOnClick = (page) => {
+  //   setButtonClick(true)
+  //   setPage(page)
+  // }
 
-  const renderPageFunction = (page) => {
-    if (page === 'Profile') {
-      return <Profile />;
-    }
-  }
+  // const renderPageFunction = (page) => {
+  //   if (page === 'Profile') {
+  //     return <Profile />;
+  //   }
+  // }
 
   return (
     <>
-      {buttonClick ? renderPageFunction(page) : (
+
         <div a href id='egg-container'>
           <p className='gacha-title'>What will hatch!?</p>
           <br />
           <br />
           <br />
           <div id='egg' onClick={() => {
-            handleOnClick('Profile')
+            handlePageChange('Profile')
           }} />
 
-        </div>)}
+        </div>
     </>
   )
 }

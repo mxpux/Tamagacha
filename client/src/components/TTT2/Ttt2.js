@@ -22,17 +22,19 @@ function Ttt2 ( {userGameStatus} ) {
 
   // },[userWon])
 
+	//check when boxes got updated
   useEffect(() => {
-		// console.log('useeffect run on the boxes')
+		console.log('useeffect run on the boxes')
     winningComb([...boxes])
 
   },[boxes])
 
+	//Check when winner are set - sweetalert
   useEffect(() => {
     if(winner === playerOne) {
       console.log('playerone won')
       setUserWon(true)
-			userGameStatus(true)
+			userGameStatus(true) // return true to minigame
       Swal.fire({
         title: 'Sweet!',
         text: 'User Win!!',
@@ -42,9 +44,7 @@ function Ttt2 ( {userGameStatus} ) {
         imageAlt: 'Custom image',
       })
     }
-    // else {
-    //   setUserWon(false)
-    // }
+
     if(winner === playerTwo) {
       Swal.fire({
         title: 'Sweet!',
@@ -77,13 +77,9 @@ function Ttt2 ( {userGameStatus} ) {
 
 		for (var combo in combos) {
 			combos[combo].forEach((pattern) => {
-				if (
-					squares[pattern[0]] === '' || squares[pattern[1]] === '' || squares[pattern[2]] === ''
-				) {
+				if (squares[pattern[0]] === '' || squares[pattern[1]] === '' || squares[pattern[2]] === '') {
 					// ==
-				} else if (
-					squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]
-				) {
+				} else if (squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]) {
 					setWinner(squares[pattern[0]]);
 					setGameOver(true)
           // setUserWon(true)
@@ -91,7 +87,7 @@ function Ttt2 ( {userGameStatus} ) {
 			});
 		}
 	};
-  	//check to see boxes that which boxes are still open and return a open random box number
+  	//check to see which boxes are still open and return a open random box number
 	const randomIndex = () => {
 		var stillOpen = []
 		for(var i = 0; i < boxes.length; i++) {
@@ -102,6 +98,11 @@ function Ttt2 ( {userGameStatus} ) {
 		var randomIndex = Math.floor(Math.random() * stillOpen.length)
 		return stillOpen[randomIndex]
 	}
+
+	const handleBackButtonClick = () => {
+    setBackToProfile(true)
+  }
+
 	const setComputerMove = () => {
 		setTimeout(() => {
 			if(gameOver === false) {
@@ -114,10 +115,6 @@ function Ttt2 ( {userGameStatus} ) {
 
 	}
 
-	const handleBackButtonClick = () => {
-    setBackToProfile(true)
-  }
-
   const handleClick = (num) => {
     if (boxes[num] !== '') {
       Swal.fire({
@@ -129,29 +126,21 @@ function Ttt2 ( {userGameStatus} ) {
 		}
 
     setBoxes(prevState => {
-      // console.log('prevvvvv beforee', prevState)
       prevState[num] = playerOne;
 			if(gameOver === false)  {
 				setComputerMove()
 			}
-      // console.log('prevvvvv afterrrrr', prevState)
       return [...prevState]
     })
-    // squares[num] = playerOne;
-
-    // squares[randomIndex()] = playerTwo;
-    // var squares = [...boxes];
-
     winningComb([...boxes])
-    // winningComb(squares)
-    // setBoxes(squares)
-
   }
 
 
   const handleRestart = () => {
 		setWinner(null);
 		setBoxes(Array(9).fill(''));
+		setUserWon(false) //if user won - value set to true
+		setGameOver(false);
 	};
   const Cell = ({ num }) => {
 		return <td onClick={() => handleClick(num)}>{boxes[num]}</td>;

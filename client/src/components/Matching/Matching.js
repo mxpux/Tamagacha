@@ -77,7 +77,7 @@ const sound = new Howl ({
 
 function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
-  
+
 
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])
@@ -90,7 +90,7 @@ function Matching( { userGameStatus }) {
 
   // Only render for the first time
   useEffect(() => {
-    console.log('only run for the fist time')
+    // console.log('---------only run for the fist time---------')
     randomCard()
   },[])
 
@@ -111,11 +111,20 @@ function Matching( { userGameStatus }) {
     if(score === 6) {
       setGameOver(true)
       userGameStatus(true)
+      // randomCard()
+      //random and flip the card back
+
     }
   }
 
   const randomCard = () => {
     var random = images2.sort(() => Math.random() - 0.5)
+    // console.log('-----randomcard------', random)
+    let temp = random.map(item => {
+      item.flip = false
+      return item
+    })
+    // console.log('------temp----', temp)
     setRandomImageLink(random)
   }
 
@@ -153,7 +162,7 @@ function Matching( { userGameStatus }) {
   //check 2 user pick card
   const checkBothCards = () => {
     if(userPick.length > 2 ) {
-      console.log('userpick length are more then 2')
+      // console.log('userpick length are more then 2')
       return;
     }
     if(userPick.length === 2) {
@@ -186,9 +195,9 @@ function Matching( { userGameStatus }) {
     <>
       {backToProfile ? <Profile /> : (
         <div>
-          <h1>from matching</h1>
+          <h1 className="matchingtitle">Let's play a matching game!</h1>
           <div className='container'>
-            <div className='row'>
+            <div className='row p-3 m-3'>
               {randomImageLink.map((item, index) => {
                 return (
                   <Card
@@ -203,7 +212,10 @@ function Matching( { userGameStatus }) {
                   />
                 )
               })}
-            {gameOver ? <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
+            {gameOver ?
+            <button class="matchingbtn" onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null
+            }
+
             </div>
           </div>
         </div>
