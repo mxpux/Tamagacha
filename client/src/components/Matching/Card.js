@@ -19,7 +19,7 @@ function Card ({ index, name, image, flip, handleOnClick, setUserPick}) {
   return (
     <div
       onClick={handleImageClick}
-      className='card'
+      className='card m-1 cardmatching'
       > {flip ? (<img
         src={image}
         alt={name}
