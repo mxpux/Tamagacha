@@ -81,6 +81,6 @@ export const newTama = (user_id, token) => { //! FOR GACHA PURPOSES
   })
 }
 
-export const getAllUser = (u_id, token) => {
-  return fetch(`/api/user`);
-};
+// export const getAllUser = (u_id, token) => {
+//   return fetch(`/api/user`);
+// };
