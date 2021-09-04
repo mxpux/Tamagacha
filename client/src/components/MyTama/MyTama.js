@@ -99,6 +99,8 @@ function MyTama({handlePageChange}) {
                     </span>
                   </div>
                 </div>
+
+    <div className="mytamawrapper">
           {tamasOwned.map((tama) => {
             return (
               <div key={tama.userTama.id} className="mytamacontainer">
@@ -139,9 +141,9 @@ function MyTama({handlePageChange}) {
                         <h5 className="title">{tama.name}</h5>
                         <p className="mytamatext">
                           Happiness: {tama.userTama.happiness} <br />
-                          Bladder: {tama.userTama.bladder} <br />
+                          Bladder: {tama.userTama.bladder}  and    
                           Hunger: {tama.userTama.hunger} <br />
-                          Alive: {tama.userTama.is_alive === true ? "Yes" : "No"}
+                          Alive: {tama.userTama.is_alive === true ? "Yes" : "REST IN PEACE"}
                         </p>
                       </div>
                     </div>
@@ -150,6 +152,7 @@ function MyTama({handlePageChange}) {
               </div>
             );
           })}
+          </div>
         </body>
 
     </>
