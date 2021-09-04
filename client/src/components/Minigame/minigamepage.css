@@ -12,16 +12,16 @@
 }
 
 .minigame-title {
-    text-align: center;
     font-family: 'Schoolbell', cursive;
-    color: rgb(59, 69, 92);
-    font-size: 26px;
+    color: rgb(19, 169, 233);
+    font-size: 30px;
+    margin-top: 50px;
 }
 
 .minigame-card {
     width: 400px;
     display: inline-block;
-    margin: 50px;
+    margin: 15px;
     align-items: center;
     text-align: center;
 
