@@ -195,9 +195,9 @@ function Matching( { userGameStatus }) {
     <>
       {backToProfile ? <Profile /> : (
         <div>
-          <h1>from matching</h1>
+          <h1 className="matchingtitle">Let's play a matching game!</h1>
           <div className='container'>
-            <div className='row'>
+            <div className='row p-3 m-3'>
               {randomImageLink.map((item, index) => {
                 return (
                   <Card
@@ -212,9 +212,10 @@ function Matching( { userGameStatus }) {
                   />
                 )
               })}
-            }
             {gameOver ?
-            <button onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
+            <button class="matchingbtn" onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null
+            }
+
             </div>
           </div>
         </div>
