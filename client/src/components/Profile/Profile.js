@@ -106,31 +106,36 @@ function Profile () {
   return (
 
     <>
-    {pageToRender ? <MinigamePage /> : (<tama id="profile">
-        <h2>{tama.name}</h2>
+    {pageToRender ? <MinigamePage /> : (<tama id="profilecssid">
+        <h2 class="profiletamaname">{tama.name}</h2>
         <pfp>
           <img id='tama' src={tama.pictures} alt=''/>
         </pfp>
-        <div className="row btnRow">
-        {stat.id && <Stats userTama={stat} name={stat.name} />}
-          {/* <Stats userTama={stat.tamas_owned[0].userTama} />
-          <Stats userTama={stat} /> */}
-        </div>
-        <div className="row btnRow">
+       
+        <div className="row btnRowprofile {
+">
           <button
           onClick={feedTama}
-          className='feed btn'
+          className='feed btnprofile'
           >Feed</button>
           <button
           href='#' //TODO: Navigate to play page
-          className='play btn'
+          className='play btnprofile'
           onClick={() => handlePageChange()}
           >Play</button>
           <button
           onClick={poopTama}
-          className='poop btn'
+          className='poop btnprofile'
           >Poop</button>
         </div>
+        
+        <div className="profilestatsbox">
+        <div className="cardprofile">
+        {stat.id && <Stats userTama={stat} name={stat.name} />}
+          {/* <Stats userTama={stat.tamas_owned[0].userTama} />
+          <Stats userTama={stat} /> */}
+        </div></div>
+
       </tama>)}
 
     </>
