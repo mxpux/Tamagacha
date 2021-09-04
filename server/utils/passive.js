@@ -9,9 +9,9 @@ const upkeepVals = {
 }
 
 //!Returns an array of user objects
-function getAllUserTama (PORT) {
+function getAllUserTama () {
   //TODO: Eventually change to a suitable URL that's not local
-  return fetch(`http://localhost:${PORT}/api/usertama`)
+  return fetch(`/api/usertama`)
     .then(res => res.json())
 }
 
@@ -30,7 +30,7 @@ function createUserTamaArr (data) {
 }
 
 //! Update the database
-async function userTamaUpdate (userTamaArr, PORT) {
+async function userTamaUpdate (userTamaArr) {
   let newUserTamaArr = []; //Will contain updated userTama stats
   userTamaArr.forEach((userTama) => {
     //! Apply upkeep values for each userTama, then PUT to db
@@ -39,8 +39,8 @@ async function userTamaUpdate (userTamaArr, PORT) {
   })
   Promise.all(newUserTamaArr.map(tama => { //Promise.all will ensure each fetch route is complete before moving on
     //TODO: Eventually change to a suitable URL that's not local
-    console.log(`http://localhost:${PORT}/api/usertama/unique/${tama.id}`)
-    fetch(`http://localhost:${PORT}/api/usertama/unique/${tama.id}`, {
+    console.log(`/api/usertama/unique/${tama.id}`)
+    fetch(`/api/usertama/unique/${tama.id}`, {
       method: "PUT",
       body: JSON.stringify(tama),
       headers: { 'Content-Type': 'application/json' }
