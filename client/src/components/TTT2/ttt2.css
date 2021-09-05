@@ -49,8 +49,8 @@
     background-image: linear-gradient(rgb(181, 217, 249) 0%, rgb(125, 189, 245) 100%);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
     cursor: pointer;
-      margin-top: 40px;
-      margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
   
   .ttt2btn:hover {
@@ -76,7 +76,7 @@
   vertical-align: middle;
   overflow: hidden;
   font-weight: bold;
-  background-image: linear-gradient(rgb(181, 217, 249) 0%, rgb(125, 189, 245) 100%);
+  background-image: linear-gradient(#bbde74 0%, #99cc33 100%);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
   cursor: pointer;
 }
@@ -86,7 +86,7 @@
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-  background-image: linear-gradient(rgb(181, 217, 249) 0%, rgb(156, 204, 245) 100%);
+  background-image: linear-gradient(#bbde74 0%, #abd850 100%);
 }
 
 .ttt-toptitle { 
