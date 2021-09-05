@@ -6,7 +6,6 @@ import './gacha.css';
 
 const sound = new Howl({
   src: [pop],
-  loop: true,
   volume: 0.1,
 });
 

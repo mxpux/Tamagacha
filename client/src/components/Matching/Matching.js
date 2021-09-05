@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Howl} from 'howler';
-import music from '../../assets/musicmatch.mp3'
+import music from '../../assets/slip.mp3'
 import './matching.css'
 import Card from './Card.js'
 import Profile from '../Profile/Profile'
+
 //Name & pic link
 const images2 = [
   {
@@ -66,27 +67,21 @@ const images2 = [
     image: 'https://tamagotchi.com/wp-content/uploads/sebiretchi.jpg',
     flip: false
   },
-
-
 ]
 
 const sound = new Howl ({
   src: [music],
-  volume: 0.1,
+  volume: 0.2,
 });
 
 function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
-
-
   const [randomImageLink, setRandomImageLink] = useState([]);
   const [userPick, setUserPick] = useState([])
   const [move, setMove] = useState(0)
   const [gameOver, setGameOver] = useState(false); //When score === 6 gameOver will set to true.
   const [score, setScore] = useState(0); // 6 = win
   const [backToProfile ,setBackToProfile] = useState(false)
-
-
 
   // Only render for the first time
   useEffect(() => {
@@ -104,8 +99,6 @@ function Matching( { userGameStatus }) {
   useEffect(() => {
     checkGameOver()
   },[score])
-
-
 
   const checkGameOver = () => {
     if(score === 6) {
@@ -127,7 +120,6 @@ function Matching( { userGameStatus }) {
     // console.log('------temp----', temp)
     setRandomImageLink(random)
   }
-
 
   const handleOnClick = (index, name) => {
     // if image is already open - just return
@@ -157,8 +149,6 @@ function Matching( { userGameStatus }) {
     setBackToProfile(true)
   }
 
-
-
   //check 2 user pick card
   const checkBothCards = () => {
     if(userPick.length > 2 ) {
@@ -169,6 +159,7 @@ function Matching( { userGameStatus }) {
       //check to see if both card name are the same
       if(userPick[0].name === userPick[1].name) {
         // console.log('user picked the right card')
+        sound.play();
         setScore(prev => prev += 1)
         setUserPick([])
       }
@@ -189,7 +180,6 @@ function Matching( { userGameStatus }) {
       }
     }
   }
-
 
   return (
     <>
