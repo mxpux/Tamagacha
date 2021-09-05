@@ -33,7 +33,7 @@ pfp {
   0% { transform: rotate(45deg) translateY(0px); }
   5% { transform: rotate(45deg) translateY(-20px); }
   10% { transform: rotate(45deg) translateY(0px); }
-  15% { transform: rotate(45deg) translateY(-12px); }
+  15% { transform: rotate(45deg) translateY(-15px); }
   20% { transform: rotate(45deg) translateY(0px); }
   30% { transform: rotate(45deg) translateX(100px) translateY(-10px); }
   40% { transform: rotate(45deg) translateX(200px) translateY(0px); }
