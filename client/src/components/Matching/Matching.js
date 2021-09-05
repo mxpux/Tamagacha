@@ -212,16 +212,14 @@ function Matching( { userGameStatus }) {
                   />
                 )
               })}
-            {gameOver ?
-            <button class="matchingbtn" onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null
-            }
-
+              {gameOver ? 
+                <button class="matchingbtn" onClick={() => handleBackButtonClick()}>Return to Profile</button> : null
+              }
             </div>
           </div>
         </div>
       )}
     </>
-
   )
 }
 

@@ -1,20 +1,11 @@
 import React, {useState} from 'react'
 import './card.css'
 
-
-
-
 function Card ({ index, name, image, flip, handleOnClick, setUserPick}) {
   // const [flip, setFlip] = useState(false)
-
-
-
-
   const handleImageClick = (e) => {
-
     handleOnClick(index, name)
   }
-
 
   return (
     <div
@@ -31,14 +22,8 @@ function Card ({ index, name, image, flip, handleOnClick, setUserPick}) {
       alt={name}
       className='bad'
       ></img>)}
-
-
-      </div>
-
-
+    </div>
   )
-
 }
-
 
 export default Card;
