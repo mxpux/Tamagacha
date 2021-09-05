@@ -26,12 +26,27 @@ pfp {
 
 #tama {
   transform: rotate(45deg);
+  animation: x 15s linear infinite;
+}
 
+@keyframes x {
+  0% { transform: rotate(45deg) translateY(0px); }
+  5% { transform: rotate(45deg) translateY(-20px); }
+  10% { transform: rotate(45deg) translateY(0px); }
+  15% { transform: rotate(45deg) translateY(-12px); }
+  20% { transform: rotate(45deg) translateY(0px); }
+  30% { transform: rotate(45deg) translateX(100px) translateY(-10px); }
+  40% { transform: rotate(45deg) translateX(200px) translateY(0px); }
+  50% { transform: rotate(45deg) translateX(100px) translateY(-10px); }
+  60% { transform: rotate(45deg) translateX(0px) translateY(0); }
+  70% { transform: rotate(45deg) translateX(-100px) translateY(-10px); }
+  80% { transform: rotate(45deg) translateX(-200px) translateY(0px); }
+  90% { transform: rotate(45deg) translateX(-100px) translateY(-10px); }
+  100% { transform: rotate(45deg) translateX(0px) translateY(0); }
 }
 
 .btnRowprofile {
   margin: 10px;
-
 }
 
 .profiletamaname{
