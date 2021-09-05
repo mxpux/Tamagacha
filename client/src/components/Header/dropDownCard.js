@@ -3,7 +3,7 @@ import React from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 // const MySwal = withReactContent(Swal)
-import { loginUser, createUser, getAllUser } from "../../utils/API";
+import { loginUser, createUser } from "../../utils/API";
 import Auth from '../../utils/auth'
 
 const liCls =
@@ -12,17 +12,17 @@ const liCls =
 
   function DropDownCard({ data = [], setOpen, handlePageChange}) {
 
-    const getAllUserEmail = async (userInputEmail) => {
-      let response = await getAllUser()
-      let data = await response.json()
-      // console.log('data-----All User data-------->', data)
-      for(var i = 0; i < data.length; i++) {
-        if(userInputEmail === data[i].email) {
-          return true;
-        }
-      }
-      return false;
-    }
+    // const getAllUserEmail = async (userInputEmail) => {
+    //   let response = await getAllUser()
+    //   let data = await response.json()
+    //   console.log('data-----All User data-------->', data)
+    //   for(var i = 0; i < data.length; i++) {
+    //     if(userInputEmail === data[i].email) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // }
     const validateEmail = (email) => {
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(String(email).toLowerCase());
@@ -147,14 +147,15 @@ const liCls =
             title: `Password must be at least 6 characters!`,
             timer: 1500
           })
-        } else if(await getAllUserEmail(userInput[1])) {
-          console.log('hahahahaha', await getAllUserEmail(userInput[1]))
-          await Swal.fire({
-            icon: 'error',
-            title: `The Email address is already in use!`,
-            timer: 1500
-          })
-        }
+        } 
+        // else if(await getAllUserEmail(userInput[1])) {
+        //   console.log('hahahahaha', await getAllUserEmail(userInput[1]))
+        //   await Swal.fire({
+        //     icon: 'error',
+        //     title: `The Email address is already in use!`,
+        //     timer: 1500
+        //   })
+        // }
         else {
           //We got username and password
           console.log('userinput Array--->', userInput)
