@@ -180,7 +180,7 @@ function Ttt2 ( {userGameStatus} ) {
 					<button className="ttt2playagainbtn" onClick={() => handleRestart()}>Play Again</button>
 				</>
 			)}
-			{gameOver ? <button className="ttt2btn" onClick={() => handleBackButtonClick()}>Return to Profile Page</button> : null}
+			{gameOver ? <button className="ttt2btn" onClick={() => handleBackButtonClick()}>Return to Profile</button> : null}
 		</div>
 		)}
 

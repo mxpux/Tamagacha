@@ -26,12 +26,23 @@ pfp {
 
 #tama {
   transform: rotate(45deg);
-
+  animation: t 15s linear infinite;
 }
 
-.btnRowprofile {
-  margin: 10px;
-
+@keyframes t {
+  0% { transform: rotate(45deg) translateY(0px); }
+  5% { transform: rotate(45deg) translateY(-20px); }
+  10% { transform: rotate(45deg) translateY(0px); }
+  15% { transform: rotate(45deg) translateY(-15px); }
+  20% { transform: rotate(45deg) translateY(0px); }
+  30% { transform: rotate(45deg) translateX(100px) translateY(-10px); }
+  40% { transform: rotate(45deg) translateX(200px) translateY(0px); }
+  50% { transform: rotate(45deg) translateX(100px) translateY(-10px); }
+  60% { transform: rotate(45deg) translateX(0px) translateY(0); }
+  70% { transform: rotate(45deg) translateX(-100px) translateY(-10px); }
+  80% { transform: rotate(45deg) translateX(-200px) translateY(0px); }
+  90% { transform: rotate(45deg) translateX(-100px) translateY(-10px); }
+  100% { transform: rotate(45deg) translateX(0px) translateY(0); }
 }
 
 .profiletamaname{
@@ -53,21 +64,18 @@ pfp {
   font-size: 20px;
   color: aliceblue;
   justify-content: center;
-    align-items: center;
-    display:flex;
+  align-items: center;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
 .play {
   background-color: rgb(124, 216, 244);
-
 }
 
 .profilestatsbox{
     justify-content: center;
     align-items: center;
     display:flex;
-
-
 }
 
 .play:hover,

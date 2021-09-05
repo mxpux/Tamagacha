@@ -12,6 +12,7 @@
     text-align: center;
     font-size: 75px;
     padding-bottom: 20px;
+    cursor: pointer;
 }
 
 .header-h1:hover {
