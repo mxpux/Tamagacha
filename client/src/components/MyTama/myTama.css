@@ -178,7 +178,6 @@
      border-radius: 50%;
      font-family: 'Schoolbell', cursive;
      font-size: 30px;
-
  }
 
 
@@ -216,16 +215,16 @@
   }
 
   .wrappergachabutton:before {
-   position: absolute;
-   top: 0;
-   left: -500px;
-   content: "";
-   width: 120px;
-   height: 500px;
-   background: rgba(255, 255, 255, 0.6);
-   transform: skew(-50deg);
-   animation: shine 2.2s ease infinite;
- }
+    position: absolute;
+    top: 0;
+    left: -500px;
+    content: "";
+    width: 120px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.6);
+    transform: skew(-50deg);
+    animation: shine 2.2s ease infinite;
+  } 
  
  @keyframes shine {
    from {left: -500px;}
@@ -238,7 +237,6 @@
 	   60% {transform: translateY(-5px);}
    }
   
-
   .wrappergachabutton .icongachabutton {
     position: relative;
     margin-top: 13px;

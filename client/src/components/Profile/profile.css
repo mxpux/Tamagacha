@@ -26,10 +26,10 @@ pfp {
 
 #tama {
   transform: rotate(45deg);
-  animation: x 15s linear infinite;
+  animation: t 15s linear infinite;
 }
 
-@keyframes x {
+@keyframes t {
   0% { transform: rotate(45deg) translateY(0px); }
   5% { transform: rotate(45deg) translateY(-20px); }
   10% { transform: rotate(45deg) translateY(0px); }
