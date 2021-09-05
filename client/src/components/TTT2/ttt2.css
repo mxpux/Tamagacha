@@ -1,4 +1,3 @@
-
 .tttcontainer {
   display: flex;
   flex-direction: column;
@@ -53,23 +52,31 @@
 }
 
 .ttt2playagainbtn {
-  background-color: rgb(169, 215, 255);
-  justify-content: center;
-  padding: 20px;
-  font-size: 30px;    
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
   font-family: 'Schoolbell', cursive;
-  color: white;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  width: 120px;
+  height: 60px;
+  line-height: 50px;
+  border-radius: 7px;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: linear-gradient(rgb(181, 217, 249) 0%, rgb(125, 189, 245) 100%);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
 }
 
 .ttt2playagainbtn:hover {
-  background-color: #99cc33;
-  font-family: 'Schoolbell', cursive;
-  font-size: 30px;
-  color: white; 
-  opacity: 1;
-  cursor: pointer;
+  -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(rgb(181, 217, 249) 0%, rgb(156, 204, 245) 100%);
 }
 
 .ttt-toptitle { 
