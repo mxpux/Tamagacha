@@ -10,13 +10,12 @@ import Profile from './components/Profile/Profile';
 import Tamadex from './components/Tamadex/Tamadex';
 import Gacha from './components/gacha_page/gacha'
 import MyTama from './components/MyTama/MyTama';
-import SelectTama from './components/SelectTama/SelectTama'; //! Duplicate of MyTama, import into mytama
 
 //* MINIGAMES
 import MinigamePage from './components/Minigame/Minigamepage';
 import Matching from './components/Matching/Matching';
 import Ttt2 from './components/TTT2/Ttt2';
-import Ttt from './components/TTT/Ttt'; //! Duplicate of TTT2
+
 
 //* LocalStorage
 import { getCurrentTama } from './utils/localStorage'
