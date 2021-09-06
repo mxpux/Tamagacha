@@ -1,13 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import { Howl } from 'howler';
 import './ttt2.css';
 import Swal from 'sweetalert2'
 import Profile from '../Profile/Profile'
-
+import music from '../../assets/slip.mp3';
+import endMusic from '../../assets/finish.wav';
+import loseMusic from '../../assets/lose.wav';
 import player1 from '../../assets/tama2.png';
 import player2 from '../../assets/tama4.png';
 
 const playerOne = <img src={player1} alt="player1" className='ttt2-inline'/>;
 const playerTwo = <img src={player2} alt="player2" className='ttt2-inline'/>
+
+const sound = new Howl({
+	src: [music],
+	volume: 0.1,
+});
+
+const endSound = new Howl ({
+	src: [endMusic],
+	volume: 0.2,
+});
+
+const loseSound = new Howl ({
+	src: [loseMusic],
+	volume: 0.2,
+});
+
 //!!!!!!!!!!!!!!!!! At the end of the game - userWon will either be true/false
 function Ttt2 ( {userGameStatus} ) {
   // const [turn, setTurn] =useState('player')
@@ -26,6 +45,7 @@ function Ttt2 ( {userGameStatus} ) {
 	//check when boxes got updated
   useEffect(() => {
 		console.log('useeffect run on the boxes')
+		sound.play();
     winningComb([...boxes])
 
   },[boxes])
@@ -42,6 +62,7 @@ function Ttt2 ( {userGameStatus} ) {
   useEffect(() => {
 		console.log('inside useEffect for winner')
     if(winner === playerOne) {
+	  endSound.play();
       console.log('playerone won')
       setUserWon(true)
 			userGameStatus(true) // return true to minigame
@@ -56,8 +77,9 @@ function Ttt2 ( {userGameStatus} ) {
     }
 
     if(winner === playerTwo) {
+	  loseSound.play();
       Swal.fire({
-        title: 'Sweet!',
+        title: 'Oh no!',
         text: 'Computer Win!!',
         imageUrl: player2,
         imageWidth: 300,
