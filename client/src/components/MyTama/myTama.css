@@ -1,3 +1,11 @@
+
+body {
+   background-image: url('../../assets/tamadraw-blue.png');
+   background-color: rgb(255, 255, 255);
+   background-repeat: repeat;
+   background-attachment: fixed;
+  }
+
 .mytamacontainer {
     margin-top: 50px;
     margin: 5px;

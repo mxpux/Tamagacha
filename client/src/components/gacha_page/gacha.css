@@ -6,10 +6,10 @@
 }
 
 .gacha-title {
-  font-family: 'Luckiest Guy', cursive;
-  color: black;
-  font-size: 20px;
-  padding-top: 20px
+  font-family: 'Schoolbell', cursive;
+  color: rgb(61, 60, 60);
+  font-size: 50px;
+  margin-top: 90px
 }
 
 #egg {
@@ -17,14 +17,14 @@
   animation-iteration-count: infinite;
   min-width: 120px;
   min-height: 120px;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 90% 25% 65% 60% / 65% 25% 90% 60%;
   border: 2px solid #9a9a9a;
   transform: rotate(-45deg);
   transform: translateY(-40px);
   margin: 5%;
-  background: snow;
+  background: rgb(255, 253, 253);
 
 }
 
