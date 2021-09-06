@@ -12,3 +12,22 @@
   border-color: transparent;
   cursor: pointer;
 }
+
+.matching-card {
+
+}
+
+/* working */
+@media only screen and (max-width: 800px) {
+  .matching-card {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .matching-card {
+    width: 82px;
+    height: 82px;
+  }
+}

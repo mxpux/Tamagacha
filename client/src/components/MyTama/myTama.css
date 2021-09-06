@@ -14,7 +14,7 @@ body {
 .mytamawrapper{
      justify-content: center;
     align-items: center;
-    display:flex; 
+    display:flex;
     flex-wrap: wrap;
 }
 
@@ -23,20 +23,28 @@ body {
     justify-content: center;
         align-items: center;
         display: flex;
-        
+
  }
 
 .mytamapagetitle {
     color: rgb(64, 176, 224);
     padding: 60px;
     text-align: center;
-    font-size: 70px;    
+    font-size: 70px;
     font-family: 'Schoolbell', cursive;
     /* justify-content: center;
     align-items: center; */
     margin-top: -30px;
-  
+
 }
+
+@media only screen and (max-width: 800px) {
+   .mytamapagetitle {
+      font-size: 50px;
+   }
+ }
+
+
 
 .mytamacard-img-top{
     background-color: transparent;
@@ -59,7 +67,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(75, 70, 179, 0.24);
     border: 2px solid rgba(150, 151, 228, 0.12);
-    font-size: 16px;   
+    font-size: 16px;
     transition: all 0.3s ease;
     position: relative;
     display: flex;
@@ -69,7 +77,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
  }
- 
+
  .icon {
     margin: 0 auto;
     width: 100%;
@@ -86,7 +94,7 @@ body {
     font-weight: bolder;
     font-size: 14px;
  }
- 
+
 
  .mytamamaincard .title {
     text-align: center;
@@ -101,7 +109,7 @@ body {
     font-family: 'Schoolbell', cursive;
     visibility: hidden;
  }
- 
+
 
  .mytamamaincard .mytamatext {
 
@@ -115,7 +123,7 @@ body {
     min-width: 250px;
     align-items: center;
  }
- 
+
 
  .mytamamaincard:hover {
     height: 400px;
@@ -139,7 +147,7 @@ body {
     visibility: visible;
 
  }
- 
+
 
  .mytamamaincard:hover .icon {
 
@@ -147,7 +155,7 @@ body {
     transition: all 0.3s ease;
     background-color: rgb(64, 176, 224);
  }
- 
+
 
  .mytamamaincard:hover .icon i {
     opacity: 1;
@@ -166,7 +174,7 @@ body {
      justify-content: center;
      align-items: center;
      text-align: center;
-     margin-left: -220px;  
+     margin-left: -220px;
      margin-top: 15px;
      transition: all 0.8s ease;
  }
@@ -178,7 +186,7 @@ body {
      margin-top: -50px;
      font-family: 'Schoolbell', cursive;
      font-size: 30px;
-     color: white;  
+     color: white;
  }
 
  .mytamabutton:hover {
@@ -195,7 +203,7 @@ body {
     background-color:cornsilk;
     border-radius: 3%;
     font-size: 20px;
-    padding: 10px;    
+    padding: 10px;
     font-family: 'Schoolbell', cursive;
     margin: 0;
     position: fixed;
@@ -232,8 +240,8 @@ body {
     background: rgba(255, 255, 255, 0.3);
     transform: skew(-30deg);
     animation: shine 1.5s ease infinite;
-  } 
- 
+  }
+
  @keyframes shine {
    from {left: -40px;}
    to {left: 140px;}
@@ -244,7 +252,7 @@ body {
 	   40% {transform: translateY(-10px);}
 	   60% {transform: translateY(-5px);}
    }
-  
+
   .wrappergachabutton .icongachabutton {
     position: relative;
     margin-top: 13px;
@@ -256,7 +264,7 @@ body {
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  
+
   .wrappergachabutton .toolgachabutton {
     position: absolute;
     text-align: center;
@@ -272,7 +280,7 @@ body {
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     width: 100px;
   }
-  
+
   .wrappergachabutton .toolgachabutton::before {
     position: absolute;
     content: "";
@@ -284,19 +292,19 @@ body {
     transform: translate(-50%) rotate(45deg);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  
+
   .wrappergachabutton .icongachabutton:hover .toolgachabutton {
     top: -55px;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
-  
+
   .wrappergachabutton .icoicongachabuttonn:hover span,
   .wrappergachabutton .icongachabutton:hover .toolgachabutton {
     text-shadow: 0px -1px 0px rgba(196, 97, 97, 0.1);
   }
-  
+
   .wrappergachabutton .egggachabutton:hover .toolgachabutton,
   .wrappergachabutton .egggachabutton:hover .toolgachabutton::before {
     background-color: rgb(41, 57, 102);

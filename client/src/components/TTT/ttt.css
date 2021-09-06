@@ -1,0 +1,40 @@
+.tttcontainer {
+	justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+table td {
+background-color: rgb(247, 247, 247);
+border: 1px solid grey;
+width: 200px;
+height: 200px;
+justify-content: center;
+align-items: center;
+margin: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+	table td {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.tttwinner {
+	font-size: 50px;
+	font-weight: bolder;
+}
+
+.ttt2-inline {
+	width: 150px;
+	height: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+	.ttt2-inline {
+		width: 100px;
+		height: 100px;
+	}
+  }
