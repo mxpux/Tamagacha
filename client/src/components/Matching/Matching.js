@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {Howl} from 'howler';
-import music from '../../assets/slip.mp3'
+import React, { useEffect, useState } from 'react';
+import { Howl } from 'howler';
+import music from '../../assets/victory.mp3';
+import endMusic from '../../assets/finish.wav';
+import wrongBeep from '../../assets/wrong.mp3';
 import './matching.css'
 import Card from './Card.js'
 import Profile from '../Profile/Profile'
@@ -74,6 +76,16 @@ const sound = new Howl ({
   volume: 0.2,
 });
 
+const endSound = new Howl ({
+  src: [endMusic],
+  volume: 0.2,
+});
+
+const errSound = new Howl ({
+  src: [wrongBeep],
+  volume: 0.1,
+});
+
 function Matching( { userGameStatus }) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!! When the game is over gamOver will set to true
   const [randomImageLink, setRandomImageLink] = useState([]);
@@ -102,6 +114,7 @@ function Matching( { userGameStatus }) {
 
   const checkGameOver = () => {
     if(score === 6) {
+      endSound.play();
       setGameOver(true)
       userGameStatus(true)
       // randomCard()
@@ -165,6 +178,7 @@ function Matching( { userGameStatus }) {
       }
        else {
         // close both card
+        errSound.play();
         setTimeout(() => {
           console.log('settimeout runnnnnninnnnngggg')
           setRandomImageLink(prevState => {
