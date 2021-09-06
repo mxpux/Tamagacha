@@ -2,7 +2,7 @@
 body {
    background-image: url('../../assets/tamadraw-blue.png');
    background-color: rgb(255, 255, 255);
-   background-repeat: no-repeat;
+   background-repeat: repeat;
    background-attachment: fixed;
   }
 
