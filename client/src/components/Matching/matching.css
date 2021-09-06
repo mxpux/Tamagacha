@@ -34,4 +34,10 @@
     margin-bottom: 30px;
  }
 
-
+      @media only screen and (max-width: 380px) {
+        .matchingbtn {
+            width: 150px;
+            height: 60px;
+            font-size: 15px;
+        }
+      }
