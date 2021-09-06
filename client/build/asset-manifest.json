@@ -1,30 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.a4a4547d.chunk.css",
-    "main.js": "/static/js/main.e3844792.chunk.js",
-    "main.js.map": "/static/js/main.e3844792.chunk.js.map",
+    "main.css": "/static/css/main.10c2c3b6.chunk.css",
+    "main.js": "/static/js/main.e7419439.chunk.js",
+    "main.js.map": "/static/js/main.e7419439.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.be265e1d.js",
     "runtime-main.js.map": "/static/js/runtime-main.be265e1d.js.map",
-    "static/js/2.32f0741a.chunk.js": "/static/js/2.32f0741a.chunk.js",
-    "static/js/2.32f0741a.chunk.js.map": "/static/js/2.32f0741a.chunk.js.map",
+    "static/js/2.e90baf25.chunk.js": "/static/js/2.e90baf25.chunk.js",
+    "static/js/2.e90baf25.chunk.js.map": "/static/js/2.e90baf25.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.a4a4547d.chunk.css.map": "/static/css/main.a4a4547d.chunk.css.map",
-    "static/js/2.32f0741a.chunk.js.LICENSE.txt": "/static/js/2.32f0741a.chunk.js.LICENSE.txt",
-    "static/js/main.e3844792.chunk.js.LICENSE.txt": "/static/js/main.e3844792.chunk.js.LICENSE.txt",
+    "static/css/main.10c2c3b6.chunk.css.map": "/static/css/main.10c2c3b6.chunk.css.map",
+    "static/js/2.e90baf25.chunk.js.LICENSE.txt": "/static/js/2.e90baf25.chunk.js.LICENSE.txt",
+    "static/js/main.e7419439.chunk.js.LICENSE.txt": "/static/js/main.e7419439.chunk.js.LICENSE.txt",
     "static/media/match-game.ecdd3e28.png": "/static/media/match-game.ecdd3e28.png",
-    "static/media/musicmatch.f31cc499.mp3": "/static/media/musicmatch.f31cc499.mp3",
     "static/media/pop.9a41a671.mp3": "/static/media/pop.9a41a671.mp3",
+    "static/media/slip.be18d87e.mp3": "/static/media/slip.be18d87e.mp3",
     "static/media/tama1.92caa939.png": "/static/media/tama1.92caa939.png",
     "static/media/tama2.5e78fef5.png": "/static/media/tama2.5e78fef5.png",
     "static/media/tama3.b0f7f578.png": "/static/media/tama3.b0f7f578.png",
     "static/media/tama4.f9ef7f88.png": "/static/media/tama4.f9ef7f88.png",
     "static/media/tama5.a825ea6e.png": "/static/media/tama5.a825ea6e.png",
+    "static/media/myTama.css": "/static/media/tamadraw-blue.6c5b7ca9.png",
     "static/media/ttt-game.78331f2a.png": "/static/media/ttt-game.78331f2a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.be265e1d.js",
-    "static/js/2.32f0741a.chunk.js",
-    "static/css/main.a4a4547d.chunk.css",
-    "static/js/main.e3844792.chunk.js"
+    "static/js/2.e90baf25.chunk.js",
+    "static/css/main.10c2c3b6.chunk.css",
+    "static/js/main.e7419439.chunk.js"
   ]
 }

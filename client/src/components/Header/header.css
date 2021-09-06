@@ -1,9 +1,10 @@
 .header {
     background-color: rgb(169, 215, 255);
-    display: 'flex';
+    width: 100%;
+    /* display: 'flex';
     flex-direction: 'row';
     align-items: 'center';
-    justify-content: 'center';
+    justify-content: 'center'; */
 }
 
 .header-h1 {
@@ -13,6 +14,12 @@
     font-size: 75px;
     padding-bottom: 20px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .header-h1 {
+    font-size: 30px;
+  }
 }
 
 .header-h1:hover {
@@ -57,9 +64,23 @@ body {
 }
 
 img {
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
 }
+
+@media only screen and (max-width: 800px) {
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    img {
+      width: 82px;
+      height: 82px;
+    }
+  }
 
 .x {
     animation: x 13s linear infinite alternate;

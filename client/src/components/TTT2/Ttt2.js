@@ -17,6 +17,7 @@ function Ttt2 ( {userGameStatus} ) {
   const [userWon, setUserWon] = useState(false) //if user won - value set to true
 	const [gameOver, setGameOver] = useState(false);
 	const [backToProfile ,setBackToProfile] = useState(false)
+	const [turn, setTurn] = useState('player') //player or computer
 
 	// useEffect(() => {
 
@@ -29,8 +30,17 @@ function Ttt2 ( {userGameStatus} ) {
 
   },[boxes])
 
+
+	useEffect(() => {
+		if(turn === 'computer') {
+			setComputerMove()
+		}
+
+  },[turn])
+
 	//Check when winner are set - sweetalert
   useEffect(() => {
+		console.log('inside useEffect for winner')
     if(winner === playerOne) {
       console.log('playerone won')
       setUserWon(true)
@@ -58,6 +68,7 @@ function Ttt2 ( {userGameStatus} ) {
   },[winner])
 
   const winningComb = (squares) => {
+		console.log('inside winning comb function')
 		var combos = {
 			across: [
 				[0, 1, 2],
@@ -78,7 +89,7 @@ function Ttt2 ( {userGameStatus} ) {
 		for (var combo in combos) {
 			combos[combo].forEach((pattern) => {
 				if (squares[pattern[0]] === '' || squares[pattern[1]] === '' || squares[pattern[2]] === '') {
-					// ==
+
 				} else if (squares[pattern[0]] === squares[pattern[1]] && squares[pattern[1]] === squares[pattern[2]]) {
 					setWinner(squares[pattern[0]]);
 					setGameOver(true)
@@ -86,9 +97,11 @@ function Ttt2 ( {userGameStatus} ) {
 				}
 			});
 		}
+
 	};
   	//check to see which boxes are still open and return a open random box number
 	const randomIndex = () => {
+		console.log('inside randomIndex function')
 		var stillOpen = []
 		for(var i = 0; i < boxes.length; i++) {
 			if (boxes[i] === '') {
@@ -104,18 +117,30 @@ function Ttt2 ( {userGameStatus} ) {
   }
 
 	const setComputerMove = () => {
-		setTimeout(() => {
-			if(gameOver === false) {
-					setBoxes(prevState => {
-						prevState[randomIndex()] = playerTwo;
-						return [...prevState]
-					})
-			}
-		},750)
-
+		console.log('inside setComputer move function')
+		if(gameOver === false) {
+			setTimeout(() => {
+				if(gameOver === false) {
+						setBoxes(prevState => {
+							prevState[randomIndex()] = playerTwo;
+							return [...prevState]
+						})
+				}
+			},750)
+		}
+		setTurn('player')
+		// setTimeout(() => {
+		// 	if(gameOver === false) {
+		// 			setBoxes(prevState => {
+		// 				prevState[randomIndex()] = playerTwo;
+		// 				return [...prevState]
+		// 			})
+		// 	}
+		// },750)
 	}
 
   const handleClick = (num) => {
+		console.log('inside handleClick function')
     if (boxes[num] !== '') {
       Swal.fire({
         icon: 'error',
@@ -127,16 +152,23 @@ function Ttt2 ( {userGameStatus} ) {
 
     setBoxes(prevState => {
       prevState[num] = playerOne;
-			if(gameOver === false)  {
-				setComputerMove()
-			}
+			// if(gameOver === false) {
+			// 	setComputerMove()
+			// }
       return [...prevState]
     })
     winningComb([...boxes])
+
+		if(gameOver === false) {
+			// setComputerMove()
+			setTurn('computer')
+		}
+
   }
 
 
   const handleRestart = () => {
+		console.log('inside handle restart function')
 		setWinner(null);
 		setBoxes(Array(9).fill(''));
 		setUserWon(false) //if user won - value set to true

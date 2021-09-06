@@ -88,14 +88,14 @@ function MyTama({handlePageChange}) {
     <>
         <div>
           <div className="mytamapagetitle">Select your Tama!</div>
-          <div class="wrappergachabutton">
-                  <div class="icongachabutton egggachabutton" onClick={() => {
+          <div className="wrappergachabutton">
+                  <div className="icongachabutton egggachabutton" onClick={() => {
                     gachaPull()
                     handlePageChange('Gacha')
                   }}>
-                    <div class="toolgachabutton">Get a Tama!</div>
+                    <div className="toolgachabutton">Get a Tama!</div>
                     <span>
-                      <i class="fas fa-egg"></i>Gacha!
+                      <i className="fas fa-egg"></i>Gacha!
                     </span>
                   </div>
                 </div>

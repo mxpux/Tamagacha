@@ -1,7 +1,7 @@
 .tttcontainer {
 	justify-content: center;
     align-items: center;
-    display:flex; 
+    display:flex;
     flex-wrap: wrap;
 }
 
@@ -13,6 +13,13 @@ height: 200px;
 justify-content: center;
 align-items: center;
 margin: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+	table td {
+		width: 100px;
+		height: 100px;
+	}
 }
 
 .tttwinner {

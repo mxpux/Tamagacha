@@ -14,13 +14,13 @@ function Card ({ index, name, image, flip, handleOnClick, setUserPick}) {
       > {flip ? (<img
         src={image}
         alt={name}
-        className='good'
+        className='matching-card'
         name={name}
         index={index}
         ></img>) : (<img
       src='./card.png'
       alt={name}
-      className='bad'
+      className='matching-card'
       ></img>)}
     </div>
   )
