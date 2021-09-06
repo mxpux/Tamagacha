@@ -7,7 +7,7 @@
 
   table td {
   background-color: rgb(247, 247, 247);
-  /* border: 1px solid grey; */
+  border: 1px solid grey;
   width: 250px;
   height: 250px;
   justify-content: center;
