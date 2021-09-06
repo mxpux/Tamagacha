@@ -224,19 +224,19 @@ body {
 
   .wrappergachabutton:before {
     position: absolute;
-    top: 0;
+    top: 0px;
     left: -500px;
     content: "";
-    width: 120px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.6);
-    transform: skew(-50deg);
-    animation: shine 2.2s ease infinite;
+    width: 45px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skew(-30deg);
+    animation: shine 1.5s ease infinite;
   } 
  
  @keyframes shine {
-   from {left: -500px;}
-   to {left: 655px;}
+   from {left: -40px;}
+   to {left: 140px;}
  }
 
   @keyframes bounce {
