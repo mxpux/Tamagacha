@@ -9,7 +9,7 @@ const userTamaData = [
     happiness: 100,
     bladder: 100,
     date_modified: new Date(),
-    date_created: '01-01',
+    date_created: new Date(),
     is_alive: true,
     is_awake: true,
     status: 10
@@ -22,7 +22,7 @@ const userTamaData = [
     happiness: 100,
     bladder: 100,
     date_modified: new Date(),
-    date_created: '01-01',
+    date_created: new Date(),
     is_alive: true,
     is_awake: true,
     status: 10
@@ -35,7 +35,7 @@ const userTamaData = [
     happiness: 100,
     bladder: 100,
     date_modified: new Date(),
-    date_created: '01-01',
+    date_created: new Date(),
     is_alive: true,
     is_awake: true,
     status: 10
@@ -48,7 +48,7 @@ const userTamaData = [
     happiness: 100,
     bladder: 100,
     date_modified: new Date(),
-    date_created: '01-01',
+    date_created: new Date(),
     is_alive: true,
     is_awake: true,
     status: 10
@@ -61,7 +61,7 @@ const userTamaData = [
     happiness: 100,
     bladder: 100,
     date_modified: new Date(),
-    date_created: '01-01',
+    date_created: new Date(),
     is_alive: true,
     is_awake: true,
     status: 10
