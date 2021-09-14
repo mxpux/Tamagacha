@@ -36,14 +36,15 @@ export const getUser = (u_id, token) => {
   });
 };
 
-export const getTama = (u_id, t_id, token) => {
-  console.log(`u_id ${u_id}, t_id ${t_id}, token ${token}`)
-  return fetch(`/api/usertama/${u_id}/${t_id}`, {
+export const getTama = (u_id, ut_id, token) => {
+  console.log(`u_id ${u_id}, t_id ${ut_id}, token ${token}`)
+  return fetch(`/api/usertama/${u_id}/${ut_id}`, {
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${token}`,
     },
   });
+  //*Returns Tama data + userTama data
 };
 
 export const getUniqueTama = (ut_id, token) => {
@@ -54,6 +55,7 @@ export const getUniqueTama = (ut_id, token) => {
       authorization: `Bearer ${token}`,
     },
   });
+  //*Returns userTama data only
 };
 
 export const updateTama = (tamaData, token, ut_id) => {

@@ -115,8 +115,11 @@ router.get('/:u_id/:t_id', authMiddleware, async (req, res) => {
         // {all: true, nested: true},
         { as: "tamas_owned",
         model: Tama,
-        where: {id: req.params.t_id},
+        // where: {id: req.params.t_id},
         through: {
+          where: {
+            id: req.params.t_id
+          },
           attributes: {exclude: ['user_id', 'tama_id']} // | Will only include tama attributes (age, hunger, etc.) |
         }},
       ]
