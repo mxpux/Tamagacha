@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './card.css'
 
 function Card ({ index, name, image, flip, handleOnClick, setUserPick}) {

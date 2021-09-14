@@ -4,7 +4,7 @@ import tamaTTT from '../../assets/ttt-game.png';
 import './minigamepage.css';
 import Ttt2 from '../TTT2/Ttt2'
 import Matching from '../Matching/Matching'
-import  { getUserId, getCurrentTama }  from '../../utils/localStorage'
+import  { getCurrentTama }  from '../../utils/localStorage'
 import { getUniqueTama, updateTama } from '../../utils/API';
 import Auth from '../../utils/auth' //gettoken
 

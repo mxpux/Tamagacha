@@ -17,7 +17,7 @@ const SERVER = dev ? `http://localhost:${PORT}` : 'https://tamagacha.herokuapp.c
 
 // -- cron -- \\
 //!Tweak schedule based on game balance
-cron.schedule('0,05,10,15,20,25,30,35,40,45,50,55 * * * * *', () => {
+cron.schedule('*/10 * * * * *', () => {
     getAllUserTama(SERVER)
     .then((data) => {
         userTamaUpdate(createUserTamaArr(data), SERVER)

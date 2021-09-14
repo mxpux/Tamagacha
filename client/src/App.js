@@ -3,19 +3,12 @@ import React, {useState} from 'react';
 //* BASE COMPONENTS
 import Header from './components/Header/Header';
 import Homepage from './components/Homepage/Homepage';
-// import Hamburger from 'hamburger-react';
 
 //*TAMA RELATED COMPONENTS
 import Profile from './components/Profile/Profile';
 import Tamadex from './components/Tamadex/Tamadex';
 import Gacha from './components/gacha_page/gacha'
 import MyTama from './components/MyTama/MyTama';
-
-//* MINIGAMES
-import MinigamePage from './components/Minigame/Minigamepage';
-import Matching from './components/Matching/Matching';
-import Ttt2 from './components/TTT2/Ttt2';
-
 
 //* LocalStorage
 import { getCurrentTama } from './utils/localStorage'
@@ -57,17 +50,7 @@ function App() {
   return (
     <div>
       <Header handlePageChange={handlePageChange}/>
-      {/* <Homepage /> */}
       {renderPage()}
-      {/* <Gacha /> */}
-      {/* <MinigamePage /> */}
-      {/* <MyTama /> */}
-      {/* <Matching /> */}
-      {/* <Tamadex /> */}
-      {/* <Ttt2 /> */}
-      {/* <Ttt /> */}
-      {/* <Matching /> */}
-      {/* <Profile /> */}
     </div>
   );
 }

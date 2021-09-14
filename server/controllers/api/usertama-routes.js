@@ -110,12 +110,11 @@ router.get('/:u_id/:t_id', authMiddleware, async (req, res) => {
   try {
     const dbUserTamaData = await User.findByPk(req.params.u_id,
     {
+      attributes: {exclude: ['password']},
       include:
       [
-        // {all: true, nested: true},
         { as: "tamas_owned",
         model: Tama,
-        // where: {id: req.params.t_id},
         through: {
           where: {
             id: req.params.t_id
@@ -130,9 +129,7 @@ router.get('/:u_id/:t_id', authMiddleware, async (req, res) => {
     };
 
     const UserTamaData = dbUserTamaData.get({ plain: true })
-    // console.log('usertamadata', UserTamaData)
-    const currentTama = UserTamaData.tamas_owned[0]
-    // console.log('after selecting', currentTama)
+    const currentTama = UserTamaData.tamas_owned[0] //*tamas_owned is still an array even if just finding one
     res.status(200).json(currentTama)
 
   } catch (err) {

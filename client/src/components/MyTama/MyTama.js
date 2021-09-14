@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Gacha from "../gacha_page/gacha";
-import Profile from "../Profile/Profile";
 import { getUser, newTama } from "../../utils/API";
 import Auth from '../../utils/auth';
 import { getUserId, setCurrentTama } from "../../utils/localStorage";

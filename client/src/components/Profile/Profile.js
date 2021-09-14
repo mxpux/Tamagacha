@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Stats from "./StatsDropdown"
 import './profile.css';
 import  { getUserId, getCurrentTama }  from '../../utils/localStorage'
-import { getUser, getTama, updateTama } from '../../utils/API';
+import { getTama, updateTama } from '../../utils/API';
 import Auth from '../../utils/auth'
 import MinigamePage from '../Minigame/Minigamepage'
 
@@ -49,9 +49,7 @@ function Profile () {
         newHunger = 100
       }
 
-      let response = await updateTama({hunger: newHunger}, token, ut_id)
-
-      console.log(response);
+      await updateTama({hunger: newHunger}, token, ut_id)
       getTamaStats();
     }
   }
@@ -69,9 +67,7 @@ function Profile () {
         newBladder = 100;
       }
 
-      let response = await updateTama({bladder: newBladder}, token, ut_id)
-
-      console.log(response);
+      await updateTama({bladder: newBladder}, token, ut_id)
       getTamaStats();
     }
   }
