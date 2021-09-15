@@ -2,98 +2,73 @@ import React, {useState, useEffect} from "react";
 import Stats from "./StatsDropdown"
 import './profile.css';
 import  { getUserId, getCurrentTama }  from '../../utils/localStorage'
-import { getUser, getTama, updateTama, getUniqueTama } from '../../utils/API';
+import { getTama, updateTama } from '../../utils/API';
 import Auth from '../../utils/auth'
 import MinigamePage from '../Minigame/Minigamepage'
 
 function Profile () {
-  const [stat, setStat] = useState({});
-  const [tama, setTama] = useState({})
-// console.log('stat', stat)
-// console.log('stat', stat.id)
-// console.log('stat', stat.tamas_owned[0])
-  const [pageToRender, setPageToRender] = useState(false)
+  const [tama, setTama] = useState({});
+  const [pageToRender, setPageToRender] = useState(false);
 
   const handlePageChange = () => {
     setPageToRender(true)
-  }
+  };
 
-  /**
-   * Stat ===
-   * User: {id, username, email, password, tamas_owned}
-   * tamas_owned: {id, name, description, pictures, userTama}
-   * userTama: {id, age, hunger, happiness, bladder, date_modified, date_created, is_alive, is_awake, status}
-   */
-  const getTamaStats = async (t_id) => {
+  const getTamaStats = async () => {
     try{
       const u_id = getUserId();
+      const ut_id = getCurrentTama();
       const token = Auth.getToken();
-      const response = await getTama(u_id, t_id, token);
-      console.log ('getTamaStats response: ', response);
+      const response = await getTama(u_id, ut_id, token);
       const data = await response.json();
-      console.log('getTamaStats data: ', data);
       setTama(data);
+      //* Data ==> Tama + userTama data as Tama's property
     } catch (err) {
       console.error(err);
     }
   }
-   const getUserTamaStats = async () => {
-    try {
-      let ut_id = getCurrentTama();
-      let token = Auth.getToken()
-
-      let response = await getUniqueTama(ut_id , token)
-
-      if (!response.ok) {
-        throw new Error('Something went wrong!')
-      };
-
-      let data = await response.json()
-      console.log('data----->', data)
-      setStat(data)
-      getTamaStats(data.tama_id);
-    }
-    catch (err){
-      console.error('errorr--->',err)
-    }
-  }
-
 
   useEffect(() => {
-      getUserTamaStats()
+    getTamaStats()
+    const interval = setInterval(() => {
+      getTamaStats()
+    }, 5000)
+      return () => clearInterval(interval);
   }, [])
 
   const feedTama = async () => {
-    console.log('hunger stat', stat.hunger)
-    if (stat.hunger >= 100 ) {
+    console.log('initial hunger stat', tama.userTama.hunger)
+    if (tama.userTama.hunger >= 100 ) {
       console.log('nothing happened');
       return
     } else {
       const ut_id = getCurrentTama();
       const token = Auth.getToken();
-      const newHunger = stat.hunger + 1
+      let newHunger = tama.userTama.hunger + 5
+      if (newHunger > 100) {
+        newHunger = 100
+      }
 
-      let response = await updateTama({hunger: newHunger}, token, ut_id)
-
-      console.log(response);
-      getUserTamaStats();
+      await updateTama({hunger: newHunger}, token, ut_id)
+      getTamaStats();
     }
   }
 
   const poopTama = async () => {
-    console.log('bladder stat', stat.bladder)
-    if (stat.bladder >= 100 ) {
+    console.log('bladder stat', tama.userTama.bladder)
+    if (tama.userTama.bladder >= 100 ) {
       console.log('nothing happened');
       return
     } else {
       const ut_id = getCurrentTama();
       const token = Auth.getToken();
-      const newBladder = stat.bladder + 1
+      let newBladder = tama.userTama.bladder + 5
+      if (newBladder > 100) {
+        newBladder = 100;
+      }
 
-      let response = await updateTama({bladder: newBladder}, token, ut_id)
-
-      console.log(response);
-      getUserTamaStats();
+      await updateTama({bladder: newBladder}, token, ut_id)
+      getTamaStats();
     }
   }
 
@@ -102,7 +77,7 @@ function Profile () {
 
     <>
     {pageToRender ? <MinigamePage /> : (<tama id="profilecssid">
-        <h2 class="profiletamaname">{tama.name}</h2>
+        <h2 className="profiletamaname">{tama.name}</h2>
         <pfp>
           <img id='tama' src={tama.pictures} alt=''/>
         </pfp>
@@ -114,7 +89,6 @@ function Profile () {
           className='feed btnprofile'
           >Feed</button>
           <button
-          href='#' //TODO: Navigate to play page
           className='play btnprofile'
           onClick={() => handlePageChange()}
           >Play</button>
@@ -125,11 +99,10 @@ function Profile () {
         </div>
 
         <div className="profilestatsbox">
-        <div className="cardprofile">
-        {stat.id && <Stats userTama={stat} name={stat.name} />}
-          {/* <Stats userTama={stat.tamas_owned[0].userTama} />
-          <Stats userTama={stat} /> */}
-        </div></div>
+          <div className="cardprofile">
+          {tama.userTama && <Stats userTama={tama.userTama} name={tama.userTama.name} />}
+          </div>
+        </div>
 
       </tama>)}
 

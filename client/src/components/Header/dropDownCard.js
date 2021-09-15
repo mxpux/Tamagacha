@@ -1,7 +1,7 @@
 import React from "react";
 //SweetAlert
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+// import withReactContent from 'sweetalert2-react-content'
 // const MySwal = withReactContent(Swal)
 import { loginUser, createUser } from "../../utils/API";
 import Auth from '../../utils/auth'
